@@ -523,11 +523,16 @@
     user-select: auto;
   }
   /* nested pills inside expandable should always be clickable */
-  .attend-expandable .opt {
+  .attend-expandable .opt,
+  .attend-expandable .options .opt {
     pointer-events: auto !important;
     opacity: 1 !important;
     cursor: pointer !important;
     user-select: none !important;
+  }
+  /* wrapper divs inside expandable also need to pass clicks through */
+  .attend-expandable > div {
+    pointer-events: auto !important;
   }
   .opt.selected .attend-txt, .opt.selected-or .attend-txt { background: #fff !important; }
     width: 100%;
@@ -1238,7 +1243,7 @@
             <div style="margin-top:10px;padding-top:10px;border-top:1.5px solid #e8e0d4;width:100%;">
               <p style="font-size:12px;font-weight:800;margin-bottom:8px;opacity:0.9;">pwede ba makisabay ang friends?</p>
               <div class="options" style="flex-direction:column;gap:6px;">
-                <div class="opt attend-expandable" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',true);togglePax('pax2',false);" style="background:var(--soft);border-color:var(--border,#e8ddd0);color:var(--dark);font-size:13px;flex-direction:column;">
+                <div class="opt attend-expandable" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',true);togglePax('pax2',false);" style="font-size:13px;flex-direction:column;">
                   <span>💸 Pwede — pero pay me, part time uber, mahal ang gas</span>
                   <div style="display:flex;align-items:center;gap:8px;margin-top:8px;" onclick="event.stopPropagation()">
                     <label style="font-size:12px;font-weight:800;color:var(--mid);">Ilan pwede makisabay?</label>
@@ -1254,8 +1259,8 @@
                     <span style="font-size:12px;color:var(--mid);">pax</span>
                   </div>
                 </div>
-                <div class="opt" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',false);togglePax('pax2',false);" style="background:var(--soft);border-color:var(--border,#e8ddd0);color:var(--dark);font-size:13px;">🙅 Sorry pre, gusto ko mapag-isa</div>
-                <div class="opt" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',false);togglePax('pax2',false);" style="background:var(--soft);border-color:var(--border,#e8ddd0);color:var(--dark);font-size:13px;">😤 Tama na! Punong-puno na ko (yung kotse)</div>
+                <div class="opt" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',false);togglePax('pax2',false);" style="font-size:13px;">🙅 Sorry pre, gusto ko mapag-isa</div>
+                <div class="opt" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',false);togglePax('pax2',false);" style="font-size:13px;">😤 Tama na! Punong-puno na ko (yung kotse)</div>
               </div>
             </div>
           </div>
@@ -1802,7 +1807,9 @@
 
   function single(el) {
     const g = el.dataset.group;
-    document.querySelectorAll(`[data-group="${g}"]`).forEach(o => o.classList.remove('selected','selected-or'));
+    document.querySelectorAll(`[data-group="${g}"]`).forEach(o => {
+      o.classList.remove('selected','selected-or');
+    });
     el.classList.add('selected');
     updateProgress();
   }
@@ -1884,14 +1891,24 @@
       attending:        getSelected('attending'),
       attendReason:     val('reason-yes3') || val('reason-maybe3') || val('reason-no2'),
       plusOne:          getSelected('plusone'),
-      plusOneName:      val('plusOneName') || val('plusTwoNames'),
+      plusOneName:      (() => {
+        const sel = document.querySelector('[data-group="plusone"].selected,[data-group="plusone"].selected-or');
+        if (!sel) return '';
+        const inp = sel.querySelector('input');
+        return inp ? inp.value.trim() : '';
+      })(),
       plusOneUltimatum: getSelected('plusone-ultimatum'),
       sleepoverNights:  getMultiSelected('sleepover-nights'),
       sleepoverPay:     getSelected('sleepover-pay'),
       airbnb:           getSelected('airbnb'),
       transport:        getSelected('transport'),
       carShare:         getSelected('carshare'),
-      carPax:           val('pax1') || val('pax2'),
+      carPax:           (() => {
+        const cs = document.querySelector('[data-group="carshare"].selected,[data-group="carshare"].selected-or');
+        if (!cs) return '';
+        const inp = cs.querySelector('input[type="number"]');
+        return inp && !inp.disabled ? inp.value.trim() : '';
+      })(),
       travelHelp:       getSelected('travel-help'),
       sleepoverNotes:   val('sleepoverNotes'),
       diet:             getSelected('diet'),
@@ -1901,7 +1918,15 @@
       trivia:           val('trivia'),
       memory:           val('memory'),
       cruiseAttending:  getSelected('cruise-attend'),
-      cruisePick:       getMultiSelected('cruise-pick'),
+      cruisePick:       (() => {
+        return Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected'))
+          .map(el => {
+            const title = el.querySelector('.cruise-opt-title') ? el.querySelector('.cruise-opt-title').textContent.trim() : '';
+            const tags = Array.from(el.querySelectorAll('.cruise-tag')).map(t => t.textContent.trim()).join(' | ');
+            const price = el.querySelector('.cruise-opt-price') ? el.querySelector('.cruise-opt-price').textContent.replace(/\s+/g,' ').trim() : '';
+            return [title, tags, price].filter(Boolean).join(' — ');
+          }).join('; ');
+      })(),
       cruisePay:        getSelected('cruise-pay'),
       roomType:         getSelected('room-type'),
       finalAnswer:      getSelected('final-ans'),
