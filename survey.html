@@ -534,6 +534,12 @@
   .attend-expandable > div {
     pointer-events: auto !important;
   }
+  /* BUT keep number inputs locked — they should only unlock via JS togglePax */
+  .attend-expandable input[type="number"][disabled] {
+    pointer-events: none !important;
+    opacity: 0.4 !important;
+    cursor: not-allowed !important;
+  }
   .opt.selected .attend-txt, .opt.selected-or .attend-txt { background: #fff !important; }
     width: 100%;
     border-radius: 12px;
@@ -1254,7 +1260,7 @@
       <!-- PLUS ONE -->
       <div class="scard" style="margin-top:42px">
         <div class="scard-label">PLUS ONE? 👀</div>
-        <div class="card-gif"><img src="https://i.ibb.co/tPWPH47p/I-feel-attackedt.gif" alt="I feel attacked"/></div>
+        <div class="card-gif" style="height:260px;"><img src="https://i.ibb.co/tPWPH47p/I-feel-attackedt.gif" alt="I feel attacked" style="height:260px;"/></div>
         <p class="q-text">May kasama ka? 👀</p>
         <p class="q-hint">Lagay mo lang as plus 1 kung wala siya own invite. Di pa to confirmed ah, vibes lang muna hehe</p>
         <div class="options" style="flex-direction:column;gap:10px;">
@@ -1391,7 +1397,7 @@
       <!-- DON'T BORE ME -->
       <div class="scard" style="margin-top:42px">
         <div class="scard-label">DON'T BORE ME 🎉</div>
-        <div class="card-gif"><img src="https://gifbin.com/bin/022016/girl-catching-wedding-bouquet.gif" alt="bouquet toss"/></div>
+        <div class="card-gif" style="height:260px;"><img src="https://gifbin.com/bin/022016/girl-catching-wedding-bouquet.gif" alt="bouquet toss" style="height:260px;"/></div>
         <p class="q-text">may hinahanap ka bang activity?</p>
         <p class="q-hint">reunion talaga to kaya kasama ka sa planning 😏 may karaoke for sure!</p>
         <div class="options" style="flex-direction:column;gap:10px;">
@@ -1627,7 +1633,7 @@
 
       <!-- Q5: COMING FROM PH -->
       <div class="scard" style="margin-top:42px">
-        <div class="scard-label">COMING FROM PH? ✈️</div>
+        <div class="scard-label">SAN KA NA NAMAN GALING ✈️</div>
         <p class="q-text">Lilipad ka ba from Pilipins or another country?</p>
         <div class="notice" style="margin-bottom:14px;font-size:13px;line-height:1.75;">
           ✈️ Airfare: ₱20,000–45,000 one way from Manila<br/>
@@ -1659,20 +1665,20 @@
         </div>
         <p class="q-text">So... sama ka ba sa Sydney trip? 👀</p>
         <div class="options" style="flex-direction:column;gap:10px;">
-          <div class="opt attend-expandable" data-group="final-ans" onclick="single(this);showYayPopup()" style="flex-direction:column;">
+          <div class="opt attend-expandable" data-group="final-ans" onclick="single(this);showYayPopup();document.getElementById('roomTypeSection').style.display='block';" style="flex-direction:column;">
             <span>✅ SAMA ako, PM me!</span>
-            <div style="margin-top:10px;padding-top:10px;border-top:1.5px solid #e8e0d4;width:100%;" onclick="event.stopPropagation()">
+            <div id="roomTypeSection" style="display:none;margin-top:10px;padding-top:10px;border-top:1.5px solid #e8e0d4;width:100%;" onclick="event.stopPropagation()">
               <p style="font-size:12px;font-weight:800;margin-bottom:8px;color:var(--mid);pointer-events:none;">Room type preference?</p>
               <div class="options" style="flex-direction:column;gap:6px;">
-                <div class="opt" data-group="room-type" onclick="event.stopPropagation();single(this)" style="font-size:13px;pointer-events:auto !important;opacity:1 !important;cursor:pointer !important;">🛏️ 2-pax room (mas private)</div>
-                <div class="opt" data-group="room-type" onclick="event.stopPropagation();single(this)" style="font-size:13px;pointer-events:auto !important;opacity:1 !important;cursor:pointer !important;">🛏️🛏️ 4-pax room (slightly cheaper, share with friends!)</div>
-                <div class="opt" data-group="room-type" onclick="event.stopPropagation();single(this)" style="font-size:13px;pointer-events:auto !important;opacity:1 !important;cursor:pointer !important;">🤷 Either is fine!</div>
+                <div class="opt" data-group="room-type" onclick="event.stopPropagation();single(this)" style="font-size:13px;">🛏️ 2-pax room (mas private)</div>
+                <div class="opt" data-group="room-type" onclick="event.stopPropagation();single(this)" style="font-size:13px;">🛏️🛏️ 4-pax room (slightly cheaper, share with friends!)</div>
+                <div class="opt" data-group="room-type" onclick="event.stopPropagation();single(this)" style="font-size:13px;">🤷 Either is fine!</div>
               </div>
             </div>
           </div>
-          <div class="opt" data-group="final-ans" onclick="single(this)">⏳ Di pa rin ako sure — update kita later, I take the risks</div>
-          <div class="opt" data-group="final-ans" onclick="single(this)">😅 Pass talaga!!! ang kulit mo</div>
-          <div class="opt" data-group="final-ans" onclick="single(this);showMamPavoidPopup()">🤯 Hala wait, pwede ba wag na umattend sa Pilipin Wedding? Dito na lang ako sama sa cruise para isang byahe lang!!!</div>
+          <div class="opt" data-group="final-ans" onclick="single(this);document.getElementById('roomTypeSection').style.display='none';document.querySelectorAll('[data-group=&quot;room-type&quot;]').forEach(o=>o.classList.remove('selected','selected-or'))">⏳ Di pa rin ako sure — update kita later, I take the risks</div>
+          <div class="opt" data-group="final-ans" onclick="single(this);document.getElementById('roomTypeSection').style.display='none';document.querySelectorAll('[data-group=&quot;room-type&quot;]').forEach(o=>o.classList.remove('selected','selected-or'))">😅 Pass talaga!!! ang kulit mo</div>
+          <div class="opt" data-group="final-ans" onclick="single(this);showMamPavoidPopup();document.getElementById('roomTypeSection').style.display='none';document.querySelectorAll('[data-group=&quot;room-type&quot;]').forEach(o=>o.classList.remove('selected','selected-or'))">🤯 Hala wait, pwede ba wag na umattend sa Pilipin Wedding? Dito na lang ako sama sa cruise para isang byahe lang!!!</div>
         </div>
       </div>
 
@@ -1970,13 +1976,12 @@
   }
 
   function submitForm() {
-    const cruise = document.querySelector('[data-group="cruise-attend"].selected, [data-group="cruise-attend"].selected-or');
-    if (!cruise) {
-      showToast('may nakalimutan ka sagutan!!! — Sama ba u? 🚢');
-      scrollToField(document.querySelector('[data-group="cruise-attend"]'));
+    const finalComments = document.getElementById('finalComments');
+    if (!finalComments || !finalComments.value.trim()) {
+      showToast('may nakalimutan ka sagutan!!! — Open Mic! 🎤');
+      scrollToField(finalComments);
       return;
     }
-
     const first = document.getElementById('firstName');
     document.getElementById('successName').textContent = (first && first.value.trim()) || 'friend';
     document.getElementById('progressBar').style.width = '100%';
@@ -1999,7 +2004,9 @@
         return inp ? inp.value.trim() : '';
       })(),
       plusOneUltimatum: getSelected('plusone-ultimatum'),
-      sleepoverNights:  getMultiSelected('sleepover-nights'),
+      sleepoverPreWedding: document.querySelector('[data-group="sleepover-nights"].selected .sleep-cb ~ *') ? (Array.from(document.querySelectorAll('[data-group="sleepover-nights"].selected')).some(e => e.textContent.includes('Pre-Wedding') || e.textContent.includes('May 4') || e.textContent.includes('All in')) ? 1 : 0) : 0,
+      sleepoverWalwalan: (Array.from(document.querySelectorAll('[data-group="sleepover-nights"].selected')).some(e => e.textContent.includes('Walwalan') || e.textContent.includes('May 5') || e.textContent.includes('All in')) ? 1 : 0),
+      sleepoverPostWedding: (Array.from(document.querySelectorAll('[data-group="sleepover-nights"].selected')).some(e => e.textContent.includes('Post-Wedding') || e.textContent.includes('May 6') || e.textContent.includes('All in')) ? 1 : 0),
       sleepoverPay:     getSelected('sleepover-pay'),
       airbnb:           getSelected('airbnb'),
       transport:        getSelected('transport'),
@@ -2019,15 +2026,11 @@
       trivia:           val('trivia'),
       memory:           val('memory'),
       cruiseAttending:  getSelected('cruise-attend'),
-      cruisePick:       (() => {
-        return Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected'))
-          .map(el => {
-            const title = el.querySelector('.cruise-opt-title') ? el.querySelector('.cruise-opt-title').textContent.trim() : '';
-            const tags = Array.from(el.querySelectorAll('.cruise-tag')).map(t => t.textContent.trim()).join(' | ');
-            const price = el.querySelector('.cruise-opt-price') ? el.querySelector('.cruise-opt-price').textContent.replace(/\s+/g,' ').trim() : '';
-            return [title, tags, price].filter(Boolean).join(' — ');
-          }).join('; ');
-      })(),
+      cruise2DayMay: (document.querySelector('[data-group="cruise-pick"].selected .cruise-opt-title') && Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected')).some(e => e.querySelector('.cruise-opt-title') && e.querySelector('.cruise-opt-title').textContent.includes('2-Day')) ? 1 : 0),
+      cruise3DayAug: (Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected')).some(e => e.querySelector('.cruise-opt-title') && e.querySelector('.cruise-opt-title').textContent.includes('3-Day')) ? 1 : 0),
+      cruise4DayPhillip: (Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected')).some(e => e.querySelector('.cruise-opt-title') && e.querySelector('.cruise-opt-title').textContent.includes('Phillip')) ? 1 : 0),
+      cruise4DayMoreton: (Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected')).some(e => e.querySelector('.cruise-opt-title') && e.querySelector('.cruise-opt-title').textContent.includes('Moreton')) ? 1 : 0),
+      cruiseNotGoing: (Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected')).some(e => e.querySelector('.cruise-opt-title') && e.querySelector('.cruise-opt-title').textContent.includes('Di ngani')) ? 1 : 0),
       cruisePay:        getSelected('cruise-pay'),
       roomType:         (() => {
         const finalAns = document.querySelector('[data-group="final-ans"].selected,[data-group="final-ans"].selected-or');
