@@ -544,7 +544,7 @@
   }
   .card-gif {
     width: 100%;
-    max-height: 220px;
+    height: 200px;
     overflow: hidden;
     border-radius: 12px;
     margin-bottom: 12px;
@@ -555,15 +555,22 @@
   }
   .card-gif img {
     width: 100%;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
     display: block;
     border-radius: 12px;
   }
-  .card-gif iframe,
+  .card-gif iframe {
+    width: 100% !important;
+    height: 200px !important;
+    display: block;
+    border: none;
+    flex-shrink: 0;
+  }
   .card-gif .tenor-gif-embed {
     width: 100% !important;
-    max-height: 220px;
+    height: 200px !important;
+    overflow: hidden;
   }
   .gif-wrap iframe {
     position: absolute;
@@ -1030,7 +1037,7 @@
   </div>
 
   <!-- clickable heart between cats -->
-  <div class="cat-heart" onclick="showPage('page2')" title="best ito sagutan sa web browser kesa mobile!!!">🧡<span class="heart-tip">best ito sagutan sa web browser kesa mobile!!!</span></div>
+  <div class="cat-heart" onclick="showPage('page2')" title="better ito sagutan sa web browser kesa mobile!! pero ok bahala ka.">🧡<span class="heart-tip">better ito sagutan sa web browser kesa mobile!! pero ok bahala ka.</span></div>
 </section>
 
 <!-- PAGE 2: WHO WE ARE -->
@@ -1074,7 +1081,7 @@
       </div>
     </div>
 
-    <span class="scroll-cue-2" onclick="showPage('page3')">sama ba u?</span>
+    <span class="scroll-cue-2" onclick="showPage('page3')">you are officially invited... to answer this survey haha 📋</span>
   </div>
 </section>
 
@@ -1097,7 +1104,7 @@
       <div class="scard" style="margin-top:42px">
         <div class="scard-label">WHO U? 👋</div>
         <div class="card-gif">
-          <iframe src="https://giphy.com/embed/xT1R9JrgVFXMizvGww" width="100%" height="220" frameBorder="0" allowFullScreen style="display:block;border:none;pointer-events:none;"></iframe>
+          <iframe src="https://giphy.com/embed/xT1R9JrgVFXMizvGww" width="100%" height="200" frameBorder="0" allowFullScreen style="display:block;border:none;pointer-events:none;"></iframe>
         </div>
         <p class="q-text">Hello, it's me 🎵<br/><span style="font-size:13px;color:var(--mid);font-weight:400;">e sino ka nga</span></p>
         <div class="name-row">
@@ -1312,7 +1319,7 @@
       <!-- SLEEPOVER -->
       <div class="scard" style="margin-top:42px">
         <div class="scard-label">SLEEPOVER!!! 🌙</div>
-        <div class="card-gif"><iframe src="https://giphy.com/embed/xUA7aOqijilVW0xPvW" width="100%" height="300" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
+        <div class="card-gif"><iframe src="https://giphy.com/embed/xUA7aOqijilVW0xPvW" width="100%" height="200" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
         </div>
         <p class="q-text">May accommodation sa lake resort! Bet mo ba magstaycation?</p>
         <p class="q-hint" style="line-height:1.8;">Will update sa exact place closer to the dates! 🏕️ <a href="https://www.facebook.com/lakeOcali/" target="_blank" title="di to virus, promise!! → facebook.com/lakeOcali" style="color:var(--em);font-weight:800;">Check out the vibes here ↗</a> (sample lang to!)<br/><br/>
@@ -1355,7 +1362,7 @@
       <!-- GRAND PAKAIN -->
       <div class="scard" style="margin-top:42px">
         <div class="scard-label">GRAND PAKAIN 🍽️</div>
-        <div class="card-gif"><iframe src="https://giphy.com/embed/3o85xnoIXebk3xYx4Q" width="100%" height="280" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
+        <div class="card-gif"><iframe src="https://giphy.com/embed/3o85xnoIXebk3xYx4Q" width="100%" height="200" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
         </div>
         <p class="q-text">May dietary requirements ka ba?</p>
         <div class="options" style="flex-direction:column;gap:8px;">
@@ -1571,7 +1578,7 @@
       <!-- Q2: KACHING KACHING -->
       <div class="scard" style="margin-top:42px">
         <div class="scard-label">KACHING KACHING! 💰</div>
-        <div class="card-gif"><iframe src="https://giphy.com/embed/K6VhXtbgCXqQU" width="100%" height="269" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
+        <div class="card-gif"><iframe src="https://giphy.com/embed/K6VhXtbgCXqQU" width="100%" height="200" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
         </div>
         <p class="q-text">Libre ba???</p>
         <div class="notice" style="margin-bottom:14px;font-size:13px;line-height:1.75;">
@@ -2048,7 +2055,7 @@
 <div id="catPopup" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.6);align-items:center;justify-content:center;flex-direction:column;">
   <div style="background:#fff;border-radius:24px;padding:28px 32px;text-align:center;max-width:320px;width:90%;box-shadow:0 16px 48px rgba(0,0,0,.3);">
     <div style="border-radius:16px;overflow:hidden;margin-bottom:16px;">
-      <iframe src="https://giphy.com/embed/ffzhLUixCtlsc" width="100%" height="220" frameBorder="0" allowFullScreen style="border:none;border-radius:16px;pointer-events:none;display:block;"></iframe>
+      <iframe src="https://giphy.com/embed/ffzhLUixCtlsc" width="100%" height="200" frameBorder="0" allowFullScreen style="border:none;border-radius:16px;pointer-events:none;display:block;"></iframe>
     </div>
     <p style="font-family:'Pacifico',cursive;font-size:20px;color:#1a6b45;margin-bottom:8px;">final answer???</p>
     
