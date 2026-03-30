@@ -455,7 +455,7 @@
   .spage-body { flex: 1; overflow-y: auto; padding-bottom: 16px; }
   .spage-title { font-family: 'Pacifico', cursive; font-size: clamp(22px, 5vw, 34px); color: var(--em); margin-top: 8px; margin-bottom: 8px; line-height: 1.2; }
   .spage-sub { font-size: 13px; color: var(--mid); font-family: 'Nunito', sans-serif; margin-bottom: 24px; }
-  .scard { background: #fff; border: 2px solid #e8ddd0; border-radius: 18px; padding: 24px 24px; margin-bottom: 28px; position: relative; }
+  .scard { background: #fff; border: 2px solid #e8ddd0; border-radius: 18px; padding: 24px 24px; margin-bottom: 84px; position: relative; }
   /* Style A - Laguna */
   #page3b .scard { background: #fff; border-color: #1a6b45; }
   #page3b .scard-label { background: #f4620a; }
@@ -467,7 +467,7 @@
     position: absolute; top: -14px; left: 16px;
     background: var(--em); color: #fff;
     font-family: 'Nunito', sans-serif;
-    font-size: 13px; font-weight: 800;
+    font-size: 19px; font-weight: 800;
     letter-spacing: 1.5px; text-transform: uppercase;
     padding: 5px 16px; border-radius: 12px;
   }
@@ -542,6 +542,29 @@
     height: 160px;
     position: relative;
   }
+  .card-gif {
+    width: 100%;
+    max-height: 220px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+  .card-gif img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+  }
+  .card-gif iframe,
+  .card-gif .tenor-gif-embed {
+    width: 100% !important;
+    max-height: 220px;
+  }
   .gif-wrap iframe {
     position: absolute;
     top: 0; left: 0;
@@ -575,7 +598,7 @@
   }
   .card.orange .card-num { background: var(--or); }
 
-  .q-text { font-family: 'Nunito', sans-serif; font-size: clamp(15px, 2.5vw, 18px); font-weight: 800; color: var(--dark); margin-bottom: 6px; line-height: 1.4; }
+  .q-text { font-family: 'Nunito', sans-serif; font-size: clamp(22px, 3.5vw, 27px); font-weight: 800; color: var(--dark); margin-bottom: 6px; line-height: 1.4; }
   .q-hint { font-size: 13px; color: #7a6a58; line-height: 1.65; margin-bottom: 18px; font-style: italic; }
 
   .options { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -1071,21 +1094,21 @@
       <div class="spage-title">Henlooo 👋</div>
       <div class="spage-sub">survey lang mamser 😂</div>
 
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">WHO U? 👋</div>
-        <div class="gif-wrap">
-          <iframe src="https://giphy.com/embed/xT1R9JrgVFXMizvGww" width="100%" height="160" frameBorder="0" allowFullScreen class="card-gif" style="border-radius:12px;pointer-events:none;"></iframe>
+        <div class="card-gif">
+          <iframe src="https://giphy.com/embed/xT1R9JrgVFXMizvGww" width="100%" height="220" frameBorder="0" allowFullScreen style="display:block;border:none;pointer-events:none;"></iframe>
         </div>
-        <p class="q-text">State your name for the record...<br/><span style="font-size:13px;color:var(--mid);font-weight:400;">and for our seating chart 😭</span></p>
+        <p class="q-text">Hello, it's me 🎵<br/><span style="font-size:13px;color:var(--mid);font-weight:400;">e sino ka nga</span></p>
         <div class="name-row">
           <input class="text-input" type="text" placeholder="First name ✨" id="firstName"/>
           <input class="text-input" type="text" placeholder="Last name" id="lastName"/>
         </div>
       </div>
 
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">PER OUR LAST CONVERSATION 📞</div>
-        <div class="gif-wrap" style="background:#1a0a00;margin-bottom:12px;overflow:hidden;border-radius:12px;">
+        <div class="card-gif" style="background:#1a0a00;">
           <div class="tenor-gif-embed" data-postid="4984536" data-share-method="host" data-aspect-ratio="1.4433" data-width="100%"><a href="https://tenor.com/view/taken-i-will-find-you-bryan-mills-liam-neeson-gif-4984536">Taken GIF</a></div>
         </div>
         <p class="q-text">Drop your contact details —<br/><span style="font-size:13px;color:var(--mid);font-weight:400;">tapos chat chat na lang lods, update ka namin 😂</span></p>
@@ -1093,10 +1116,9 @@
         <input class="text-input" type="tel" placeholder="Phone / Viber / WhatsApp 📱" id="phone"/>
       </div>
 
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">REPREZENTING... 📍</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/17/14/enhanced/webdr05/enhanced-4838-1439835055-1.png?downsize=700%3A%2A&output-quality=auto&output-format=auto" style="width:100%;height:auto;display:block;border-radius:12px;" alt="where are you from"/>
+        <div class="card-gif"><img src="https://img.buzzfeed.com/buzzfeed-static/static/2015-08/17/14/enhanced/webdr05/enhanced-4838-1439835055-1.png?downsize=700%3A%2A&output-quality=auto&output-format=auto" style="width:100%;height:auto;display:block;border-radius:12px;" alt="where are you from"/>
         </div>
         <p class="q-text">Saan ka galing?<br/><span style="font-size:13px;color:var(--mid);font-weight:400;">naol travel goals 🐟</span></p>
         <div class="options">
@@ -1108,7 +1130,7 @@
           </div>
         </div>
       </div>
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">BAT TAYO FRIENDS? 🤨</div>
         <div class="gif-wrap" style="border-radius:12px;overflow:hidden;margin-bottom:8px;">
           <div class="tenor-gif-embed" data-postid="3220405049185060143" data-share-method="host" data-aspect-ratio="1.2029" data-width="100%">
@@ -1162,18 +1184,29 @@
         <div class="tenor-gif-embed" data-postid="12764262" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/dock-fail-bride-groom-grooms-men-brides-maid-gif-12764262">Dock Fail Bride GIF</a></div>
       </div>
 
-      <div class="notice green" style="margin-bottom:16px">
-        💌 <strong>Rough headcount lang 'to!</strong> Hindi pa locked in. We'll send an official RSVP reminder 2 months and 2 weeks before the event. 📅
+      <div class="notice green" style="margin-bottom:16px;font-size:13.5px;line-height:1.85;">
+        <strong style="color:var(--em);font-size:15px;">Wedding by the Lake 🌅💍</strong><br/><br/>
+        Sa lake kami na-engage guys so gusto rin namin sa lake ikasal yieee 🥹<br/><br/>
+        📍 <strong>Caliraya Lake o Cavinti Lumot Lake area, Laguna, Philippines</strong><br/>
+        📅 <strong>May 5, 2027 · Wednesday</strong> (yes weekday, ito talaga gusto naming date hehehe)<br/><br/>
+        <div style="margin-top:8px;font-size:13px;color:#0f3d28;line-height:1.8;opacity:.9;">
+          <strong>What to expect:</strong><br/>
+          🌅 3PM–5PM sunset ceremony (golden hour photos)<br/>
+          🍽️ Reception 5–8PM<br/>
+          🎤 Open bar, Socials, karaoke, sayawan till 11PM<br/>
+          🌊 Optional lakeside sleepover sa resort<br/>
+          🚗 Roadtrip from Manila (~2–3 hrs)<br/><br/>
+          <em style="font-size:11px;opacity:.75;">💌 Rough headcount lang 'to! Hindi pa locked in. Official RSVP reminder 2 months before. 📅</em>
+        </div>
       </div>
 
       <!-- G KA BA -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">G KA BA? 👀</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <img src="https://i.ibb.co/7JyqvcZm/WELL-WAIT.png" alt="WELL-WAIT" style="width:100%;height:auto;display:block;border-radius:12px;"/>
+        <div class="card-gif"><img src="https://i.ibb.co/7JyqvcZm/WELL-WAIT.png" alt="WELL-WAIT" style="width:100%;height:auto;display:block;border-radius:12px;"/>
         </div>
-        <p class="q-text">May 5, 2027 ang ceremony and reception.</p>
-        <p class="q-hint">3PM–5PM sunset ceremony (golden hour chz 🌅) tapos 5PM–11PM reception, socials, walwalan. <strong>Wednesday yon!</strong> G ka ba?</p>
+        <p class="q-text">May 5, 2027 ang ceremony and reception. G ka ba?</p>
+        <p class="q-hint">ok lang kung di ka pa sure, kami rin e (sa details) HAHA</p>
         <div class="attend-options">
           <div class="attend-row">
             <div class="opt" data-group="attending" onclick="handleAttend(this)" data-val="yes1">🎉 YES!!!! — magfile na aq agad ng leave, mag-impake na aq. ready to go!</div>
@@ -1191,7 +1224,7 @@
             <div class="opt" data-group="attending" onclick="handleAttend(this)" data-val="maybe1">😬 Maybe — bat weekday teh, depende pa kay boss kung makakaleave ako.</div>
           </div>
           <div class="attend-row">
-            <div class="opt" data-group="attending" onclick="handleAttend(this)" data-val="maybe2">✈️ Maybe — ang mahal ng pamasahe pa-Pinas friend, depende sa seat sale.</div>
+            <div class="opt" data-group="attending" onclick="handleAttend(this)" data-val="maybe2">✈️ Maybe — ang mahal ng pamasahe friend, depende sa seat sale.</div>
           </div>
           <div class="attend-row">
             <div class="opt attend-expandable" data-group="attending" onclick="handleAttend(this)" data-val="maybe3">
@@ -1212,13 +1245,11 @@
       </div>
 
       <!-- PLUS ONE -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">PLUS ONE? 👀</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <img src="https://i.ibb.co/tPWPH47p/I-feel-attackedt.gif" style="width:100%;height:auto;display:block;border-radius:12px;" alt="I feel attacked"/>
-        </div>
+        <div class="card-gif"><img src="https://i.ibb.co/tPWPH47p/I-feel-attackedt.gif" alt="I feel attacked"/></div>
         <p class="q-text">May kasama ka? 👀</p>
-        <p class="q-hint">Lagay mo lang plus 1 kung wala siya own invite. Di pa confirmed, vibes lang muna 😌</p>
+        <p class="q-hint">Lagay mo lang as plus 1 kung wala siya own invite. Di pa to confirmed ah, vibes lang muna hehe</p>
         <div class="options" style="flex-direction:column;gap:10px;">
           <div class="opt" data-group="plusone" onclick="single(this)">💅 Me, myself, and I</div>
           <div class="opt attend-expandable" data-group="plusone" onclick="single(this)" style="flex-direction:column;">
@@ -1227,7 +1258,7 @@
           </div>
           <div class="opt attend-expandable" data-group="plusone" onclick="single(this)" style="flex-direction:column;">
             <span>👨‍👩‍👧 Pwede plus 2? Kasi my pamilee omg</span>
-            <input class="text-input" type="text" id="plusTwoNames" placeholder="pa-submit ng age at family tree hahaha" style="margin-top:10px;background:#fff;border-color:#e8ddd0;color:var(--dark);" onclick="event.stopPropagation()"/>
+            <input class="text-input" type="text" id="plusTwoNames" placeholder="pa-submit ng age po &amp; family tree hahaha" style="margin-top:10px;background:#fff;border-color:#e8ddd0;color:var(--dark);" onclick="event.stopPropagation()"/>
           </div>
         </div>
         <div style="margin-top:12px;background:var(--soft);border:1.5px solid var(--em-pale);border-radius:14px;padding:14px;">
@@ -1240,10 +1271,9 @@
       </div>
 
       <!-- TRANSPORT -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">COMMUTE OR DRIVE? 🚗</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <div class="tenor-gif-embed" data-postid="18069934" data-share-method="host" data-aspect-ratio="2" data-width="100%"><a href="https://tenor.com/view/umbrella-academy-five-vanya-gif-18069934">Umbrella Academy Five GIF</a></div>
+        <div class="card-gif"><div class="tenor-gif-embed" data-postid="18069934" data-share-method="host" data-aspect-ratio="2" data-width="100%"><a href="https://tenor.com/view/umbrella-academy-five-vanya-gif-18069934">Umbrella Academy Five GIF</a></div>
         </div>
         <p class="q-text">Ang venue ay sa Caliraya Lake o Cavinti Lumot Lake. Magdala ka ba ng car?</p>
         <div class="options" style="flex-direction:column;gap:10px;">
@@ -1273,24 +1303,24 @@
               </div>
             </div>
           </div>
-          <div class="opt" data-group="transport" onclick="single(this)">🚌 Commute lang ako — LRT trained 'to</div>
-          <div class="opt" data-group="transport" onclick="single(this)">🤝 Commute ako — pero pwede ba makisabay sa iba if meron?</div>
-          <div class="opt" data-group="transport" onclick="single(this)">🤷 Di ko pa sure, usap na lang next year baka may kotse na ako non</div>
+          <div class="opt" data-group="transport" onclick="single(this);togglePax('pax1',false);togglePax('pax2',false)">🚌 Commute lang ako — LRT trained 'to</div>
+          <div class="opt" data-group="transport" onclick="single(this);togglePax('pax1',false);togglePax('pax2',false)">🤝 Commute ako — pero pwede ba makisabay sa iba if meron?</div>
+          <div class="opt" data-group="transport" onclick="single(this);togglePax('pax1',false);togglePax('pax2',false)">🤷 Di ko pa sure, usap na lang next year baka may kotse na ako non</div>
         </div>
       </div>
 
       <!-- SLEEPOVER -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">SLEEPOVER!!! 🌙</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <iframe src="https://giphy.com/embed/xUA7aOqijilVW0xPvW" width="100%" height="300" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
+        <div class="card-gif"><iframe src="https://giphy.com/embed/xUA7aOqijilVW0xPvW" width="100%" height="300" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
         </div>
         <p class="q-text">May accommodation sa lake resort! Bet mo ba magstaycation?</p>
-        <p class="q-hint" style="line-height:1.8;">Will update sa exact place closer to the dates! 🏕️ <a href="https://www.facebook.com/lakeOcali/" target="_blank" title="di to virus, promise!! → facebook.com/lakeOcali" style="color:var(--em);font-weight:800;">Check out the vibes here ↗</a> (sample lang yan!)<br/><br/>
+        <p class="q-hint" style="line-height:1.8;">Will update sa exact place closer to the dates! 🏕️ <a href="https://www.facebook.com/lakeOcali/" target="_blank" title="di to virus, promise!! → facebook.com/lakeOcali" style="color:var(--em);font-weight:800;">Check out the vibes here ↗</a> (sample lang to!)<br/><br/>
           <strong>Our night choices:</strong> it's either pre + wedding night, post + wedding night, or just wedding night<br/>
           🔥 <strong>Pre-Wedding Night (May 4)</strong> — game night, bonfire, chilling by the lake<br/>
           🥂 <strong>Walwalan Night (May 5)</strong> — reception afterparty, matulog pag lasing na 😂<br/>
-          🌅 <strong>Post-Wedding Night (May 6)</strong> — game night, open forum chz, bonfire, staycation extension<br/><br/>
+          🌅 <strong>Post-Wedding Night (May 6)</strong> — game night, open forum chz, bonfire, staycation extension<br/>
+          Optional group activities... pwede ring enjoy your lake time. Ok lang hehe<br/><br/>
           Rates: ₱1,000–2,000/person · ₱2,000–3,500/2-pax room</p>
         <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--em);font-weight:800;margin-bottom:8px;">Tick all na applicable 👇</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
@@ -1312,10 +1342,10 @@
           </div>
         </div>
         <div style="background:var(--soft);border:1.5px solid var(--em-pale);border-radius:14px;padding:14px;">
-          <p style="font-size:12px;font-weight:800;color:var(--em);margin-bottom:10px;">Bayad? 💸</p>
+          <p class="q-text" style="margin-bottom:10px;">Bayad? 💸</p>
           <div class="options" style="flex-direction:column;gap:8px;">
-            <div class="opt" data-group="sleepover-pay" onclick="single(this)">🌊 Yes I can pay — it's giving lake vacation!</div>
-            <div class="opt" data-group="sleepover-pay" onclick="single(this)">🆓 Sama lang ako pag free hehe</div>
+            <div class="opt" data-group="sleepover-pay" onclick="single(this)">🌊 Yes happy to pay — it's giving lake vacation!</div>
+            <div class="opt" data-group="sleepover-pay" onclick="single(this)">🆓 Sama lang ako sa overnight pag free hehe</div>
             <div class="opt" data-group="sleepover-pay" onclick="single(this)">😅 Di talaga makasama kahit free — I'm a bz person</div>
           </div>
           <textarea class="text-input" id="sleepoverNotes" rows="2" placeholder="may sabihin ako..." style="margin-top:10px;background:#fff;color:var(--dark);border-color:var(--em-pale);"></textarea>
@@ -1323,10 +1353,9 @@
       </div>
 
       <!-- GRAND PAKAIN -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">GRAND PAKAIN 🍽️</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <iframe src="https://giphy.com/embed/3o85xnoIXebk3xYx4Q" width="100%" height="280" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
+        <div class="card-gif"><iframe src="https://giphy.com/embed/3o85xnoIXebk3xYx4Q" width="100%" height="280" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
         </div>
         <p class="q-text">May dietary requirements ka ba?</p>
         <div class="options" style="flex-direction:column;gap:8px;">
@@ -1339,7 +1368,7 @@
             <textarea class="text-input" rows="2" placeholder="specify mo please! 🙏" id="dietDetail" style="margin-top:10px;" onclick="event.stopPropagation()"></textarea>
           </div>
         </div>
-        <p class="q-text" style="font-size:14px;margin-top:14px;">Pwede po paorder? 🙋</p>
+        <p class="q-text" style="margin-top:14px;">Pwede po paorder? 🙋</p>
         <p class="q-hint">order taker lang... di mo sure kung maseserve HAHAHA enge suggestions 😂</p>
         <div class="options" style="flex-direction:column;gap:8px;margin-top:8px;">
           <div class="opt" data-group="foodreq" onclick="toggleOpt(this)">🍜 Dapat may Shanghai!! Non-negotiable.</div>
@@ -1353,11 +1382,9 @@
       </div>
 
       <!-- DON'T BORE ME -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">DON'T BORE ME 🎉</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <img src="https://gifbin.com/bin/022016/girl-catching-wedding-bouquet.gif" style="width:100%;height:auto;display:block;border-radius:12px;" alt="bouquet toss"/>
-        </div>
+        <div class="card-gif"><img src="https://gifbin.com/bin/022016/girl-catching-wedding-bouquet.gif" alt="bouquet toss"/></div>
         <p class="q-text">may hinahanap ka bang activity?</p>
         <p class="q-hint">reunion talaga to kaya kasama ka sa planning 😏 may karaoke for sure!</p>
         <div class="options" style="flex-direction:column;gap:10px;">
@@ -1376,10 +1403,9 @@
       </div>
 
       <!-- TRIVIA -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">BONUS ROUND 🧠</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <div class="tenor-gif-embed" data-postid="20611692" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/thinking-woman-woman-thinking-thinking-woman-math-lady-gif-20611692">Thinking Woman GIF</a></div>
+        <div class="card-gif"><div class="tenor-gif-embed" data-postid="20611692" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/thinking-woman-woman-thinking-thinking-woman-math-lady-gif-20611692">Thinking Woman GIF</a></div>
         </div>
         <p class="q-text">Give us your favorite trivia or fun fact! (kahit tungkol saan)</p>
         <p class="q-hint">baka masama sa trivia night — ez free point! 🧠</p>
@@ -1420,24 +1446,24 @@
       <div class="notice" style="background:linear-gradient(135deg,#fde8d8,#fff0e8);border-color:var(--or);margin-bottom:16px;font-size:13.5px;line-height:1.85;">
         <strong style="color:var(--or);font-size:15px;">Sydney after party = CRUISE!! 🚢🎉</strong><br/><br/>
         Imagine: waking up sa dagat, food and entertainment — lahat sa ship! 100% vacation mode, zero planning stress (for you at least 😂).<br/><br/>
-        We're targeting a 2–4 day cruise from Sydney. Think floating resort na may island stop pa! Na-try na namin, and enjoy naman hehe weight gain atleast 3kg hahaha 🙌<br/><br/>
+        We're targeting a 2–4 day cruise from Sydney. Think floating resort na pwedeng may island stop pa! Na-try na namin, and enjoy naman hehe weight gain atleast 3kg hahaha 🙌<br/><br/>
         <a href="https://www.instagram.com/reel/DVhkh4-D7Pz/" title="di to virus, promise!! → instagram.com/reel/DVhkh4..." target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:var(--or);color:#fff;padding:8px 16px;border-radius:12px;text-decoration:none;font-weight:800;font-size:12px;margin-top:4px;">📱 See what a Carnival Cruise looks like ↗</a>
-        <p style="font-size:11px;color:#7a4020;opacity:.8;margin-top:6px;font-style:italic;">pang 8-day cruise yang example pero same same vibes 😂</p>
+        <p style="font-size:11px;color:#7a4020;opacity:.8;margin-top:6px;font-style:italic;">pang 8-day cruise yung example pero same same vibes 😂</p>
         <div style="margin-top:12px;font-size:13px;color:#7a4020;line-height:1.8;opacity:.85;">
           <strong>What's usually included:</strong><br/>
           ✅ Unli food &nbsp;✅ Unli pantry drinks &nbsp;✅ Pools<br/>
           ✅ Trivia &nbsp;✅ Karaoke &nbsp;✅ Theatre shows &nbsp;✅ Theme/Costume nights &nbsp;✅ Tugstugs!<br/><br/>
           <strong>Optional extras (added cost):</strong> alcoholic drinks, island excursions, spa, specialty dining, paid activities<br/><br/>
-          May common itineraries + group exclusive activities. Di mo need sumama whole day sa mga activities — para pwede ka pa rin mag me-time!! 😂<br/><br/>
+          May common itineraries + group exclusive activities. Di mo naman need sumama whole day sa mga activities, pwede ka pa rin mag me-time!!<br/><br/>
           We're in talks with a travel planner — need to lock in cabins early kasi tataas ang rates/mauubos slots as dates get closer. Kaya sagutan mo na to!<br/><br/><em style="font-size:11px;opacity:.75;">💱 For reference: 1 AUD ~ ₱40</em>
         </div>
       </div>
 
       <!-- Q1: SAMA BA U -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">SAMA BA U? 🚢</div>
-        <p class="q-text">Need to lock in this month — tataas ang presyo or mauubos ang slot!</p>
-        <p class="q-hint">Ganito po talaga ka-early mag-reserve 😅 If hindi ka makapagconfirm agad, pwede pa naman balikan — pero di na guarantee ang cheaper cost at slot — i-try namin ihabol sa booking!</p>
+        <p class="q-text">Need to lock in this month kasi tataas ang presyo or mauubos ang slot! Sama ka?</p>
+        <p class="q-hint">Ganito po talaga ka-early mag-reserve 😅 If hindi ka makapagconfirm agad, pwede pa naman balikan — pero di na guarantee ang cheaper cost at slot — pero i-try namin ihabol sa booking!</p>
         <div class="options" style="flex-direction:column;gap:10px;">
           <div class="opt" data-group="cruise-attend" onclick="single(this)">🥳 Sama ako!!!</div>
           <div class="opt" data-group="cruise-attend" onclick="single(this)">⏳ Wait lang, depende sa details!</div>
@@ -1446,13 +1472,11 @@
       </div>
 
       <!-- Q3: CRUISE VIBES -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">CRUISE VIBES 🌊</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <img src="https://i.ibb.co/rfRRm5DZ/1681865371858.jpg" style="width:100%;height:auto;display:block;border-radius:12px;" alt="cruise vibes"/>
-        </div>
+        <div class="card-gif"><img src="https://i.ibb.co/rfRRm5DZ/1681865371858.jpg" alt="cruise vibes"/></div>
         <p class="q-text">Anong vibes mo?</p>
-        <p class="q-hint">Iba-ibang dates, destinations, at prices — pili ka! All in Carnival Adventure 🚢</p>
+        <p class="q-hint">Iba-ibang dates, destinations, at prices — pili ka! Lahat under Carnival Adventure 🚢</p>
 
         <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px;">
 
@@ -1545,17 +1569,16 @@
       </div>
 
       <!-- Q2: KACHING KACHING -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">KACHING KACHING! 💰</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <iframe src="https://giphy.com/embed/K6VhXtbgCXqQU" width="100%" height="269" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
+        <div class="card-gif"><iframe src="https://giphy.com/embed/K6VhXtbgCXqQU" width="100%" height="269" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;"></iframe>
         </div>
         <p class="q-text">Libre ba???</p>
         <div class="notice" style="margin-bottom:14px;font-size:13px;line-height:1.75;">
           Wala na libre ngayon bes. Chz! 😂 Panghoneymoon talaga namin tong budget pero iseshare na namin sainyo kasi love namin kayo HAHAHA yieee<br/><br/>
           🏝️ <strong>For Pilipins</strong> — we can offer 30–40% off (100–200 AUD less/person)!<br/>
           🦘 <strong>For Sydney people</strong> — what ifff share niyo na AUD niyo samin hehehehe<br/><br/>
-          Deposits are non-refundable. Optional cabin upgrades, alcoholic drinks, other activities are paid out of pocket kung gusto niyo lang mag-avail. 😊
+          Deposits are non-refundable (usually AUD50-100 pp). Optional cabin upgrades, alcoholic drinks, other activities are paid out of pocket kung gusto niyo lang mag-avail. 😊
         </div>
         <div class="options" style="flex-direction:column;gap:10px;">
           <div class="opt attend-expandable" data-group="cruise-pay" onclick="single(this)" style="flex-direction:column;">
@@ -1583,7 +1606,7 @@
 
 
       <!-- Q4: AIRBNB -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">AIRBNB? 🏡</div>
         <p class="q-text">Kung mag-staycation tayo, kelan mo gusto?</p>
         <p class="q-hint">Will check if kaya pa sa budget haha 😂</p>
@@ -1596,7 +1619,7 @@
       </div>
 
       <!-- Q5: COMING FROM PH -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">COMING FROM PH? ✈️</div>
         <p class="q-text">Lilipad ka ba from Pilipins or another country?</p>
         <div class="notice" style="margin-bottom:14px;font-size:13px;line-height:1.75;">
@@ -1613,10 +1636,9 @@
       </div>
 
       <!-- Q6: ANYTHING ELSE -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">ANYTHING ELSE? 💬</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <div class="tenor-gif-embed" data-postid="7892586" data-share-method="host" data-aspect-ratio="1.785" data-width="100%"><a href="https://tenor.com/view/michael-scott-gif-7892586">Michael Scott GIF</a></div>
+        <div class="card-gif"><div class="tenor-gif-embed" data-postid="7892586" data-share-method="host" data-aspect-ratio="1.785" data-width="100%"><a href="https://tenor.com/view/michael-scott-gif-7892586">Michael Scott GIF</a></div>
         </div>
         <p class="q-text">Comments, violent reactions, reklamo sa barangay, requests?</p>
         <p class="q-hint">Or pm pwede rin 😂</p>
@@ -1624,10 +1646,9 @@
       </div>
 
       <!-- FINAL ANSWER -->
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">FINAL ANSWER 🎤</div>
-        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;">
-          <div class="tenor-gif-embed" data-postid="10123907" data-share-method="host" data-aspect-ratio="1.95" data-width="100%"><a href="https://tenor.com/view/i-need-an-answer-now-joey-friends-gif-10123907">I Need An Answer Now Joey GIF</a></div>
+        <div class="card-gif"><div class="tenor-gif-embed" data-postid="10123907" data-share-method="host" data-aspect-ratio="1.95" data-width="100%"><a href="https://tenor.com/view/i-need-an-answer-now-joey-friends-gif-10123907">I Need An Answer Now Joey GIF</a></div>
         </div>
         <p class="q-text">So... sama ka ba sa Sydney trip? 👀</p>
         <div class="options" style="flex-direction:column;gap:10px;">
@@ -1650,7 +1671,7 @@
 
     </div>
     <div class="spage-footer">
-      <button class="snext-btn" onclick="showPage('page3d')">Next — almost done! 🙏</button>
+      <button class="snext-btn" onclick="goStep4()">Next — almost done! 🙏</button>
       <p class="submit-note">By submitting you confirm you've read all the notes above 😅</p>
     </div>
   </div>
@@ -1672,7 +1693,7 @@
       <div class="spage-title">Last na! 💬</div>
       <div class="spage-sub">maraming salamat sa pagsagot!! 🥹</div>
 
-      <div class="scard" style="margin-top:14px">
+      <div class="scard" style="margin-top:42px">
         <div class="scard-label">OPEN MIC 🎤</div>
         <p class="q-text">Any comments, questions, or kahit unsolicited marriage advice?</p>
         <p class="q-hint">baka maiyak pa kami niyan 🥹</p>
@@ -1705,7 +1726,7 @@
   <span class="s-big">🥹🎉</span>
   <h2>Yesss <span id="successName">friend</span>.</h2>
   <p>
-    Nakatrack ka na HAHAHA 💚🧡<br/><br/>
+    Nakatrack ka na HAHAHA 🐾🐾<br/><br/>
     We'll ping you with a reminder <strong>2 months before</strong> each event and again <strong>2 weeks out</strong> with all the official RSVP deets.<br/><br/>
     In the meantime — kape kape muna 😂<br/><br/>
     TY!!<br/><strong>Lhicel &amp; Kim 💍</strong>
@@ -1752,20 +1773,56 @@
     }, 2800);
   }
 
+  function isAnswered(group) {
+    return !!document.querySelector(`[data-group="${group}"].selected, [data-group="${group}"].selected-or`);
+  }
+  function scrollToGroup(group) {
+    const el = document.querySelector(`[data-group="${group}"]`);
+    scrollToField(el);
+  }
+  function scrollToField(el) {
+    if (!el) return;
+    const page = el.closest('.survey-page');
+    if (page) {
+      setTimeout(() => {
+        const top = el.closest('.scard') ? el.closest('.scard').offsetTop - 80 : el.offsetTop - 80;
+        page.scrollTo({ top: top, behavior: 'smooth' });
+      }, 50);
+    }
+    el.focus && el.focus();
+  }
+
   function goStep2() {
-    const first = document.getElementById('firstName').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    if (!first) { showToast('may nakalimutan ka sagutan!!! — pangalan mo 😭'); return; }
-    if (!email || !email.includes('@')) { showToast('may nakalimutan ka sagutan!!! — email mo 📬'); return; }
-    if (phone && !/^[+\d\s\-()]{6,20}$/.test(phone)) { showToast('may nakalimutan ka sagutan!!! — valid number lang please 📱'); return; }
+    const firstEl = document.getElementById('firstName');
+    const emailEl = document.getElementById('email');
+    const phoneEl = document.getElementById('phone');
+    const first = firstEl.value.trim();
+    const email = emailEl.value.trim();
+    const phone = phoneEl.value.trim();
+    if (!first) { showToast('may nakalimutan ka sagutan!!! — pangalan mo 😭'); scrollToField(firstEl); return; }
+    if (!email || !email.includes('@')) { showToast('may nakalimutan ka sagutan!!! — email mo 📬'); scrollToField(emailEl); return; }
+    if (phone && !/^[+\d\s\-()]{6,20}$/.test(phone)) { showToast('may nakalimutan ka sagutan!!! — valid number lang please 📱'); scrollToField(phoneEl); return; }
+    if (!isAnswered('location')) { showToast('may nakalimutan ka sagutan!!! — saan ka galing? 🌏'); scrollToGroup('location'); return; }
     showPage('page3b');
   }
 
   function goStep3() {
-    const attend = document.querySelector('[data-group="attending"].selected, [data-group="attending"].selected-or');
-    if (!attend) { showToast('may nakalimutan ka sagutan!!! — G ka ba? 👀'); return; }
+    if (!isAnswered('attending')) { showToast('may nakalimutan ka sagutan!!! — G ka ba? 👀'); scrollToGroup('attending'); return; }
+    if (!isAnswered('plusone')) { showToast('may nakalimutan ka sagutan!!! — plus one? 💑'); scrollToGroup('plusone'); return; }
+    if (!isAnswered('transport')) { showToast('may nakalimutan ka sagutan!!! — commute or drive? 🚗'); scrollToGroup('transport'); return; }
+    if (!isAnswered('sleepover-nights')) { showToast('may nakalimutan ka sagutan!!! — sleepover? 🌙'); scrollToGroup('sleepover-nights'); return; }
+    if (!isAnswered('diet')) { showToast('may nakalimutan ka sagutan!!! — dietary requirements? 🍽️'); scrollToGroup('diet'); return; }
+    if (!isAnswered('activity')) { showToast('may nakalimutan ka sagutan!!! — activities? 🎉'); scrollToGroup('activity'); return; }
     showPage('page3c');
+  }
+
+  function goStep4() {
+    if (!isAnswered('cruise-attend')) { showToast('may nakalimutan ka sagutan!!! — Sama ba u? 🚢'); scrollToGroup('cruise-attend'); return; }
+    if (!isAnswered('cruise-pay')) { showToast('may nakalimutan ka sagutan!!! — Libre ba? 💸'); scrollToGroup('cruise-pay'); return; }
+    if (!isAnswered('airbnb')) { showToast('may nakalimutan ka sagutan!!! — Airbnb? 🏡'); scrollToGroup('airbnb'); return; }
+    if (!isAnswered('travel-help')) { showToast('may nakalimutan ka sagutan!!! — Lilipad ka? ✈️'); scrollToGroup('travel-help'); return; }
+    if (!isAnswered('final-ans')) { showToast('may nakalimutan ka sagutan!!! — Final answer? 🎤'); scrollToGroup('final-ans'); return; }
+    showPage('page3d');
   }
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -1907,7 +1964,11 @@
 
   function submitForm() {
     const cruise = document.querySelector('[data-group="cruise-attend"].selected, [data-group="cruise-attend"].selected-or');
-    if (!cruise) { showToast('may nakalimutan ka sagutan!!! — Sama ba u? 🚢'); return; }
+    if (!cruise) {
+      showToast('may nakalimutan ka sagutan!!! — Sama ba u? 🚢');
+      scrollToField(document.querySelector('[data-group="cruise-attend"]'));
+      return;
+    }
 
     const first = document.getElementById('firstName');
     document.getElementById('successName').textContent = (first && first.value.trim()) || 'friend';
@@ -1961,7 +2022,14 @@
           }).join('; ');
       })(),
       cruisePay:        getSelected('cruise-pay'),
-      roomType:         getSelected('room-type'),
+      roomType:         (() => {
+        const finalAns = document.querySelector('[data-group="final-ans"].selected,[data-group="final-ans"].selected-or');
+        if (!finalAns) return '';
+        const span = finalAns.querySelector('span');
+        const text = span ? span.textContent : finalAns.textContent;
+        if (!text.includes('SAMA')) return '';
+        return getSelected('room-type');
+      })(),
       finalAnswer:      getSelected('final-ans'),
       notes:            val('notes'),
       finalComments:    val('finalComments'),
