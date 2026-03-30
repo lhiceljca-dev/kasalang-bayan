@@ -187,8 +187,8 @@
     min-height: 100dvh;
     height: auto;
     background: var(--cream);
-    display: flex; align-items: flex-start; justify-content: center;
-    padding: 60px 32px 80px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px 32px 80px;
     position: relative; overflow-y: auto;
   }
   .pg2::before {
@@ -371,12 +371,16 @@
     color: #fff;
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
-    font-size: 17px;
-    padding: 12px 36px; border-radius: 60px;
+    font-size: clamp(13px, 4vw, 17px);
+    padding: 12px 28px; border-radius: 60px;
     cursor: pointer;
     transition: all .2s cubic-bezier(.34,1.56,.64,1);
     box-shadow: 0 4px 20px rgba(26,107,69,.25);
     letter-spacing: .3px;
+    max-width: 90vw;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
   }
   .scroll-cue-2:hover { transform: scale(1.05) translateY(-2px); background: var(--em-light); }
 
@@ -463,7 +467,7 @@
   .spage-body { flex: 1; overflow-y: auto; padding-bottom: 16px; }
   .spage-title { font-family: 'Pacifico', cursive; font-size: clamp(22px, 5vw, 34px); color: var(--em); margin-top: 8px; margin-bottom: 8px; line-height: 1.2; }
   .spage-sub { font-size: 13px; color: var(--mid); font-family: 'Nunito', sans-serif; margin-bottom: 24px; }
-  .scard { background: #fff; border: 2px solid #e8ddd0; border-radius: 18px; padding: 44px 24px 24px; margin-bottom: 84px; position: relative; }
+  .scard { background: #fff; border: 2px solid #e8ddd0; border-radius: 18px; padding: 88px 24px 24px; margin-bottom: 84px; position: relative; }
   /* Style A - Laguna */
   #page3b .scard { background: #fff; border-color: #1a6b45; }
   #page3b .scard-label { background: #f4620a; }
@@ -590,13 +594,24 @@
   .card-gif .tenor-gif-embed a,
   .card-gif p,
   .gif-wrap .tenor-gif-embed a,
-  .gif-wrap p {
+  .gif-wrap p,
+  .card-gif a,
+  .gif-wrap a {
     display: none !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
   }
   /* hide giphy attribution */
   .card-gif iframe + p,
   .giphy-embed + p {
     display: none !important;
+  }
+  /* prevent all clicks on tenor embeds */
+  .tenor-gif-embed {
+    pointer-events: none !important;
+  }
+  .tenor-gif-embed iframe {
+    pointer-events: none !important;
   }
   .gif-wrap iframe {
     position: absolute;
@@ -1294,10 +1309,9 @@
             <input class="text-input" type="text" id="plusTwoNames" placeholder="pa-submit ng age po &amp; family tree hahaha" style="margin-top:10px;background:#fff;border-color:#e8ddd0;color:var(--dark);" onclick="event.stopPropagation()"/>
           </div>
         </div>
-        <div style="margin-top:42px;background:var(--soft);border:2px solid var(--em-pale);border-radius:18px;padding:24px 24px 20px;position:relative;">
-          <div class="scard-label" style="background:var(--em);">ULTIMATUM 👀</div>
-          <p class="q-text">"Pag di kasama plus 1 ko, di na rin ako sasama." True or false?</p>
-          <div class="options" style="gap:8px;margin-top:10px;">
+        <div style="margin-top:16px;background:var(--soft);border:1.5px solid var(--em-pale);border-radius:14px;padding:14px;">
+          <p class="q-text" style="margin-bottom:10px;">"Pag di kasama plus 1 ko, di na rin ako sasama." True or false? 👀</p>
+          <div class="options" style="gap:8px;">
             <div class="opt" data-group="plusone-ultimatum" onclick="single(this)">😤 TRUE. non-negotiable.</div>
             <div class="opt" data-group="plusone-ultimatum" onclick="single(this)">😂 false lang charot, sasama pa rin</div>
           </div>
@@ -1311,35 +1325,35 @@
         </div>
         <p class="q-text">Ang venue ay sa Caliraya Lake o Cavinti Lumot Lake. Magdala ka ba ng car?</p>
         <div class="options" style="flex-direction:column;gap:10px;">
-          <div class="opt attend-expandable" data-group="transport" onclick="single(this)" style="flex-direction:column;">
-            <span>🚗 Yes — roadtrip!!</span>
-            <div style="margin-top:10px;padding-top:10px;border-top:1.5px solid #e8e0d4;width:100%;" onclick="event.stopPropagation()" ontouchstart="event.stopPropagation()">
-              <p style="font-size:12px;font-weight:800;margin-bottom:8px;opacity:0.9;pointer-events:none;">pwede ba makisabay ang friends?</p>
-              <div class="options" style="flex-direction:column;gap:6px;">
-                <div class="opt attend-expandable" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',true);togglePax('pax2',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;flex-direction:column;">
-                  <span>💸 Pwede — pero pay me, part time uber, mahal ang gas</span>
-                  <div style="display:flex;align-items:center;gap:8px;margin-top:8px;" onclick="event.stopPropagation()" ontouchstart="event.stopPropagation()">
-                    <label style="font-size:12px;font-weight:800;color:var(--mid);">Ilan pwede makisabay?</label>
-                    <input type="number" min="1" max="6" placeholder="1" id="pax1" disabled style="width:56px;border:1.5px solid var(--em-pale);border-radius:8px;padding:4px 8px;font-size:13px;font-family:'Nunito',sans-serif;font-weight:800;text-align:center;outline:none;opacity:.4;cursor:not-allowed;" onclick="event.stopPropagation()"/>
-                    <span style="font-size:12px;color:var(--mid);">pax</span>
-                  </div>
-                </div>
-                <div class="opt attend-expandable" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax2',true);togglePax('pax1',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;flex-direction:column;">
-                  <span>🫶 G! I'm a good samaritan — pay it forward eme</span>
-                  <div style="display:flex;align-items:center;gap:8px;margin-top:8px;" onclick="event.stopPropagation()" ontouchstart="event.stopPropagation()">
-                    <label style="font-size:12px;font-weight:800;color:var(--mid);">Ilan pwede makisabay?</label>
-                    <input type="number" min="1" max="6" placeholder="1" id="pax2" disabled style="width:56px;border:1.5px solid var(--em-pale);border-radius:8px;padding:4px 8px;font-size:13px;font-family:'Nunito',sans-serif;font-weight:800;text-align:center;outline:none;opacity:.4;cursor:not-allowed;" onclick="event.stopPropagation()"/>
-                    <span style="font-size:12px;color:var(--mid);">pax</span>
-                  </div>
-                </div>
-                <div class="opt" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',false);togglePax('pax2',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;">🙅 Sorry pre, gusto ko mapag-isa</div>
-                <div class="opt" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',false);togglePax('pax2',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;">😤 Tama na! Punong-puno na ko (yung kotse)</div>
+          <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='block';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false);">🚗 Yes — roadtrip!!</div>
+          <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='none';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false)">🚌 Commute lang ako — LRT trained 'to</div>
+          <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='none';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false)">🤝 Commute ako — pero pwede ba makisabay sa iba if meron?</div>
+          <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='none';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false)">🤷 Di ko pa sure, usap na lang next year baka may kotse na ako non</div>
+        </div>
+
+        <!-- CARSHARE SECTION — only shows when YES transport is selected -->
+        <div id="carshareSection" style="display:none;margin-top:10px;padding-top:10px;border-top:1.5px solid #e8e0d4;">
+          <p style="font-size:12px;font-weight:800;margin-bottom:8px;color:var(--mid);">pwede ba makisabay ang friends?</p>
+          <div class="options" style="flex-direction:column;gap:6px;">
+            <div class="opt attend-expandable" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',true);togglePax('pax2',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;flex-direction:column;">
+              <span>💸 Pwede — pero pay me, part time uber, mahal ang gas</span>
+              <div style="display:flex;align-items:center;gap:8px;margin-top:8px;" onclick="event.stopPropagation()" ontouchstart="event.stopPropagation()">
+                <label style="font-size:12px;font-weight:800;color:var(--mid);">Ilan pwede makisabay?</label>
+                <input type="number" min="1" max="6" placeholder="1" id="pax1" disabled style="width:56px;border:1.5px solid var(--em-pale);border-radius:8px;padding:4px 8px;font-size:13px;font-family:'Nunito',sans-serif;font-weight:800;text-align:center;outline:none;opacity:.4;cursor:not-allowed;" onclick="event.stopPropagation()"/>
+                <span style="font-size:12px;color:var(--mid);">pax</span>
               </div>
             </div>
+            <div class="opt attend-expandable" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax2',true);togglePax('pax1',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;flex-direction:column;">
+              <span>🫶 G! I'm a good samaritan — pay it forward eme</span>
+              <div style="display:flex;align-items:center;gap:8px;margin-top:8px;" onclick="event.stopPropagation()" ontouchstart="event.stopPropagation()">
+                <label style="font-size:12px;font-weight:800;color:var(--mid);">Ilan pwede makisabay?</label>
+                <input type="number" min="1" max="6" placeholder="1" id="pax2" disabled style="width:56px;border:1.5px solid var(--em-pale);border-radius:8px;padding:4px 8px;font-size:13px;font-family:'Nunito',sans-serif;font-weight:800;text-align:center;outline:none;opacity:.4;cursor:not-allowed;" onclick="event.stopPropagation()"/>
+                <span style="font-size:12px;color:var(--mid);">pax</span>
+              </div>
+            </div>
+            <div class="opt" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',false);togglePax('pax2',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;">🙅 Sorry pre, gusto ko mapag-isa</div>
+            <div class="opt" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',false);togglePax('pax2',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;">😤 Tama na! Punong-puno na ko (yung kotse)</div>
           </div>
-          <div class="opt" data-group="transport" onclick="single(this);togglePax('pax1',false);togglePax('pax2',false)">🚌 Commute lang ako — LRT trained 'to</div>
-          <div class="opt" data-group="transport" onclick="single(this);togglePax('pax1',false);togglePax('pax2',false)">🤝 Commute ako — pero pwede ba makisabay sa iba if meron?</div>
-          <div class="opt" data-group="transport" onclick="single(this);togglePax('pax1',false);togglePax('pax2',false)">🤷 Di ko pa sure, usap na lang next year baka may kotse na ako non</div>
         </div>
       </div>
 
@@ -1418,7 +1432,7 @@
       <!-- DON'T BORE ME -->
       <div class="scard" style="margin-top:42px">
         <div class="scard-label">DON'T BORE ME 🎉</div>
-        <div class="card-gif" style="height:260px;"><img src="https://gifbin.com/bin/022016/girl-catching-wedding-bouquet.gif" alt="bouquet toss" style="height:260px;"/></div>
+        <div class="card-gif" style="height:auto;background:transparent;"><img src="https://gifbin.com/bin/022016/girl-catching-wedding-bouquet.gif" alt="bouquet toss" style="width:100%;height:auto;object-fit:contain;"/></div>
         <p class="q-text">may hinahanap ka bang activity?</p>
         <p class="q-hint">reunion talaga to kaya kasama ka sa planning 😏 may karaoke for sure!</p>
         <div class="options" style="flex-direction:column;gap:10px;">
@@ -1653,7 +1667,7 @@
       </div>
 
       <!-- Q5: COMING FROM PH -->
-      <div class="scard" style="margin-top:42px;padding-top:36px;">
+      <div class="scard" style="margin-top:42px;padding-top:72px;">
         <div class="scard-label">SAN KA NA NAMAN GALING ✈️</div>
         <p class="q-text">Lilipad ka ba from Pilipins or another country?</p>
         <div class="notice" style="margin-bottom:14px;font-size:13px;line-height:1.75;">
@@ -1846,10 +1860,8 @@
     if (!isAnswered('plusone-ultimatum')) { showToast('may nakalimutan ka sagutan!!! — true or false? 👀'); scrollToGroup('plusone-ultimatum'); return; }
     if (!isAnswered('transport')) { showToast('may nakalimutan ka sagutan!!! — commute or drive? 🚗'); scrollToGroup('transport'); return; }
     // if driving, carshare answer required
-    const transport = document.querySelector('[data-group="transport"].selected,[data-group="transport"].selected-or');
-    if (transport && (transport.textContent.includes('Yes') || transport.textContent.includes('roadtrip'))) {
-      if (!isAnswered('carshare')) { showToast('may nakalimutan ka sagutan!!! — pwede bang makisabay? 🚗'); scrollToGroup('carshare'); return; }
-    }
+    const carshareVisible = document.getElementById('carshareSection') && document.getElementById('carshareSection').style.display !== 'none';
+    if (carshareVisible && !isAnswered('carshare')) { showToast('may nakalimutan ka sagutan!!! — pwede bang makisabay? 🚗'); scrollToField(document.getElementById('carshareSection')); return; }
     if (!isAnswered('sleepover-nights')) { showToast('may nakalimutan ka sagutan!!! — sleepover? 🌙'); scrollToGroup('sleepover-nights'); return; }
     if (!isAnswered('sleepover-pay')) { showToast('may nakalimutan ka sagutan!!! — bayad? 💸'); scrollToGroup('sleepover-pay'); return; }
     if (!isAnswered('diet')) { showToast('may nakalimutan ka sagutan!!! — dietary requirements? 🍽️'); scrollToGroup('diet'); return; }
@@ -1900,6 +1912,15 @@
   function cancelNo() {
     window._pendingNoEl = null;
     document.getElementById('catPopup').style.display = 'none';
+  }
+
+  function selectTransportYes() {
+    const yesTransport = document.querySelector('[data-group="transport"][data-val="yes"], .opt[data-group="transport"]:first-child');
+    // Find the roadtrip pill specifically
+    const opts = document.querySelectorAll('[data-group="transport"]');
+    opts.forEach(o => o.classList.remove('selected','selected-or'));
+    if (opts[0]) opts[0].classList.add('selected');
+    updateProgress();
   }
 
   function togglePax(id, enable) {
@@ -1958,7 +1979,20 @@
   function toggleOpt(el) { el.classList.toggle('selected'); updateProgress(); }
   function selectVoucher(el) { document.querySelectorAll('.voucher-btn').forEach(b => b.classList.remove('selected')); el.classList.add('selected'); updateProgress(); }
   function pickCruiseOpt(el) {
-    el.classList.toggle('selected');
+    const isNotGoing = el.querySelector('.cruise-opt-title') && el.querySelector('.cruise-opt-title').textContent.includes('Di ngani');
+    if (isNotGoing) {
+      // deselect all other cruise options
+      document.querySelectorAll('[data-group="cruise-pick"]').forEach(c => c.classList.remove('selected'));
+      el.classList.toggle('selected');
+    } else {
+      // deselect "di ngani" if selecting a real option
+      document.querySelectorAll('[data-group="cruise-pick"]').forEach(c => {
+        if (c.querySelector('.cruise-opt-title') && c.querySelector('.cruise-opt-title').textContent.includes('Di ngani')) {
+          c.classList.remove('selected');
+        }
+      });
+      el.classList.toggle('selected');
+    }
     updateProgress();
   }
   function selectCruise(el) { document.querySelectorAll('.cruise-card').forEach(c => c.classList.remove('selected')); el.classList.add('selected'); updateProgress(); }
@@ -2051,7 +2085,11 @@
       sleepoverNotes:   val('sleepoverNotes'),
       diet:             getSelected('diet'),
       dietDetail:       val('dietDetail'),
-      foodRequest:      getMultiSelected('foodreq') + (val('foodRequest') ? ' — ' + val('foodRequest') : ''),
+      foodShanghai:     (Array.from(document.querySelectorAll('[data-group="foodreq"].selected')).some(e => e.textContent.includes('Shanghai')) ? 1 : 0),
+      foodLechon:       (Array.from(document.querySelectorAll('[data-group="foodreq"].selected')).some(e => e.textContent.includes('Lechon')) ? 1 : 0),
+      foodSurprise:     (Array.from(document.querySelectorAll('[data-group="foodreq"].selected')).some(e => e.textContent.includes('Surprise')) ? 1 : 0),
+      foodCravings:     (Array.from(document.querySelectorAll('[data-group="foodreq"].selected')).some(e => e.textContent.includes('Cravings')) ? 1 : 0),
+      foodCravingsNote: val('foodRequest'),
       activities:       getMultiSelected('activity'),
       trivia:           val('trivia'),
       memory:           val('memory'),
