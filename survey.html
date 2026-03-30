@@ -1155,9 +1155,9 @@
         </div>
         <p class="q-text">Saan ka galing?<br/><span style="font-size:13px;color:var(--mid);font-weight:400;">naol travel goals 🐟</span></p>
         <div class="options">
-          <div class="opt" data-group="location" onclick="toggleOpt(this)">🏝️ Ui Pilipins! Pilipins!</div>
-          <div class="opt" data-group="location" onclick="toggleOpt(this)">🦘 Aussie aussie oi! oi! oi!</div>
-          <div class="opt attend-expandable" data-group="location" onclick="toggleOpt(this)" style="flex-direction:column;">
+          <div class="opt" data-group="location" onclick="single(this)">🏝️ Ui Pilipins! Pilipins!</div>
+          <div class="opt" data-group="location" onclick="single(this)">🦘 Aussie aussie oi! oi! oi!</div>
+          <div class="opt attend-expandable" data-group="location" onclick="single(this)" style="flex-direction:column;">
             <span>🌏 Anywhere but here</span>
             <input class="text-input" type="text" placeholder="city, country — KKB ah! *kanya kanyang byahe 😂" id="locationOther" style="margin-top:8px;background:#fff;border-color:#e8ddd0;color:var(--dark);" onclick="event.stopPropagation()"/>
           </div>
@@ -1280,7 +1280,7 @@
       <!-- PLUS ONE -->
       <div class="scard" style="margin-top:42px">
         <div class="scard-label">PLUS ONE? 👀</div>
-        <div class="card-gif" style="height:auto;background:transparent;"><img src="https://i.ibb.co/tPWPH47p/I-feel-attackedt.gif" alt="I feel attacked" style="width:100%;height:auto;object-fit:contain;"/></div>
+        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;"><img src="https://i.ibb.co/tPWPH47p/I-feel-attackedt.gif" alt="I feel attacked" style="width:100%;height:auto;display:block;border-radius:12px;"/></div>
         <p class="q-text">May kasama ka? 👀</p>
         <p class="q-hint">Lagay mo lang as plus 1 kung wala siya own invite. Di pa to confirmed ah, vibes lang muna hehe</p>
         <div class="options" style="flex-direction:column;gap:10px;">
@@ -1294,9 +1294,10 @@
             <input class="text-input" type="text" id="plusTwoNames" placeholder="pa-submit ng age po &amp; family tree hahaha" style="margin-top:10px;background:#fff;border-color:#e8ddd0;color:var(--dark);" onclick="event.stopPropagation()"/>
           </div>
         </div>
-        <div style="margin-top:12px;background:var(--soft);border:1.5px solid var(--em-pale);border-radius:14px;padding:14px;">
-          <p style="font-size:13px;font-weight:800;color:var(--dark);margin-bottom:8px;">"Pag di kasama plus 1 ko, di na rin ako sasama." True or false? 👀</p>
-          <div class="options" style="gap:8px;">
+        <div style="margin-top:42px;background:var(--soft);border:2px solid var(--em-pale);border-radius:18px;padding:24px 24px 20px;position:relative;">
+          <div class="scard-label" style="background:var(--em);">ULTIMATUM 👀</div>
+          <p class="q-text">"Pag di kasama plus 1 ko, di na rin ako sasama." True or false?</p>
+          <div class="options" style="gap:8px;margin-top:10px;">
             <div class="opt" data-group="plusone-ultimatum" onclick="single(this)">😤 TRUE. non-negotiable.</div>
             <div class="opt" data-group="plusone-ultimatum" onclick="single(this)">😂 false lang charot, sasama pa rin</div>
           </div>
