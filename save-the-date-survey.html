@@ -2208,7 +2208,7 @@
       lastName:         val('lastName'),
       email:            val('email'),
       phone:            val('phone'),
-      location:         getMultiSelected('location'),
+      from:             getSelected('location'),
       locationOther:    val('locationOther'),
       memory:           val('memory'),
       // --- PAGE 3b: LAGUNA WEDDING ---
@@ -2270,7 +2270,7 @@
       finalComments:    val('finalComments'),
     };
 
-    fetch('https://script.google.com/macros/s/AKfycbxkv1QYuEn9p7x7g7VxmrNY8UsJqvT4OSo62TXpbCWWPt0vcVfEcVwJTEK324su1Dsi/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbxCIrowpzlHJbyi7buGtLSzgzSfKEHLchdf7xj3SwdBFZyUif9eD5pIgrA1EDHXwPvN/exec', {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
