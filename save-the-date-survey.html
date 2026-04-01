@@ -133,7 +133,7 @@
     text-align: center;
     max-width: 55vw; width: 100%;
     padding-bottom: min(260px, 30vh);
-    margin-top: -6vh;
+    margin-top: 12vh;
   }
 
   .line-kasalan-full {
@@ -141,10 +141,10 @@
     font-size: clamp(22px, 5vw, 62px);
     color: #0f3d28;
     display: block;
-    line-height: 1.2;
+    line-height: 1.1;
     white-space: nowrap;
     animation: slideUp .7s cubic-bezier(.34,1.56,.64,1) .1s both;
-    margin-bottom: 4px;
+    margin-bottom: 0px;
   }
 
   /* dotted rule */
@@ -162,8 +162,8 @@
     color: rgba(15, 61, 40, 0.6);
     display: block;
     animation: slideUp .6s ease .5s both;
-    margin-top: 16px;
-    margin-bottom: 10px;
+    margin-top: 6px;
+    margin-bottom: 4px;
   }
   .line-survey-muna {
     font-family: 'Unbounded', sans-serif;
@@ -268,7 +268,7 @@
   .cat-heart {
     position: absolute;
     left: 50%;
-    bottom: 38%;
+    bottom: 36%;
     transform: translateX(-50%);
     z-index: 3;
     cursor: pointer;
@@ -1095,10 +1095,11 @@
     <span class="line-survey-muna">
       <span class="w-survey">survey</span> <span class="w-muna">muna!</span>
     </span>
+    <p style="font-family:'Nunito',sans-serif;font-size:11px;color:rgba(15,61,40,0.55);text-align:center;line-height:1.6;margin-top:12px;padding:0 8px;line-height:1.3;">For better experience, sagutan mo 'to sa desktop browser — or kung nasa mobile ka, i-open as a new link (<strong>NOT</strong> within Messenger) 😊</p>
   </div>
 
   <!-- clickable heart between cats -->
-  <div class="cat-heart" onclick="showPage('page2')" title="better ito sagutan sa desktop browser kesa mobile... pero ok bahala ka 😅">🧡<span class="heart-tip">better ito sagutan sa desktop browser kesa mobile... pero ok bahala ka 😅</span></div>
+  <div class="cat-heart" onclick="showPage('page2')">🧡</div>
 </section>
 
 <!-- PAGE 2: WHO WE ARE -->
@@ -1122,7 +1123,8 @@
       <img src="https://i.ibb.co/xKn4QJdh/local.gif" alt="local" style="width:100%;display:block;object-fit:cover;object-position:40% 60%;max-height:340px;"/>
     </div>
 
-    <span class="scroll-cue-2" onclick="showPage('page3')" title="Gusto namin kayo kasama mag-celebrate and ang daming planning so need ng data!">you are officially invited... to answer this survey haha 📋</span>
+    <span class="scroll-cue-2" onclick="showPage('page3')">you are officially invited... to answer this survey haha 📋</span>
+    <p style="font-family:'Nunito',sans-serif;font-size:13px;color:var(--mid);text-align:center;margin-top:12px;line-height:1.6;">Gusto namin kayo kasama mag-celebrate and ang daming planning so need ng data!</p>
   </div>
 </section>
 
@@ -1361,6 +1363,7 @@
           <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='none';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false)">🚌 Commute lang ako — LRT trained 'to</div>
           <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='none';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false)">🤝 Commute ako — pero pwede ba makisabay sa iba if meron?</div>
           <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='none';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false)">🤷 Di ko pa sure, usap na lang next year baka may kotse na ako non</div>
+          <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='none';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false)">🙋 Ako na bahala sakin — <strong>strong, independent</strong></div>
         </div>
       </div>
 
@@ -1933,9 +1936,103 @@
     showPage('page3d');
   }
 
+
+  // ── AUTO-SAVE TO LOCALSTORAGE ──────────────────────────────────────────
+  const LS_KEY = 'kasalan_survey_v1';
+
+  function saveState() {
+    try {
+      const state = {
+        page: document.querySelector('.page.active') ? document.querySelector('.page.active').id : 'page1',
+        inputs: {},
+        selected: {},
+        sections: {}
+      };
+      // Save all text inputs and textareas
+      document.querySelectorAll('.text-input').forEach(el => {
+        if (el.id) state.inputs[el.id] = el.value;
+      });
+      // Save all selected pills
+      const groups = ['location','attending','plusone','plusone-ultimatum','transport','carshare','sleepover-nights','sleepover-pay','diet','foodreq','activity','cruise-attend','cruise-pay','cruise-pick','airbnb','travel-help','final-ans','room-type'];
+      groups.forEach(g => {
+        const selected = Array.from(document.querySelectorAll(`[data-group="${g}"].selected,[data-group="${g}"].selected-or`)).map(el => {
+          return el.querySelector('.cruise-opt-title') ? el.querySelector('.cruise-opt-title').textContent.trim() : (el.querySelector('span') ? el.querySelector('span').textContent.trim() : el.textContent.trim().substring(0, 60));
+        });
+        state.selected[g] = selected;
+      });
+      // Save section visibility
+      ['carshareSection','roomTypeSection','plusOneSection','plusTwoSection'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) state.sections[id] = el.style.display;
+      });
+      localStorage.setItem(LS_KEY, JSON.stringify(state));
+    } catch(e) {}
+  }
+
+  function restoreState() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (!raw) return;
+      const state = JSON.parse(raw);
+
+      // Restore text inputs
+      Object.keys(state.inputs || {}).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = state.inputs[id];
+      });
+
+      // Restore selected pills
+      const groups = ['location','attending','plusone','plusone-ultimatum','transport','carshare','sleepover-nights','sleepover-pay','diet','foodreq','activity','cruise-attend','cruise-pay','cruise-pick','airbnb','travel-help','final-ans','room-type'];
+      groups.forEach(g => {
+        const savedTexts = state.selected[g] || [];
+        if (!savedTexts.length) return;
+        document.querySelectorAll(`[data-group="${g}"]`).forEach(el => {
+          const text = el.querySelector('.cruise-opt-title') ? el.querySelector('.cruise-opt-title').textContent.trim() : (el.querySelector('span') ? el.querySelector('span').textContent.trim() : el.textContent.trim().substring(0, 60));
+          if (savedTexts.some(s => text.includes(s.substring(0, 30)) || s.includes(text.substring(0, 30)))) {
+            el.classList.add('selected');
+          }
+        });
+      });
+
+      // Restore section visibility
+      Object.keys(state.sections || {}).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = state.sections[id];
+      });
+
+      // Restore pax inputs
+      const cs = document.querySelector('[data-group="carshare"].selected,[data-group="carshare"].selected-or');
+      if (cs) {
+        if (cs.textContent.includes('pay me')) togglePax('pax1', true);
+        else if (cs.textContent.includes('samaritan')) togglePax('pax2', true);
+      }
+
+      // Restore page
+      if (state.page && state.page !== 'page1') {
+        showPage(state.page);
+      }
+
+      updateProgress();
+    } catch(e) {}
+  }
+
+  function clearState() {
+    try { localStorage.removeItem(LS_KEY); } catch(e) {}
+  }
+  // ────────────────────────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', function() {
-    showPage('page1');
-    document.querySelectorAll('.text-input').forEach(i => i.addEventListener('input', updateProgress));
+    restoreState();
+    if (!localStorage.getItem(LS_KEY)) showPage('page1');
+    document.querySelectorAll('.text-input').forEach(i => {
+      i.addEventListener('input', updateProgress);
+      i.addEventListener('input', saveState);
+    });
+    // Save on any pill click
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.opt') || e.target.closest('.cruise-opt')) {
+        setTimeout(saveState, 100);
+      }
+    });
   });
 
   function handleAttend(el) {
@@ -2100,6 +2197,7 @@
       return;
     }
     const first = document.getElementById('firstName');
+    clearState();
     document.getElementById('successName').textContent = (first && first.value.trim()) || 'friend';
     document.getElementById('progressBar').style.width = '100%';
     showPage('page4');
