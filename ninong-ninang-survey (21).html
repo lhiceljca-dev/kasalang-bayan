@@ -976,6 +976,44 @@
     }
   }
 
+
+  @media (max-width: 768px) {
+    #page0 .proposal-wrap {
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow-y: auto;
+      padding: 20px 16px 40px;
+      gap: 12px;
+    }
+    .collage-container {
+      display: none;
+    }
+    .proposal-center {
+      max-width: 100% !important;
+      width: 100%;
+      margin: 0 auto;
+    }
+    /* Show gifs in a 2x2 grid instead on mobile */
+    .mobile-gif-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+    .mobile-gif-grid img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid #fff;
+      box-shadow: 3px 4px 12px rgba(0,0,0,.15);
+    }
+    .mobile-gif-grid img:nth-child(1) { transform: rotate(-4deg); }
+    .mobile-gif-grid img:nth-child(2) { transform: rotate(3deg); }
+    .mobile-gif-grid img:nth-child(3) { transform: rotate(2deg); }
+    .mobile-gif-grid img:nth-child(4) { transform: rotate(-3deg); }
+  }
+
 </style>
 </head>
 <body>
@@ -994,14 +1032,22 @@
       <img class="collage-gif" src="https://i.ibb.co/kgc6QSFx/greys-anatomy-cristina-yang2-ezgif-com-resize3.gif" alt="greys anatomy"/>
     </div>
 
+    <!-- Mobile gif grid (hidden on desktop) -->
+    <div class="mobile-gif-grid" style="display:none;">
+      <img src="https://i.ibb.co/6cx81NhV/lodi53.gif" alt="lodi"/>
+      <img src="https://i.ibb.co/LzBZNP4y/you-inspire-me-in-ways-you-dont-even-realise-alicia-souza2-ezgif-com-resize3.gif" alt="you inspire me"/>
+      <img src="https://i.ibb.co/xtvXPvC1/i-could-really-use-your-expertise-help-me2.gif" alt="i need you"/>
+      <img src="https://i.ibb.co/kgc6QSFx/greys-anatomy-cristina-yang2-ezgif-com-resize3.gif" alt="greys anatomy"/>
+    </div>
+
     <!-- Center card -->
     <div class="proposal-center">
       <p class="proposal-hello">hello,</p>
       <div class="proposal-names">Ninong/Ninang Name<br/>&amp; Name</div>
       <p class="proposal-question">will you be our<br/><span>ninong/ninang</span>? 💍🥹</p>
+      <p style="font-family:'Nunito',sans-serif;font-size:13px;color:var(--mid);margin-bottom:16px;line-height:1.5;">Read the details first and we'll ask again after 😊</p>
       <div class="proposal-btns">
-        <button class="proposal-yes" onclick="showYesNinangPopup()">💚 OO NAMAN!!!</button>
-        <button class="proposal-no" onclick="showNoNinangPopup()">😬 hmm...</button>
+        <button class="proposal-yes" onclick="showPage('page1')" style="background:var(--em);">📋 Read more</button>
       </div>
     </div>
 
@@ -1735,7 +1781,42 @@
 
     </div>
     <div class="spage-footer">
-      <button class="snext-btn orange" onclick="goStep3()">Next — Sydney Shenanigans 🚢</button>
+      <button class="snext-btn orange" onclick="goStep3Ninang()">Next — Sydney Shenanigans 🚢</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- PAGE 3b5: NINONG/NINANG ANSWER -->
+<div class="survey-page page" id="page3b5">
+  <div class="spage-wrap">
+    <div class="spage-header">
+      <button class="back-btn dark sback" onclick="showPage('page3b')">← back</button>
+      <div class="step-dots">
+        <div class="step-dot done"></div>
+        <div class="step-dot active"></div>
+        <div class="step-dot"></div>
+      </div>
+      <div class="step-label">Step 2 of 3</div>
+    </div>
+    <div class="spage-body">
+      <div style="text-align:center;padding:20px 0 10px;">
+        <div style="font-family:'Pacifico',cursive;font-size:clamp(22px,5vw,32px);color:var(--em);margin-bottom:8px;">so... 💍🥹</div>
+        <p style="font-family:'Nunito',sans-serif;font-size:clamp(15px,3vw,18px);font-weight:800;color:var(--dark);line-height:1.5;">will you be our ninong/ninang?</p>
+      </div>
+
+      <div class="scard" style="margin-top:24px">
+        <div class="scard-label">YOUR ANSWER 💍</div>
+        <div class="options" style="flex-direction:column;gap:10px;">
+          <div class="opt" data-group="ninang-answer" onclick="single(this)">💚 Yes — and I will attend the wedding!</div>
+          <div class="opt" data-group="ninang-answer" onclick="single(this)">💌 Yes — but I won't be able to attend</div>
+          <div class="opt" data-group="ninang-answer" onclick="single(this)">🥹 No — but I will still attend the wedding!</div>
+          <div class="opt" data-group="ninang-answer" onclick="single(this)">🤍 No — and I won't be able to attend</div>
+        </div>
+      </div>
+    </div>
+    <div class="spage-footer">
+      <button class="snext-btn orange" onclick="goStep3FromNinang()">Next — Sydney Shenanigans 🚢</button>
     </div>
   </div>
 </div>
@@ -2067,7 +2148,7 @@
 
 <script>
   function showPage(id) {
-    ['page0','page1','page2','page3','page3b','page3c','page3d','page4'].forEach(p => {
+    ['page0','page1','page2','page3','page3b','page3b5','page3c','page3d','page4'].forEach(p => {
       document.getElementById(p).classList.remove('active');
     });
     document.getElementById(id).classList.add('active');
@@ -2139,7 +2220,10 @@
     showPage('page3b');
   }
 
-  function goStep3() {
+  function goStep3(callback) {
+    goStep3Internal(callback);
+  }
+  function goStep3Internal(callback) {
     if (!isAnswered('attending')) { showToast('may nakalimutan ka sagutan!!! — G ka ba? 👀'); scrollToGroup('attending'); return; }
     // if expandable attending selected, require the textarea
     const attendSel = document.querySelector('[data-group="attending"].selected,[data-group="attending"].selected-or');
@@ -2529,6 +2613,7 @@
       notes:            val('notes'),
       // --- PAGE 3d: FINAL ---
       finalComments:    val('finalComments'),
+      ninangAnswer:     getSelected('ninang-answer'),
     };
 
     fetch('https://script.google.com/macros/s/AKfycbxCIrowpzlHJbyi7buGtLSzgzSfKEHLchdf7xj3SwdBFZyUif9eD5pIgrA1EDHXwPvN/exec', {
