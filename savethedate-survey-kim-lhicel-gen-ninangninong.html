@@ -1,0 +1,2606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:title" content="Kasalang Bayan — Kim & Lhicel 💍"/>
+  <meta property="og:description" content="Kasalan na guyssss! Survey muna! 🥹🎉"/>
+  <meta property="og:image" content="https://i.ibb.co/gLLpmfKR/20210902-030953.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://i.ibb.co/gLLpmfKR/20210902-030953.jpg"/>
+<title>Kasalang Bayan</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:ital,wght@0,400;0,600;0,800;1,400;1,700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet"/>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<style>
+  :root {
+    --em: #1a6b45;
+    --em-light: #2d9e68;
+    --em-pale: #d4ede1;
+    --em-bg: #0f3d28;
+    --or: #f4620a;
+    --or-light: #ff8c42;
+    --or-pale: #fde8d8;
+    --cream: #fffbf5;
+    --dark: #1a1208;
+    --mid: #4a3520;
+    --soft: #f7f2ea;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E") 16 16, auto;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background-image:
+      radial-gradient(circle, var(--or) 2px, transparent 2px),
+      radial-gradient(circle, var(--em-light) 2px, transparent 2px),
+      radial-gradient(circle, var(--or-light) 1.5px, transparent 1.5px);
+    background-size: 80px 80px, 120px 120px, 60px 60px;
+    background-position: 10px 10px, 40px 40px, 20px 55px;
+    opacity: 0.06;
+  }
+  .progress-wrap { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: 5px; background: var(--em-pale); }
+  .progress-bar { height: 100%; background: linear-gradient(90deg, var(--em), var(--or)); width: 0%; transition: width .4s cubic-bezier(.4,0,.2,1); border-radius: 0 4px 4px 0; }
+
+  /* ── PAGE SYSTEM ── */
+  #page1.active { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E🐱%3C/text%3E%3C/svg%3E") 16 16, auto; }
+  #page2.active { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26' fill='white' stroke='%23333' stroke-width='1'%3E%F0%9F%90%BE%3C/text%3E%3C/svg%3E") 16 16, auto; }
+  #page0, #page1, #page2, #page3, #page3b, #page3b5, #page3c, #page3d, #page4 { display: none !important; }
+  #page0.active { display: flex !important; }
+  #page1.active { display: flex !important; }
+  #page2.active { display: flex !important; }
+  #page3.active, #page3b.active, #page3b5.active, #page3c.active, #page3d.active { display: flex !important; }
+  #page4.active { display: flex !important; }
+
+  /* All pages: exactly viewport, no outer scroll */
+  html { height: 100%; overflow: hidden; }
+  body { height: 100%; height: 100dvh; overflow: hidden; }
+  .page {
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+  }
+  /* page 3 survey scrolls internally */
+  #page3 { overflow-y: auto; flex-direction: column; align-items: center; }
+  #page2 { overflow-y: auto; }
+  #page4 { align-items: center; justify-content: center; }
+
+  /* ── PAGE 1: SPLASH ── */
+  .pg1 {
+    background-color: #e0f5f7;
+    background-image: url("https://i.ibb.co/XkMmqRxk/cat-wedding-wider.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 0 32px;
+  }
+
+
+  /* blobs */
+  .blob { position: absolute; border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; pointer-events: none; z-index: 2; }
+  .blob-1 { width: 500px; height: 500px; background: var(--or); opacity: .13; top: -140px; right: -160px; animation: blobbity 9s ease-in-out infinite alternate; }
+  .blob-2 { width: 360px; height: 360px; background: var(--em-light); opacity: .14; bottom: -100px; left: -100px; animation: blobbity 11s ease-in-out infinite alternate-reverse; }
+  .blob-3 { width: 220px; height: 220px; background: var(--or-light); opacity: .09; top: 55%; right: 5%; animation: blobbity 13s ease-in-out infinite alternate; }
+  @keyframes blobbity {
+    0%   { border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; transform: scale(1) rotate(0deg); }
+    50%  { border-radius: 40% 60% 35% 65% / 60% 40% 70% 30%; transform: scale(1.06) rotate(6deg); }
+    100% { border-radius: 55% 45% 70% 30% / 45% 55% 35% 65%; transform: scale(.96) rotate(-5deg); }
+  }
+
+  /* floaties */
+  .floatie { position: absolute; font-size: 30px; animation: floatUp 6s ease-in-out infinite; pointer-events: none; opacity: .7; z-index: 2; }
+  .floatie:nth-child(1) { left: 7%;  top: 12%; animation-delay: 0s; }
+  .floatie:nth-child(2) { right: 9%; top: 18%; animation-delay: 1.4s; }
+  .floatie:nth-child(3) { left: 12%; bottom: 20%; animation-delay: 3.1s; }
+  .floatie:nth-child(4) { right: 7%; bottom: 25%; animation-delay: 0.7s; }
+  .floatie:nth-child(5) { left: 48%; top: 7%;  animation-delay: 2.2s; font-size: 24px; }
+  @keyframes floatUp { 0%,100%{ transform:translateY(0) rotate(-4deg); } 50%{ transform:translateY(-20px) rotate(4deg); } }
+  @keyframes popIn  { from{ opacity:0; transform:scale(.4) rotate(-8deg); } to{ opacity:1; transform:scale(1) rotate(0deg); } }
+  @keyframes slideUp { from{ opacity:0; transform:translateY(50px); } to{ opacity:1; transform:translateY(0); } }
+
+  /* cat silhouette */
+  .cat-silhouette {
+    position: absolute;
+    bottom: 8vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(480px, 82vw);
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* pg1 layout — text sits in top ~55% so cats show below */
+
+  .pg1-arch { position:absolute; top:0; left:50%; transform:translateX(-50%); width:160%; height:100%; pointer-events:none; z-index:0; overflow:visible; }
+  .pg1-petal { position:absolute; bottom:-20px; animation:floatPetal 18s ease-in infinite; pointer-events:none; z-index:0; opacity:0; }
+  @keyframes floatPetal { 0% { bottom:-10%; opacity:0; } 15% { opacity:.8; } 85% { opacity:.6; } 100% { bottom:105%; opacity:0; transform:rotate(180deg); } }
+  @keyframes twinklePg1 { 0%,100% { opacity:0; transform:scale(.5); } 50% { opacity:1; transform:scale(1.2); } }
+  .pg1-inner {
+    position: relative; z-index: 2;
+    text-align: center;
+    max-width: 55vw; width: 100%;
+    padding-bottom: min(260px, 30vh);
+    margin-top: 12vh;
+  }
+
+  .line-kasalan-full {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(22px, 5vw, 62px);
+    color: #0f3d28;
+    display: block;
+    line-height: 1.1;
+    white-space: nowrap;
+    animation: slideUp .7s cubic-bezier(.34,1.56,.64,1) .1s both;
+    margin-bottom: 0px;
+  }
+
+  /* dotted rule */
+  .pg1-rule {
+    margin: 28px auto;
+    width: 48px; height: 3px;
+    background: repeating-linear-gradient(90deg, var(--or) 0, var(--or) 5px, transparent 5px, transparent 10px);
+    border-radius: 4px;
+    animation: popIn .5s ease .4s both;
+  }
+
+  .line-pero {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(16px, 3vw, 34px);
+    color: rgba(15, 61, 40, 0.6);
+    display: block;
+    animation: slideUp .6s ease .5s both;
+    margin-top: 6px;
+    margin-bottom: 4px;
+  }
+  .line-survey-muna {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 900;
+    font-size: clamp(28px, 6vw, 72px);
+    display: block;
+    white-space: nowrap;
+    line-height: 1.15;
+    animation: slideUp .7s cubic-bezier(.34,1.56,.64,1) .6s both;
+    letter-spacing: -1px;
+  }
+  .line-survey-muna .w-survey { color: var(--or-light); }
+  .line-survey-muna .w-muna   { color: var(--em); }
+
+  .scroll-cue {
+    display: inline-block;
+    margin-top: 36px;
+    color: rgba(15, 61, 40, 0.45);
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    animation: bounce 2s ease-in-out infinite, slideUp .6s ease .85s both;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+  }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
+
+  /* ── PAGE 2: WHO WE ARE ── */
+  .pg2 {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    background: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px 32px 80px;
+    position: relative; overflow-y: auto;
+  }
+  .pg2::before {
+    content: '';
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 70% 50% at 100% 0%, rgba(244,98,10,.07) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 0% 100%, rgba(26,107,69,.07) 0%, transparent 60%);
+  }
+  .pg2-inner {
+    position: relative; z-index: 2;
+    max-width: 820px; width: 100%;
+    text-align: center;
+  }
+  .pg2-tag {
+    display: inline-block;
+    border: 2px solid var(--em-pale);
+    color: var(--em);
+    font-family: 'Unbounded', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 7px 18px; border-radius: 40px;
+    margin-bottom: 32px;
+  }
+  .pg2-names {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(30px, 7vw, 64px);
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+  .pg2-names .n-kim    { color: var(--em); display: inline; }
+  .pg2-names .n-amp    { font-size: clamp(24px, 5vw, 44px); color: #c8b89a; display: inline; margin: 0 8px; }
+  .pg2-names .n-lhicel { color: var(--or); display: inline; }
+
+  .pg2-divider {
+    display: flex; align-items: center; gap: 14px;
+    margin: 16px 0;
+  }
+  .pg2-divider::before, .pg2-divider::after {
+    content: ''; flex: 1; height: 2px;
+    background: repeating-linear-gradient(90deg, var(--em-pale) 0, var(--em-pale) 6px, transparent 6px, transparent 12px);
+  }
+  .pg2-divider-dot { font-size: 18px; }
+
+  .pg2-intro {
+    font-size: clamp(15px, 2.5vw, 18px);
+    color: var(--mid);
+    line-height: 1.9;
+    background: #fff;
+    border: 2px solid var(--em-pale);
+    border-radius: 20px;
+    padding: 24px 28px;
+    text-align: left;
+  }
+  .pg2-intro strong { color: var(--em); font-weight: 800; }
+
+  /* bouncing eyes */
+  .eyes-emoji {
+    display: inline-block;
+    animation: eyeBounce 1s cubic-bezier(.34,1.56,.64,1) infinite;
+  }
+  @keyframes eyeBounce {
+    0%,100% { transform: translateY(0); }
+    40%     { transform: translateY(-10px); }
+    60%     { transform: translateY(-6px); }
+  }
+
+  /* clickable heart */
+  .cat-heart {
+    position: absolute;
+    left: 50%;
+    bottom: 36%;
+    transform: translateX(-50%);
+    z-index: 3;
+    cursor: pointer;
+    font-size: 48px;
+    animation: heartPulse 1.6s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(244,98,10,.6));
+    transition: transform .2s;
+  }
+  .cat-heart:hover { transform: translateX(-50%) scale(1.25); }
+  .heart-tip {
+    display: none;
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15,61,40,0.92);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    padding: 6px 12px;
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .heart-tip::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: rgba(15,61,40,0.92);
+  }
+  .cat-heart:hover .heart-tip { display: block; }
+  @keyframes heartPulse {
+    0%,100% { transform: translateX(-50%) scale(1); }
+    50%     { transform: translateX(-50%) scale(1.15); }
+  }
+
+  /* remove old scroll cue from pg1 */
+  .pg1 .scroll-cue { display: none; }
+
+  /* event boxes on pg2 */
+  .event-boxes { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+  .event-box {
+    border-radius: 16px;
+    padding: 12px 18px;
+    text-align: left;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .event-box.green { background: var(--em-pale); border: 2px solid rgba(26,107,69,.2); }
+  .event-box.orange { background: var(--or-pale); border: 2px solid rgba(244,98,10,.2); }
+  .event-box .eb-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .event-box .eb-label {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--em); margin-bottom: 4px; font-family: 'Nunito', sans-serif; font-weight: 800;
+  }
+  .event-box.orange .eb-label { color: var(--or); }
+  .event-box .eb-title {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(16px, 3.5vw, 22px);
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+  .event-box .eb-date {
+    font-size: 13px; color: var(--mid);
+    font-family: 'Nunito', sans-serif;
+  }
+  .event-box .eb-date-big {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: clamp(15px, 3vw, 19px);
+    color: var(--dark);
+    margin-top: 4px;
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .event-box.green .eb-date-big { color: var(--em); }
+  .event-box.orange .eb-date-big { color: var(--or); }
+  .event-box .eb-place {
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px; color: var(--mid);
+    margin-top: 2px;
+    letter-spacing: .5px;
+  }
+  .tbd {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    background: var(--or-pale); color: var(--or);
+    border: 1px solid rgba(244,98,10,.25);
+    border-radius: 10px; padding: 2px 8px;
+    font-weight: 700; font-family: 'Nunito', sans-serif;
+    vertical-align: middle;
+  }
+
+  .pg2-freetext {
+    font-size: clamp(13px, 2vw, 15px);
+    color: var(--mid);
+    line-height: 1.7;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .scroll-cue-2 {
+    display: inline-block;
+    margin-top: 18px;
+    background: var(--em);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: clamp(13px, 4vw, 17px);
+    padding: 12px 28px; border-radius: 60px;
+    cursor: pointer;
+    transition: all .2s cubic-bezier(.34,1.56,.64,1);
+    box-shadow: 0 4px 20px rgba(26,107,69,.25);
+    letter-spacing: .3px;
+    max-width: 90vw;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .scroll-cue-2:hover { transform: scale(1.05) translateY(-2px); background: var(--em-light); }
+
+  /* back button */
+  .back-btn {
+    position: absolute;
+    top: 20px; left: 20px;
+    z-index: 10;
+    background: rgba(255,255,255,.15);
+    border: 1.5px solid rgba(255,255,255,.25);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background .2s;
+    backdrop-filter: blur(4px);
+  }
+  .back-btn:hover { background: rgba(255,255,255,.25); }
+  .back-btn.dark {
+    background: rgba(26,107,69,.1);
+    border-color: var(--em-pale);
+    color: var(--em);
+  }
+  .back-btn.dark:hover { background: var(--em-pale); }
+
+  /* survey progress inside page 3 */
+  .survey-progress {
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    z-index: 20;
+    background: var(--cream);
+    padding: 14px 24px 10px;
+    border-bottom: 1px solid var(--border, #e8ddd0);
+    width: 100%;
+  }
+  .survey-progress-top {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 8px;
+    max-width: 860px; margin-left: auto; margin-right: auto;
+  }
+  .survey-progress-label {
+    font-size: 12px; font-weight: 800; color: var(--em);
+    font-family: 'Nunito', sans-serif; letter-spacing: .5px;
+  }
+  .survey-progress-pct {
+    font-size: 12px; color: var(--mid); font-family: 'Nunito', sans-serif;
+  }
+  .survey-progress-track {
+    height: 6px; background: var(--em-pale);
+    border-radius: 10px; overflow: hidden;
+    max-width: 860px; margin: 0 auto;
+  }
+  .survey-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--em), var(--or));
+    border-radius: 10px;
+    width: 0%;
+    transition: width .4s cubic-bezier(.4,0,.2,1);
+  }
+  /* SURVEY SUB-PAGES */
+  .spage-wrap {
+    display: flex; flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+    width: 100%;
+    max-width: 900px; margin: 0 auto;
+    padding: 0 28px 0 28px;
+    box-sizing: border-box;
+  }
+  .spage-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0 16px;
+    flex-shrink: 0;
+  }
+  .sback { position: static !important; font-size: 12px; padding: 6px 14px; }
+  .step-dots { display: flex; gap: 8px; align-items: center; }
+  .step-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--em-pale); border: 2px solid var(--em-pale); transition: all .3s; }
+  .step-dot.active { background: var(--em); border-color: var(--em); transform: scale(1.2); }
+  .step-dot.done { background: var(--em-light); border-color: var(--em-light); }
+  .step-label { font-size: 11px; color: var(--mid); font-weight: 800; letter-spacing: 1px; font-family: 'Nunito', sans-serif; }
+  .spage-body { flex: 1; overflow-y: auto; padding-bottom: 16px; }
+  .spage-title { font-family: 'Pacifico', cursive; font-size: clamp(22px, 5vw, 34px); color: var(--em); margin-top: 8px; margin-bottom: 8px; line-height: 1.2; }
+  .spage-sub { font-size: 13px; color: var(--mid); font-family: 'Nunito', sans-serif; margin-bottom: 24px; }
+  .scard { background: #fff; border: 2px solid #e8ddd0; border-radius: 18px; padding: 88px 24px 24px; margin-bottom: 84px; position: relative; }
+  /* Style A - Laguna */
+  #page3b .scard { background: #fff; border-color: #1a6b45; }
+  #page3b .scard-label { background: #f4620a; }
+  /* Style B - Sydney */
+  #page3c .scard { background: #fff; border-color: #f4620a; }
+  #page3c .scard-label { background: #1a6b45; }
+  .scard-label {
+    display: inline-block;
+    position: absolute; top: -16px; left: 16px;
+    background: var(--em); color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 19px; font-weight: 800;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 12px;
+  }
+  .scard-label.or { background: var(--or); }
+  .sleep-cb {
+    position: absolute; top: 8px; right: 8px;
+    width: 18px; height: 18px;
+    border-radius: 5px;
+    border: 2px solid #c8b89a;
+    background: #fff;
+    transition: all .2s;
+    flex-shrink: 0;
+  }
+  .sleep-check.selected .sleep-cb {
+    background: var(--em);
+    border-color: var(--em);
+  }
+  .sleep-check.selected .sleep-cb::after {
+    content: '✓';
+    position: absolute; top: -1px; left: 2px;
+    font-size: 12px; color: #fff; font-weight: 900;
+  }
+  .attend-options { display: flex; flex-direction: column; gap: 12px; }
+  .attend-row { display: flex; flex-direction: column; }
+  .attend-row .opt { width: 100%; text-align: left; border-radius: 10px; white-space: normal; line-height: 1.4; padding: 14px 18px; display: flex; flex-direction: column; }
+  .attend-expandable { cursor: pointer; }
+  .attend-expandable span { pointer-events: none; }
+  .attend-txt { 
+    margin-top: 8px !important; 
+    font-size: 13px !important; 
+    background: #fff !important;
+    border-color: #e8ddd0 !important; 
+    color: var(--dark) !important; 
+    display: block !important; 
+    border-radius: 10px !important;
+  }
+  .attend-txt::placeholder { color: #b8a898 !important; font-style: italic; }
+  /* hide inner content of plusone expandable pills unless selected */
+  [data-group="plusone"].attend-expandable input,
+  [data-group="plusone"].attend-expandable > div {
+    display: none;
+  }
+  [data-group="plusone"].attend-expandable.selected input,
+  [data-group="plusone"].attend-expandable.selected > div,
+  [data-group="plusone"].attend-expandable.selected-or input,
+  [data-group="plusone"].attend-expandable.selected-or > div {
+    display: block;
+  }
+
+  /* textareas inside expandable pills — locked unless pill is selected */
+  .attend-expandable textarea,
+  .attend-expandable .text-input {
+    pointer-events: none;
+    opacity: 0.4;
+    cursor: not-allowed;
+    user-select: none;
+  }
+  .attend-expandable.selected textarea,
+  .attend-expandable.selected .text-input,
+  .attend-expandable.selected-or textarea,
+  .attend-expandable.selected-or .text-input {
+    pointer-events: auto;
+    opacity: 1;
+    cursor: text;
+    user-select: auto;
+  }
+  /* nested pills inside expandable should always be clickable */
+  .attend-expandable .opt,
+  .attend-expandable .options .opt {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    cursor: pointer !important;
+    user-select: none !important;
+  }
+  /* wrapper divs inside expandable also need to pass clicks through */
+  .attend-expandable > div {
+    pointer-events: auto !important;
+  }
+  /* BUT keep number inputs locked — they should only unlock via JS togglePax */
+  .attend-expandable input[type="number"][disabled] {
+    pointer-events: none !important;
+    opacity: 0.4 !important;
+    cursor: not-allowed !important;
+  }
+  .opt.selected .attend-txt, .opt.selected-or .attend-txt { background: #fff !important; }
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    height: 160px;
+    position: relative;
+  }
+  .card-gif {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+  .card-gif img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+  }
+  .card-gif iframe {
+    width: 100% !important;
+    height: 200px !important;
+    display: block;
+    border: none;
+    flex-shrink: 0;
+  }
+  .card-gif .tenor-gif-embed {
+    width: 100% !important;
+    height: 200px !important;
+    overflow: hidden;
+  }
+  /* hide tenor/giphy link overlays */
+  .card-gif .tenor-gif-embed a,
+  .card-gif p,
+  .gif-wrap .tenor-gif-embed a,
+  .gif-wrap p,
+  .card-gif a,
+  .gif-wrap a {
+    display: none !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+  }
+  /* hide giphy attribution */
+  .card-gif iframe + p,
+  .giphy-embed + p {
+    display: none !important;
+  }
+  /* prevent all clicks on tenor embeds */
+  .tenor-gif-embed {
+    pointer-events: none !important;
+  }
+  .tenor-gif-embed iframe {
+    pointer-events: none !important;
+  }
+  .gif-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border-radius: 12px;
+    border: none;
+  }
+  .scard .q-text { margin-bottom: 6px; }
+  .scard .q-hint { margin-bottom: 12px; }
+  .spage-footer { flex-shrink: 0; padding: 16px 0 28px; text-align: center; }
+  .snext-btn { background: linear-gradient(135deg, var(--em), var(--em-light)); color: #fff; border: none; padding: 16px 40px; border-radius: 14px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px; cursor: pointer; transition: all .2s cubic-bezier(.34,1.56,.64,1); box-shadow: 0 4px 20px rgba(26,107,69,.25); width: 100%; }
+  .snext-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,107,69,.3); }
+  .snext-btn.orange { background: linear-gradient(135deg, var(--or), var(--or-light)); box-shadow: 0 4px 20px rgba(244,98,10,.25); }
+
+  .survey { max-width: 860px; margin: 0 auto; padding: 64px 20px 100px; position: relative; z-index: 1; }
+  .section-intro { text-align: center; margin-bottom: 40px; }
+  .section-intro .s-emoji { font-size: 40px; display: block; margin-bottom: 12px; }
+  .section-intro h2 { font-family: 'Unbounded', sans-serif; font-size: clamp(20px, 4vw, 30px); font-weight: 700; color: var(--em); margin-bottom: 10px; line-height: 1.2; }
+  .section-intro p { color: var(--mid); font-size: 15px; line-height: 1.75; max-width: 480px; margin: 0 auto; }
+
+  .card {
+    background: #fff; border-radius: 24px; padding: 28px; margin-bottom: 16px;
+    border: 2px solid transparent; transition: border-color .2s, transform .2s, box-shadow .2s; position: relative;
+  }
+  .card:hover { border-color: var(--em-pale); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(26,107,69,.08); }
+  .card.orange:hover { border-color: var(--or-pale); box-shadow: 0 8px 32px rgba(244,98,10,.08); }
+  .card-num {
+    position: absolute; top: -12px; left: 24px;
+    background: var(--em); color: #fff; font-family: 'Unbounded', sans-serif;
+    font-size: 10px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 1px;
+  }
+  .card.orange .card-num { background: var(--or); }
+
+  .q-text { font-family: 'Nunito', sans-serif; font-size: clamp(22px, 3.5vw, 27px); font-weight: 800; color: var(--dark); margin-bottom: 6px; line-height: 1.4; }
+  .q-hint { font-size: 13px; color: #7a6a58; line-height: 1.65; margin-bottom: 18px; font-style: italic; }
+
+  .options { display: flex; flex-wrap: wrap; gap: 10px; }
+  .opt {
+    cursor: pointer; padding: 10px 18px; border: 2px solid #e8e0d4; border-radius: 10px;
+    font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700; color: var(--mid);
+    background: var(--soft); transition: all .18s cubic-bezier(.34,1.56,.64,1); user-select: none;
+  }
+  .opt:hover { border-color: var(--em); color: var(--em); }
+  .opt.selected { background: var(--em-pale); border: 2.5px solid var(--em); color: var(--em); font-weight: 800; }
+  .opt.selected-or { background: var(--or-pale); border: 2.5px solid var(--or); color: var(--or); font-weight: 800; }
+
+  .text-input {
+    width: 100%; border: 2px solid #e8e0d4; border-radius: 14px; padding: 13px 16px;
+    font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 600; color: var(--dark);
+    background: #fff; outline: none; transition: border-color .2s, box-shadow .2s; resize: none;
+  }
+  .text-input:focus { border-color: var(--em); box-shadow: 0 0 0 4px rgba(26,107,69,.1); }
+  .name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media(max-width:480px) { .name-row { grid-template-columns: 1fr; } }
+
+  .notice {
+    background: linear-gradient(135deg, #fff8f2, #fde8d8); border: 2px solid var(--or-pale);
+    border-radius: 16px; padding: 16px 18px; margin-top: 14px; font-size: 13px; color: #7a4020; line-height: 1.7;
+  }
+  .notice strong { color: var(--or); }
+  .notice ul { margin: 8px 0 0 18px; }
+  .notice ul li { margin-bottom: 3px; }
+  .notice.green { background: linear-gradient(135deg, #f0faf5, #d4ede1); border-color: var(--em-pale); color: #1a4a30; }
+  .notice.green strong { color: var(--em); }
+
+  .fun-divider { text-align: center; margin: 48px 0 40px; position: relative; }
+  .fun-divider::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: repeating-linear-gradient(90deg, var(--em-pale) 0, var(--em-pale) 8px, transparent 8px, transparent 16px); }
+  .fun-divider span { position: relative; background: var(--cream); padding: 0 16px; font-size: 22px; }
+
+  .section-banner { border-radius: 24px; padding: 28px; margin-bottom: 24px; color: #fff; position: relative; overflow: hidden; }
+  .section-banner.green { background: linear-gradient(135deg, var(--em) 0%, #145c36 100%); }
+  .section-banner.orange { background: linear-gradient(135deg, var(--or) 0%, #c24800 100%); }
+  .section-banner::after { content: attr(data-emoji); position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 56px; opacity: .25; }
+  .section-banner .sb-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; opacity: .7; margin-bottom: 6px; }
+  .section-banner .sb-title { font-family: 'Unbounded', sans-serif; font-size: clamp(16px, 3vw, 22px); font-weight: 700; margin-bottom: 6px; }
+  .section-banner .sb-sub { font-size: 13px; opacity: .85; line-height: 1.65; max-width: 380px; }
+
+  .cruise-opt {
+    border: 2px solid #e8ddd0;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color .2s, transform .15s;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .cruise-opt:hover { border-color: var(--or); transform: translateY(-2px); }
+  .cruise-opt.selected { border-color: var(--or); box-shadow: 0 4px 16px rgba(244,98,10,.15); }
+  .cruise-opt-check {
+    position: absolute; bottom: 10px; right: 10px;
+    width: 22px; height: 22px; border-radius: 6px;
+    border: 2px solid #c8b89a; background: #fff;
+    transition: all .2s; z-index: 2;
+  }
+  .cruise-opt.selected .cruise-opt-check {
+    background: var(--or); border-color: var(--or);
+  }
+  .cruise-opt.selected .cruise-opt-check::after {
+    content: '✓'; position: absolute; top: -1px; left: 3px;
+    font-size: 13px; color: #fff; font-weight: 900;
+  }
+  .cruise-opt-img { width: 100%; height: 110px; object-fit: cover; display: block; }
+  .cruise-opt-body { padding: 12px 14px; }
+  .cruise-opt-title { font-family: 'Pacifico', cursive; font-size: 16px; color: var(--dark); margin-bottom: 6px; }
+  .cruise-opt-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+  .cruise-tag { font-size: 11px; font-weight: 800; background: var(--or-pale); color: var(--or); border-radius: 8px; padding: 3px 10px; }
+  .cruise-opt-route { font-size: 12px; color: var(--mid); margin-bottom: 8px; line-height: 1.5; }
+  .cruise-opt-price { font-size: 12px; color: var(--dark); line-height: 1.7; margin-bottom: 8px; }
+  .cruise-opt-link { font-size: 11px; font-weight: 800; color: var(--or); text-decoration: none; letter-spacing: .5px; }
+  .cruise-opt-link:hover { text-decoration: underline; }
+  .cruise-card { border: 2px solid #e8e0d4; border-radius: 18px; padding: 16px; cursor: pointer; transition: all .2s cubic-bezier(.34,1.56,.64,1); background: var(--soft); text-align: center; }
+  .cruise-card:hover { border-color: var(--or); transform: translateY(-3px); }
+  .cruise-card.selected { border-color: var(--or); background: var(--or-pale); box-shadow: 0 4px 16px rgba(244,98,10,.15); transform: translateY(-3px); }
+  .cruise-card .cc-emoji { font-size: 28px; display: block; margin-bottom: 8px; }
+  .cruise-card .cc-name { font-family: 'Unbounded', sans-serif; font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .cruise-card .cc-detail { font-size: 11px; color: #9a8a78; line-height: 1.4; }
+
+  .voucher-options { display: flex; flex-direction: column; gap: 10px; }
+  .voucher-btn { cursor: pointer; border: 2px solid #e8e0d4; border-radius: 18px; padding: 18px; background: var(--soft); font-family: 'Nunito', sans-serif; color: var(--dark); text-align: left; transition: all .2s cubic-bezier(.34,1.56,.64,1); display: flex; align-items: flex-start; gap: 14px; }
+  .voucher-btn:hover { border-color: var(--or); transform: translateY(-2px); }
+  .voucher-btn.selected { border-color: var(--or); background: var(--or-pale); box-shadow: 0 4px 16px rgba(244,98,10,.15); }
+  .voucher-btn .vb-icon { font-size: 26px; flex-shrink: 0; }
+  .voucher-btn .vb-title { font-weight: 800; font-size: 14px; margin-bottom: 3px; }
+  .voucher-btn .vb-sub { font-size: 12px; color: #7a6a58; line-height: 1.5; }
+
+  .submit-zone { text-align: center; margin-top: 56px; }
+  .submit-btn { display: inline-block; background: linear-gradient(135deg, var(--em) 0%, var(--em-light) 100%); color: #fff; border: none; padding: 20px 60px; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px; border-radius: 14px; cursor: pointer; transition: all .22s cubic-bezier(.34,1.56,.64,1); box-shadow: 0 6px 24px rgba(26,107,69,.3); }
+  .submit-btn:hover { transform: scale(1.06) translateY(-3px); box-shadow: 0 12px 36px rgba(26,107,69,.35); }
+  .submit-note { font-size: 12.5px; color: #9a8a78; margin-top: 14px; line-height: 1.7; }
+
+  .success-screen { text-align: center; padding: 40px 24px; max-width: 860px; margin: auto; }
+  .success-screen .s-big { font-size: 72px; display: block; margin-bottom: 24px; animation: popIn .6s cubic-bezier(.34,1.56,.64,1) both; }
+  .success-screen h2 { font-family: 'Unbounded', sans-serif; font-size: clamp(22px, 5vw, 36px); font-weight: 900; color: var(--em); margin-bottom: 16px; line-height: 1.2; }
+  .success-screen p { font-size: 15px; color: var(--mid); line-height: 1.8; }
+
+  /* ── NINONG/NINANG PROPOSAL PAGE ── */
+  #page0 {
+    background: #fef9f0;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  #page0.active { display: flex !important; }
+  .proposal-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  .collage-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .collage-gif {
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: 3px 4px 12px rgba(0,0,0,.15);
+    object-fit: cover;
+    border: 3px solid #fff;
+    width: 480px;
+    height: 270px;
+  }
+  .collage-gif:nth-child(1) { top: 5%; left: 8%; transform: rotate(-6deg); }
+  .collage-gif:nth-child(2) { top: 5%; right: 8%; transform-origin: top right; transform: rotate(5deg); }
+  .collage-gif:nth-child(3) { bottom: 5%; left: 8%; transform: rotate(4deg); }
+  .collage-gif:nth-child(4) { bottom: 5%; right: 8%; transform-origin: bottom right; transform: rotate(-5deg); }
+  .proposal-center {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    background: rgba(255,252,245,0.88);
+    backdrop-filter: blur(6px);
+    border: 2px dashed #e8c89a;
+    border-radius: 24px;
+    padding: 28px 40px;
+    max-width: min(520px, 36vw);
+    box-shadow: 0 8px 32px rgba(0,0,0,.08);
+  }
+  .proposal-hello { font-family: 'Nunito', sans-serif; font-size: 16px; color: var(--mid); font-weight: 600; letter-spacing: 1px; margin-bottom: 6px; }
+  .proposal-names { font-family: 'Pacifico', cursive; font-size: clamp(22px, 3.5vw, 32px); color: var(--em); line-height: 1.2; margin-bottom: 16px; }
+  .proposal-question { font-family: 'Nunito', sans-serif; font-size: clamp(17px, 3.5vw, 21px); font-weight: 800; color: var(--dark); line-height: 1.5; margin-bottom: 20px; }
+  .proposal-question span { color: var(--or); }
+  .proposal-btns { display: flex; gap: 12px; justify-content: center; }
+  .proposal-yes { background: var(--em); color: #fff; border: none; padding: 12px 28px; border-radius: 50px; font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 16px; cursor: pointer; box-shadow: 0 4px 16px rgba(26,107,69,.3); transition: transform .2s; }
+  .proposal-yes:hover { transform: scale(1.06); }
+  @media (max-width: 768px) {
+    .collage-container { display: none; }
+    .proposal-center { max-width: 90vw !important; padding: 24px 20px; }
+    .mobile-gif-grid { display: grid !important; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
+    .mobile-gif-grid img { width: 100%; height: auto; object-fit: contain; border-radius: 8px; border: 3px solid #fff; box-shadow: 3px 4px 12px rgba(0,0,0,.15); }
+    .mobile-gif-grid img:nth-child(1) { transform: rotate(-4deg); }
+    .mobile-gif-grid img:nth-child(2) { transform: rotate(3deg); }
+    .mobile-gif-grid img:nth-child(3) { transform: rotate(2deg); }
+    .mobile-gif-grid img:nth-child(4) { transform: rotate(-3deg); }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<!-- PAGE 0: NINONG/NINANG PROPOSAL -->
+<section class="page" id="page0">
+  <div class="proposal-wrap">
+    <div class="collage-container">
+      <img class="collage-gif" src="https://i.ibb.co/6cx81NhV/lodi53.gif" alt="lodi"/>
+      <img class="collage-gif" src="https://i.ibb.co/LzBZNP4y/you-inspire-me-in-ways-you-dont-even-realise-alicia-souza2-ezgif-com-resize3.gif" alt="you inspire me"/>
+      <img class="collage-gif" src="https://i.ibb.co/xtvXPvC1/i-could-really-use-your-expertise-help-me2.gif" alt="i need you"/>
+      <img class="collage-gif" src="https://i.ibb.co/kgc6QSFx/greys-anatomy-cristina-yang2-ezgif-com-resize3.gif" alt="greys anatomy"/>
+    </div>
+    <div class="mobile-gif-grid" style="display:none;">
+      <img src="https://i.ibb.co/6cx81NhV/lodi53.gif" alt="lodi"/>
+      <img src="https://i.ibb.co/LzBZNP4y/you-inspire-me-in-ways-you-dont-even-realise-alicia-souza2-ezgif-com-resize3.gif" alt="you inspire me"/>
+      <img src="https://i.ibb.co/xtvXPvC1/i-could-really-use-your-expertise-help-me2.gif" alt="i need you"/>
+      <img src="https://i.ibb.co/kgc6QSFx/greys-anatomy-cristina-yang2-ezgif-com-resize3.gif" alt="greys anatomy"/>
+    </div>
+    <div class="proposal-center">
+      <p class="proposal-hello">hello,</p>
+      <div class="proposal-names">Ninong/Ninang Name<br/>&amp; Name</div>
+      <p class="proposal-question">will you be our<br/><span>ninong/ninang</span>? 💍🥹</p>
+      <div class="proposal-btns">
+        <button class="proposal-yes" onclick="showPage('page2')">Spill! ✨</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 1: SPLASH -->
+<section class="pg1 page active" id="page1">
+  <!-- blobs hidden for photo bg -->
+
+  <!-- ARCH BACKGROUND - hidden, using photo bg -->
+  <svg class="pg1-arch" style="display:none;" viewBox="-80 0 680 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="overflow:visible;">
+    <!-- tall posts running full height -->
+    <rect x="-60" y="130" width="16" height="670" rx="8" fill="rgba(255,255,255,0.1)"/>
+    <rect x="580" y="130" width="16" height="670" rx="8" fill="rgba(255,255,255,0.1)"/>
+    <!-- arch curve - peaks at y=20 so visible at top -->
+    <path d="M-44,130 Q260,20 596,130" stroke="rgba(255,255,255,0.13)" stroke-width="10" fill="none"/>
+    <!-- flowers along arch - orange + cream -->
+    <circle cx="34" cy="130" r="16" fill="#f4620a" opacity=".6"/>
+    <circle cx="34" cy="130" r="9" fill="#ff8c42" opacity=".7"/>
+    <circle cx="68" cy="88" r="13" fill="#f4620a" opacity=".55"/>
+    <circle cx="110" cy="62" r="15" fill="#ff8c42" opacity=".6"/>
+    <circle cx="158" cy="46" r="12" fill="#fde8d8" opacity=".55"/>
+    <circle cx="210" cy="34" r="15" fill="#f4620a" opacity=".6"/>
+    <circle cx="260" cy="30" r="13" fill="#ff8c42" opacity=".55"/>
+    <circle cx="310" cy="34" r="15" fill="#f4620a" opacity=".6"/>
+    <circle cx="362" cy="46" r="12" fill="#fde8d8" opacity=".55"/>
+    <circle cx="410" cy="62" r="15" fill="#ff8c42" opacity=".6"/>
+    <circle cx="452" cy="88" r="13" fill="#f4620a" opacity=".55"/>
+    <circle cx="486" cy="130" r="16" fill="#f4620a" opacity=".6"/>
+    <!-- inner flower layer -->
+    <circle cx="50" cy="108" r="9" fill="#fde8d8" opacity=".4"/>
+    <circle cx="90" cy="76" r="8" fill="#fde8d8" opacity=".4"/>
+    <circle cx="180" cy="40" r="9" fill="#fde8d8" opacity=".4"/>
+    <circle cx="260" cy="34" r="8" fill="#fde8d8" opacity=".4"/>
+    <circle cx="340" cy="40" r="9" fill="#fde8d8" opacity=".4"/>
+    <circle cx="430" cy="76" r="8" fill="#fde8d8" opacity=".4"/>
+    <circle cx="470" cy="108" r="9" fill="#fde8d8" opacity=".4"/>
+    <!-- greenery sprigs along arch -->
+    <ellipse cx="55" cy="106" rx="16" ry="7" fill="#2d9e68" opacity=".5" transform="rotate(-38 55 106)"/>
+    <ellipse cx="95" cy="78" rx="16" ry="7" fill="#1a6b45" opacity=".5" transform="rotate(-55 95 78)"/>
+    <ellipse cx="148" cy="50" rx="16" ry="7" fill="#2d9e68" opacity=".5" transform="rotate(-70 148 50)"/>
+    <ellipse cx="200" cy="37" rx="16" ry="7" fill="#1a6b45" opacity=".5" transform="rotate(-80 200 37)"/>
+    <ellipse cx="260" cy="32" rx="16" ry="7" fill="#2d9e68" opacity=".5"/>
+    <ellipse cx="320" cy="37" rx="16" ry="7" fill="#1a6b45" opacity=".5" transform="rotate(80 320 37)"/>
+    <ellipse cx="372" cy="50" rx="16" ry="7" fill="#2d9e68" opacity=".5" transform="rotate(70 372 50)"/>
+    <ellipse cx="425" cy="78" rx="16" ry="7" fill="#1a6b45" opacity=".5" transform="rotate(55 425 78)"/>
+    <ellipse cx="465" cy="106" rx="16" ry="7" fill="#2d9e68" opacity=".5" transform="rotate(38 465 106)"/>
+    <!-- hanging wispy tendrils from arch -->
+    <path d="M80,88 Q75,110 70,130" stroke="#2d9e68" stroke-width="2" fill="none" opacity=".4" stroke-linecap="round"/>
+    <path d="M160,48 Q155,70 152,92" stroke="#1a6b45" stroke-width="2" fill="none" opacity=".4" stroke-linecap="round"/>
+    <path d="M260,32 Q258,55 255,78" stroke="#2d9e68" stroke-width="2" fill="none" opacity=".4" stroke-linecap="round"/>
+    <path d="M360,48 Q365,70 368,92" stroke="#1a6b45" stroke-width="2" fill="none" opacity=".4" stroke-linecap="round"/>
+    <path d="M440,88 Q445,110 450,130" stroke="#2d9e68" stroke-width="2" fill="none" opacity=".4" stroke-linecap="round"/>
+  </svg>
+
+  <!-- BOTANICAL CORNERS - hidden -->
+  <svg style="display:none;position:absolute;top:0;left:0;width:160px;height:160px;pointer-events:none;z-index:0;opacity:.4;" viewBox="0 0 160 160">
+    <ellipse cx="20" cy="140" rx="14" ry="28" fill="#2d9e68" transform="rotate(-25 20 140)"/>
+    <ellipse cx="45" cy="110" rx="12" ry="22" fill="#1a6b45" transform="rotate(-45 45 110)"/>
+    <ellipse cx="70" cy="85" rx="10" ry="18" fill="#2d9e68" transform="rotate(-65 70 85)"/>
+    <ellipse cx="90" cy="65" rx="8" ry="14" fill="#1a6b45" transform="rotate(-80 90 65)"/>
+    <circle cx="22" cy="135" r="8" fill="#f4620a"/>
+    <circle cx="42" cy="108" r="7" fill="#ff8c42"/>
+    <circle cx="65" cy="82" r="8" fill="#f4620a"/>
+    <circle cx="85" cy="62" r="6" fill="#fde8d8"/>
+    <circle cx="102" cy="45" r="7" fill="#ff8c42"/>
+  </svg>
+  <svg style="display:none;position:absolute;bottom:0;right:0;width:160px;height:160px;pointer-events:none;z-index:0;opacity:.4;transform:rotate(180deg);" viewBox="0 0 160 160">
+    <ellipse cx="20" cy="140" rx="14" ry="28" fill="#2d9e68" transform="rotate(-25 20 140)"/>
+    <ellipse cx="45" cy="110" rx="12" ry="22" fill="#1a6b45" transform="rotate(-45 45 110)"/>
+    <ellipse cx="70" cy="85" rx="10" ry="18" fill="#2d9e68" transform="rotate(-65 70 85)"/>
+    <ellipse cx="90" cy="65" rx="8" ry="14" fill="#1a6b45" transform="rotate(-80 90 65)"/>
+    <circle cx="22" cy="135" r="8" fill="#f4620a"/>
+    <circle cx="42" cy="108" r="7" fill="#ff8c42"/>
+    <circle cx="65" cy="82" r="8" fill="#f4620a"/>
+    <circle cx="85" cy="62" r="6" fill="#fde8d8"/>
+    <circle cx="102" cy="45" r="7" fill="#ff8c42"/>
+  </svg>
+
+  <!-- ══ BOTANICAL DECORATIONS ══ -->
+
+  <!-- TOP-LEFT corner sprig -->
+  <svg style="position:absolute;top:0;left:0;width:200px;height:200px;pointer-events:none;z-index:2;opacity:0.55;" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10,10 Q60,40 90,100" stroke="#7a9e7e" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M10,10 Q50,30 110,60" stroke="#7a9e7e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M10,10 Q30,70 50,130" stroke="#8aaa88" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="40" cy="38" rx="12" ry="6" fill="#8aaa88" opacity=".8" transform="rotate(40 40 38)"/>
+    <ellipse cx="60" cy="58" rx="14" ry="6" fill="#6b9470" opacity=".75" transform="rotate(50 60 58)"/>
+    <ellipse cx="76" cy="80" rx="13" ry="5" fill="#8aaa88" opacity=".7" transform="rotate(60 76 80)"/>
+    <ellipse cx="65" cy="36" rx="11" ry="5" fill="#6b9470" opacity=".7" transform="rotate(20 65 36)"/>
+    <ellipse cx="90" cy="48" rx="12" ry="5" fill="#8aaa88" opacity=".65" transform="rotate(15 90 48)"/>
+    <circle cx="90" cy="102" r="14" fill="#e8913a" opacity=".85"/>
+    <circle cx="90" cy="102" r="9" fill="#f0a84a" opacity=".9"/>
+    <circle cx="90" cy="102" r="4" fill="#3d1f00" opacity=".6"/>
+    <circle cx="52" cy="132" r="7" fill="#e8913a" opacity=".6"/>
+    <circle cx="112" cy="62" r="6" fill="#f0a84a" opacity=".55"/>
+  </svg>
+
+  <!-- TOP-RIGHT corner sprig (mirrored) -->
+  <svg style="position:absolute;top:0;right:0;width:200px;height:200px;pointer-events:none;z-index:2;opacity:0.55;transform:scaleX(-1);" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10,10 Q60,40 90,100" stroke="#7a9e7e" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M10,10 Q50,30 110,60" stroke="#7a9e7e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <path d="M10,10 Q30,70 50,130" stroke="#8aaa88" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="40" cy="38" rx="12" ry="6" fill="#8aaa88" opacity=".8" transform="rotate(40 40 38)"/>
+    <ellipse cx="60" cy="58" rx="14" ry="6" fill="#6b9470" opacity=".75" transform="rotate(50 60 58)"/>
+    <ellipse cx="76" cy="80" rx="13" ry="5" fill="#8aaa88" opacity=".7" transform="rotate(60 76 80)"/>
+    <ellipse cx="65" cy="36" rx="11" ry="5" fill="#6b9470" opacity=".7" transform="rotate(20 65 36)"/>
+    <ellipse cx="90" cy="48" rx="12" ry="5" fill="#8aaa88" opacity=".65" transform="rotate(15 90 48)"/>
+    <circle cx="90" cy="102" r="14" fill="#e8913a" opacity=".85"/>
+    <circle cx="90" cy="102" r="9" fill="#f0a84a" opacity=".9"/>
+    <circle cx="90" cy="102" r="4" fill="#3d1f00" opacity=".6"/>
+    <circle cx="52" cy="132" r="7" fill="#e8913a" opacity=".6"/>
+    <circle cx="112" cy="62" r="6" fill="#f0a84a" opacity=".55"/>
+  </svg>
+
+  <!-- BOTTOM-LEFT wispy leaves -->
+  <svg style="position:absolute;bottom:0;left:0;width:180px;height:220px;pointer-events:none;z-index:2;opacity:0.45;" viewBox="0 0 180 220" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10,220 Q50,160 80,100" stroke="#7a9e7e" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M10,220 Q70,180 120,150" stroke="#8aaa88" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="38" cy="178" rx="13" ry="5" fill="#6b9470" opacity=".7" transform="rotate(-40 38 178)"/>
+    <ellipse cx="58" cy="148" rx="14" ry="5" fill="#8aaa88" opacity=".65" transform="rotate(-50 58 148)"/>
+    <ellipse cx="72" cy="120" rx="12" ry="5" fill="#6b9470" opacity=".6" transform="rotate(-55 72 120)"/>
+    <ellipse cx="75" cy="178" rx="13" ry="5" fill="#8aaa88" opacity=".6" transform="rotate(-20 75 178)"/>
+    <ellipse cx="105" cy="158" rx="12" ry="5" fill="#6b9470" opacity=".55" transform="rotate(-15 105 158)"/>
+    <circle cx="80" cy="100" r="8" fill="#e8913a" opacity=".5"/>
+    <circle cx="80" cy="100" r="4" fill="#f0a84a" opacity=".6"/>
+  </svg>
+
+  <!-- BOTTOM-RIGHT wispy leaves (mirrored) -->
+  <svg style="position:absolute;bottom:0;right:0;width:180px;height:220px;pointer-events:none;z-index:2;opacity:0.45;transform:scaleX(-1);" viewBox="0 0 180 220" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10,220 Q50,160 80,100" stroke="#7a9e7e" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M10,220 Q70,180 120,150" stroke="#8aaa88" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="38" cy="178" rx="13" ry="5" fill="#6b9470" opacity=".7" transform="rotate(-40 38 178)"/>
+    <ellipse cx="58" cy="148" rx="14" ry="5" fill="#8aaa88" opacity=".65" transform="rotate(-50 58 148)"/>
+    <ellipse cx="72" cy="120" rx="12" ry="5" fill="#6b9470" opacity=".6" transform="rotate(-55 72 120)"/>
+    <ellipse cx="75" cy="178" rx="13" ry="5" fill="#8aaa88" opacity=".6" transform="rotate(-20 75 178)"/>
+    <ellipse cx="105" cy="158" rx="12" ry="5" fill="#6b9470" opacity=".55" transform="rotate(-15 105 158)"/>
+    <circle cx="80" cy="100" r="8" fill="#e8913a" opacity=".5"/>
+    <circle cx="80" cy="100" r="4" fill="#f0a84a" opacity=".6"/>
+  </svg>
+
+  <!-- SCATTERED small flowers mid-sides -->
+  <svg style="position:absolute;top:30%;left:2%;width:40px;height:40px;pointer-events:none;z-index:2;opacity:0.4;animation:floatUp 7s ease-in-out infinite;" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="10" fill="#e8913a"/>
+    <circle cx="20" cy="20" r="6" fill="#f5b55a"/>
+    <circle cx="20" cy="20" r="3" fill="#3d1f00" opacity=".5"/>
+  </svg>
+  <svg style="position:absolute;top:22%;right:3%;width:32px;height:32px;pointer-events:none;z-index:2;opacity:0.38;animation:floatUp 9s ease-in-out infinite;animation-delay:2s;" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="16" cy="16" rx="13" ry="5" fill="#6b9470" opacity=".8" transform="rotate(30 16 16)"/>
+    <ellipse cx="16" cy="16" rx="13" ry="5" fill="#8aaa88" opacity=".7" transform="rotate(90 16 16)"/>
+    <ellipse cx="16" cy="16" rx="13" ry="5" fill="#6b9470" opacity=".7" transform="rotate(150 16 16)"/>
+    <circle cx="16" cy="16" r="4" fill="#e8913a" opacity=".8"/>
+  </svg>
+  <svg style="position:absolute;top:58%;right:2%;width:36px;height:36px;pointer-events:none;z-index:2;opacity:0.35;animation:floatUp 8s ease-in-out infinite;animation-delay:4s;" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="18" cy="18" r="10" fill="#e8913a" opacity=".7"/>
+    <circle cx="18" cy="18" r="5" fill="#f5b55a"/>
+    <circle cx="18" cy="18" r="2.5" fill="#3d1f00" opacity=".5"/>
+  </svg>
+  <svg style="position:absolute;top:44%;left:2%;width:28px;height:42px;pointer-events:none;z-index:2;opacity:0.3;animation:floatUp 11s ease-in-out infinite;animation-delay:1s;" viewBox="0 0 28 42" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14,42 Q14,22 14,5" stroke="#7a9e7e" stroke-width="2" fill="none"/>
+    <ellipse cx="9" cy="22" rx="8" ry="4" fill="#8aaa88" transform="rotate(-30 9 22)"/>
+    <ellipse cx="19" cy="14" rx="8" ry="4" fill="#6b9470" transform="rotate(30 19 14)"/>
+  </svg>
+
+  <!-- FLOATING PETALS -->
+  <div class="pg1-petal" style="left:5%;animation-delay:0s;font-size:24px;color:#f4620a;">✿</div>
+  <div class="pg1-petal" style="left:15%;animation-delay:4s;font-size:20px;color:#2d9e68;">❧</div>
+  <div class="pg1-petal" style="left:28%;animation-delay:7s;font-size:22px;color:#ff8c42;">✾</div>
+  <div class="pg1-petal" style="left:42%;animation-delay:10s;font-size:18px;color:#2d9e68;">🌿</div>
+  <div class="pg1-petal" style="left:58%;animation-delay:3s;font-size:24px;color:#f4620a;">✿</div>
+  <div class="pg1-petal" style="left:70%;animation-delay:8s;font-size:20px;color:#ff8c42;">✾</div>
+  <div class="pg1-petal" style="left:82%;animation-delay:12s;font-size:22px;color:#2d9e68;">❧</div>
+  <div class="pg1-petal" style="left:92%;animation-delay:14s;font-size:18px;color:#f4620a;">✿</div>
+
+  <!-- SPARKLES -->
+  <div style="position:absolute;width:4px;height:4px;background:#ff8c42;border-radius:50%;top:18%;left:8%;animation:twinklePg1 2.5s ease-in-out infinite;pointer-events:none;z-index:0;"></div>
+  <div style="position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;top:35%;left:22%;animation:twinklePg1 2s ease-in-out infinite;animation-delay:.6s;pointer-events:none;z-index:0;"></div>
+  <div style="position:absolute;width:4px;height:4px;background:#f4620a;border-radius:50%;top:15%;left:75%;animation:twinklePg1 3s ease-in-out infinite;animation-delay:1s;pointer-events:none;z-index:0;"></div>
+  <div style="position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;top:40%;left:88%;animation:twinklePg1 2s ease-in-out infinite;animation-delay:.3s;pointer-events:none;z-index:0;"></div>
+
+  <!-- Cat couple silhouette -->
+  <svg class="cat-silhouette" style="display:none;" viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg" fill="white">
+    <!-- ── GROOM CAT (left) ── -->
+    <!-- ears -->
+    <polygon points="108,58 92,18 126,42"/>
+    <polygon points="152,52 158,14 176,44"/>
+    <!-- head -->
+    <ellipse cx="140" cy="88" rx="46" ry="44"/>
+    <!-- bow tie -->
+    <polygon points="122,142 136,152 122,162"/>
+    <polygon points="158,142 144,152 158,162"/>
+    <circle cx="140" cy="152" r="5"/>
+    <!-- body / suit -->
+    <path d="M100,158 Q80,200 78,270 L202,270 Q200,200 180,158 Q162,148 140,145 Q118,148 100,158Z"/>
+    <!-- suit lapels -->
+    <path d="M130,158 L120,195 L140,182Z" fill="#0f3d28"/>
+    <path d="M150,158 L160,195 L140,182Z" fill="#0f3d28"/>
+    <!-- tail -->
+    <path d="M78,255 Q48,240 44,210 Q40,185 60,178 Q72,174 74,190" fill="none" stroke="white" stroke-width="10" stroke-linecap="round"/>
+    <!-- whiskers -->
+    <line x1="94" y1="85" x2="62" y2="80" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="94" y1="91" x2="62" y2="91" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="94" y1="97" x2="62" y2="102" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="186" y1="85" x2="218" y2="80" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="186" y1="91" x2="218" y2="91" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="186" y1="97" x2="218" y2="102" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- eyes -->
+    <ellipse cx="126" cy="82" rx="7" ry="6" fill="#0f3d28"/>
+    <ellipse cx="154" cy="82" rx="7" ry="6" fill="#0f3d28"/>
+    <!-- nose -->
+    <polygon points="140,96 135,102 145,102" fill="#0f3d28"/>
+    <!-- mouth -->
+    <path d="M135,102 Q140,108 145,102" fill="none" stroke="#0f3d28" stroke-width="2"/>
+    <!-- legs -->
+    <rect x="100" y="268" width="28" height="44" rx="12"/>
+    <rect x="152" y="268" width="28" height="44" rx="12"/>
+
+    <!-- ── BRIDE CAT (right) ── -->
+    <!-- ears -->
+    <polygon points="340,62 326,20 360,46"/>
+    <polygon points="384,56 390,18 408,48"/>
+    <!-- head -->
+    <ellipse cx="372" cy="90" rx="46" ry="44"/>
+    <!-- veil base arc -->
+    <path d="M326,72 Q372,28 418,72" fill="none" stroke="white" stroke-width="5" stroke-linecap="round"/>
+    <!-- veil flowing right -->
+    <path d="M418,72 Q445,90 450,140 Q455,180 440,200 L432,196 Q444,178 438,140 Q434,96 410,80Z"/>
+    <!-- veil crown dots -->
+    <circle cx="340" cy="52" r="4"/>
+    <circle cx="356" cy="40" r="5"/>
+    <circle cx="372" cy="36" r="6"/>
+    <circle cx="388" cy="40" r="5"/>
+    <circle cx="404" cy="52" r="4"/>
+    <!-- body / dress -->
+    <path d="M332,162 Q310,205 296,270 L448,270 Q434,205 412,162 Q394,150 372,147 Q350,150 332,162Z"/>
+    <!-- dress details — scallop hem -->
+    <path d="M296,270 Q310,255 324,270 Q338,255 352,270 Q366,255 380,270 Q394,255 408,270 Q422,255 436,270 L448,270 L296,270Z" fill="#0f3d28"/>
+    <!-- bouquet -->
+    <circle cx="300" cy="220" r="22"/>
+    <circle cx="284" cy="206" r="14"/>
+    <circle cx="316" cy="208" r="14"/>
+    <circle cx="292" cy="238" r="12"/>
+    <circle cx="312" cy="236" r="12"/>
+    <!-- bouquet ribbon -->
+    <path d="M300,242 Q295,258 288,265 M300,242 Q305,258 312,265" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <!-- tail -->
+    <path d="M448,258 Q478,244 480,214 Q484,188 464,180 Q452,176 450,192" fill="none" stroke="white" stroke-width="10" stroke-linecap="round"/>
+    <!-- whiskers -->
+    <line x1="326" y1="87" x2="294" y2="82" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="326" y1="93" x2="294" y2="93" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="418" y1="87" x2="450" y2="82" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="418" y1="93" x2="450" y2="93" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- eyes (happy/squint) -->
+    <path d="M358,84 Q364,78 370,84" fill="none" stroke="#0f3d28" stroke-width="3" stroke-linecap="round"/>
+    <path d="M374,84 Q380,78 386,84" fill="none" stroke="#0f3d28" stroke-width="3" stroke-linecap="round"/>
+    <!-- nose -->
+    <polygon points="372,97 367,103 377,103" fill="#0f3d28"/>
+    <!-- mouth -->
+    <path d="M367,103 Q372,109 377,103" fill="none" stroke="#0f3d28" stroke-width="2"/>
+    <!-- legs / dress hem hides them, just feet -->
+    <ellipse cx="328" cy="308" rx="16" ry="10"/>
+    <ellipse cx="416" cy="308" rx="16" ry="10"/>
+
+    <!-- ground line -->
+    <rect x="60" y="310" width="400" height="6" rx="3" opacity="0.4"/>
+  </svg>
+
+  <div class="pg1-inner">
+    <span class="line-kasalan-full">Kasalan na guyssss!&nbsp;<span style="white-space:nowrap;display:inline-flex;align-items:center;vertical-align:middle;margin-left:6px;transform:rotate(15deg);transform-origin:bottom center;">
+      <svg width="52" height="56" viewBox="0 0 52 56" xmlns="http://www.w3.org/2000/svg">
+        <!-- stems -->
+        <path d="M26,54 Q20,44 16,32" stroke="#2d9e68" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M26,54 Q26,44 26,30" stroke="#1a6b45" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M26,54 Q32,44 36,32" stroke="#2d9e68" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M26,54 Q18,46 14,38" stroke="#1a6b45" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M26,54 Q34,46 38,38" stroke="#1a6b45" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- ribbon -->
+        <path d="M19,50 Q22,46 26,50 Q30,46 33,50" stroke="#c45a0a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- big eucalyptus leaves - sage green -->
+        <ellipse cx="6" cy="24" rx="5" ry="9" fill="#7fb5a0" opacity=".8" transform="rotate(-30 6 24)"/>
+        <ellipse cx="46" cy="24" rx="5" ry="9" fill="#7fb5a0" opacity=".8" transform="rotate(30 46 24)"/>
+        <ellipse cx="10" cy="14" rx="4" ry="8" fill="#5a9e8a" opacity=".7" transform="rotate(-50 10 14)"/>
+        <ellipse cx="42" cy="14" rx="4" ry="8" fill="#5a9e8a" opacity=".7" transform="rotate(50 42 14)"/>
+        <ellipse cx="26" cy="4" rx="4" ry="7" fill="#7fb5a0" opacity=".6" transform="rotate(5 26 4)"/>
+        <!-- wispy white fluffy bits -->
+        <circle cx="8" cy="30" r="3" fill="#fff" opacity=".5"/>
+        <circle cx="9" cy="26" r="2" fill="#fff" opacity=".4"/>
+        <circle cx="44" cy="30" r="3" fill="#fff" opacity=".5"/>
+        <circle cx="43" cy="26" r="2" fill="#fff" opacity=".4"/>
+        <circle cx="18" cy="8" r="2.5" fill="#fff" opacity=".45"/>
+        <circle cx="34" cy="8" r="2.5" fill="#fff" opacity=".45"/>
+        <!-- terracotta roses - big ones -->
+        <circle cx="26" cy="22" r="8" fill="#c45a0a" opacity=".95"/>
+        <circle cx="26" cy="22" r="5" fill="#e07030"/>
+        <circle cx="26" cy="22" r="2.5" fill="#f4956a"/>
+        <circle cx="14" cy="26" r="7" fill="#b84d08" opacity=".9"/>
+        <circle cx="14" cy="26" r="4" fill="#d4611a"/>
+        <circle cx="14" cy="26" r="2" fill="#f4956a"/>
+        <circle cx="38" cy="26" r="7" fill="#c45a0a" opacity=".9"/>
+        <circle cx="38" cy="26" r="4" fill="#e07030"/>
+        <circle cx="38" cy="26" r="2" fill="#f4956a"/>
+        <!-- medium roses -->
+        <circle cx="18" cy="16" r="6" fill="#d4611a" opacity=".9"/>
+        <circle cx="18" cy="16" r="3.5" fill="#e88040"/>
+        <circle cx="18" cy="16" r="1.5" fill="#fde8d8"/>
+        <circle cx="34" cy="16" r="6" fill="#b84d08" opacity=".9"/>
+        <circle cx="34" cy="16" r="3.5" fill="#d4611a"/>
+        <circle cx="34" cy="16" r="1.5" fill="#fde8d8"/>
+        <!-- cream/blush roses -->
+        <circle cx="26" cy="12" r="5.5" fill="#f5dcc8" opacity=".9"/>
+        <circle cx="26" cy="12" r="3" fill="#fde8d8"/>
+        <circle cx="10" cy="20" r="4.5" fill="#f5dcc8" opacity=".8"/>
+        <circle cx="42" cy="20" r="4.5" fill="#f5dcc8" opacity=".8"/>
+        <!-- small berry dots -->
+        <circle cx="16" cy="10" r="2" fill="#8b4513" opacity=".7"/>
+        <circle cx="22" cy="6" r="1.5" fill="#8b4513" opacity=".6"/>
+        <circle cx="30" cy="6" r="1.5" fill="#8b4513" opacity=".6"/>
+        <circle cx="36" cy="10" r="2" fill="#8b4513" opacity=".7"/>
+      </svg>
+    </span></span>
+
+    <span class="line-pero"><span style="font-family:'Nunito',sans-serif;font-size:clamp(11px,2vw,14px);color:rgba(15,61,40,0.55);font-style:italic;font-weight:400;">(next year hihi 🫣)</span> pero...</span>
+    <span class="line-survey-muna">
+      <span class="w-survey">survey</span> <span class="w-muna">muna!</span>
+    </span>
+    <p style="font-family:'Nunito',sans-serif;font-size:11px;color:rgba(15,61,40,0.55);text-align:center;line-height:1.6;margin-top:12px;padding:0 8px;line-height:1.3;">For better experience, sagutan sa desktop browser — or kung nasa mobile, i-open as a new link (<strong>NOT</strong> within Messenger) 😊</p>
+  </div>
+
+  <!-- clickable heart between cats -->
+  <div class="cat-heart" onclick="showPage('page2')">🧡</div>
+</section>
+
+<!-- PAGE 2: WHO WE ARE -->
+<section class="pg2 page" id="page2">
+  <button class="back-btn dark" onclick="showPage('page0')">← back</button>
+  <div class="pg2-inner">
+
+    <div class="pg2-names">
+      <span class="n-kim">Kim</span>
+      <span class="n-amp">&amp;</span>
+      <span class="n-lhicel">Lhicel</span>
+    </div>
+
+    <div class="pg2-divider">
+      <div class="pg2-divider-dot">🌿</div>
+    </div>
+
+    <p class="pg2-freetext">After 12? 13? years — finally guys! YAYYY 🥹🎉</p>
+
+    <div style="border-radius:16px;overflow:hidden;margin:16px 0;max-height:340px;">
+      <img src="https://i.ibb.co/xKn4QJdh/local.gif" alt="local" style="width:100%;display:block;object-fit:cover;object-position:40% 60%;max-height:340px;"/>
+    </div>
+
+    <span class="scroll-cue-2" onclick="showPage('page3')">you are officially invited... to answer this survey haha 📋</span>
+    <p style="font-family:'Nunito',sans-serif;font-size:13px;color:var(--mid);text-align:center;margin-top:12px;line-height:1.6;">Gusto namin kayo kasama mag-celebrate and ang daming planning so need ng data!</p>
+  </div>
+</section>
+
+<!-- PAGE 3a: ABOUT YOU -->
+<div class="survey-page page" id="page3">
+  <div class="spage-wrap">
+    <div class="spage-header">
+      <button class="back-btn dark sback" onclick="showPage('page2')">← back</button>
+      <div class="step-dots">
+        <div class="step-dot active"></div>
+        <div class="step-dot"></div>
+        <div class="step-dot"></div>
+      </div>
+      <div class="step-label">Step 1 of 3</div>
+    </div>
+    <div class="spage-body">
+      <div class="spage-title">Henlooo 👋</div>
+      
+      <div style="text-align:center;padding:16px 0 4px;">
+        <p style="font-family:'Pacifico',cursive;font-size:clamp(18px,4vw,26px);color:var(--em);line-height:1.4;" id="surveyGreeting">survey lang po haha 🥹</p>
+      </div>
+
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">PER OUR LAST CONVERSATION 📞</div>
+        <div class="card-gif" style="background:#1a0a00;">
+          <div class="tenor-gif-embed" data-postid="4984536" data-share-method="host" data-aspect-ratio="1.4433" data-width="100%"><a href="https://tenor.com/view/taken-i-will-find-you-bryan-mills-liam-neeson-gif-4984536">Taken GIF</a></div>
+        </div>
+        <p class="q-text">Drop your contact details —<br/><span style="font-size:13px;color:var(--mid);font-weight:400;">tapos chat chat na lang lodies, update namin kayo hehe</span></p>
+        <input class="text-input" type="email" placeholder="your@email.com 💌" id="email" style="margin-bottom:10px;"/>
+        <input class="text-input" type="tel" placeholder="Phone / Viber / WhatsApp 📱" id="phone" style="margin-bottom:10px;"/>
+        <input class="text-input" type="text" placeholder="city, country 📍" id="locationOther"/>
+      </div>
+
+
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">THAT'S WHAT FRIENDS ARE 4 🤨</div>
+        <div class="gif-wrap" style="border-radius:12px;overflow:hidden;margin-bottom:8px;">
+          <div class="tenor-gif-embed" data-postid="3220405049185060143" data-share-method="host" data-aspect-ratio="1.2029" data-width="100%">
+            <a href="https://tenor.com/view/theodoros-gif-3220405049185060143">Theodoros GIF</a>
+          </div>
+        </div>
+        <p class="q-text">Most chaotic/unforgettable memory of us?</p>
+        <p class="q-hint">Pangcheck lang kung di AI 🤖</p>
+        <textarea class="text-input" rows="3" placeholder="go, kwento! 🤭" id="memory"></textarea>
+      </div>
+    </div>
+    <div class="spage-footer">
+      <button class="snext-btn" onclick="goStep2()">Next — Wedding by the Lake 🌊</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3b: LAGUNA -->
+<div class="survey-page page" id="page3b">
+  <div class="spage-wrap">
+    <div class="spage-header">
+      <button class="back-btn dark sback" onclick="showPage('page3')">← back</button>
+      <div class="step-dots">
+        <div class="step-dot done"></div>
+        <div class="step-dot active"></div>
+        <div class="step-dot"></div>
+      </div>
+      <div class="step-label">Step 2 of 3</div>
+    </div>
+    <div class="spage-body">
+      <div class="spage-title" style="display:flex;align-items:center;gap:10px;justify-content:center;font-size:clamp(28px,7vw,44px)">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="10" fill="#d4ede1"/>
+          <polygon points="6,26 18,10 30,26" fill="#1a6b45"/>
+          <polygon points="14,17 18,10 22,17" fill="white" opacity="0.9"/>
+          <rect x="4" y="22" width="2.5" height="6" rx="1" fill="#0f3d28"/>
+          <polygon points="2,23 5.25,16 8.5,23" fill="#0f3d28"/>
+          <rect x="29.5" y="22" width="2.5" height="6" rx="1" fill="#0f3d28"/>
+          <polygon points="27.5,23 30.75,16 34,23" fill="#0f3d28"/>
+          <ellipse cx="18" cy="29" rx="14" ry="5" fill="#7ea8b4"/>
+          <ellipse cx="18" cy="29" rx="10" ry="3" fill="#b8d4dc" opacity="0.5"/>
+          <rect x="14" y="20" width="8" height="7" fill="#c45a0a"/>
+          <polygon points="12,21 18,15 24,21" fill="#8b3a00"/>
+          <rect x="16.5" y="22" width="3" height="3" rx="0.5" fill="#fde8d8"/>
+        </svg>
+        Wedding by the Lake
+      </div>
+      <div class="spage-sub" style="font-size:16px;font-weight:800;color:var(--em);margin-bottom:20px;">May 5, 2027 · Laguna, Philippines</div>
+
+      <div style="border-radius:12px;overflow:hidden;margin-bottom:16px;">
+        <div class="tenor-gif-embed" data-postid="12764262" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/dock-fail-bride-groom-grooms-men-brides-maid-gif-12764262">Dock Fail Bride GIF</a></div>
+      </div>
+
+      <div class="notice green" style="margin-bottom:16px;font-size:13.5px;line-height:1.85;">
+        <strong style="color:var(--em);font-size:15px;">Wedding by the Lake 🌅💍</strong><br/><br/>
+        Sa lake kami na-engage so gusto rin namin sa lake ikasal yieee 🥹<br/><br/>
+        📍 <strong>Caliraya Lake o Cavinti Lumot Lake area, Laguna, Philippines</strong><br/>
+        📅 <strong>May 5, 2027 · Wednesday</strong> (yes weekday, ito talaga gusto naming date hehehe)<br/><br/>
+        <div style="margin-top:8px;font-size:13px;color:#0f3d28;line-height:1.8;opacity:.9;">
+          <strong>What to expect:</strong><br/>
+          🌅 3PM–5PM sunset ceremony (golden hour photos)<br/>
+          🍽️ Reception 5–8PM<br/>
+          🎤 Open bar, Socials, karaoke, sayawan till 11PM<br/>
+          🌊 Optional lakeside sleepover sa resort<br/>
+          🚗 Roadtrip from Manila (~2–3 hrs)<br/><br/>
+          <em style="font-size:11px;opacity:.75;">💌 Rough headcount lang 'to! Hindi pa locked in. Official RSVP reminder 2 months before. 📅</em>
+        </div>
+      </div>
+
+      <!-- G KA BA -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">G BA KAYO?</div>
+        <div class="card-gif"><img src="https://i.ibb.co/7JyqvcZm/WELL-WAIT.png" alt="WELL-WAIT" style="width:100%;height:auto;display:block;border-radius:12px;"/>
+        </div>
+        <p class="q-text">May 5, 2027 ang ceremony and reception. G ba kayo?</p>
+        <p class="q-hint">ok lang kung di kayo pa sure, kami rin e (sa details) HAHA</p>
+        <div class="attend-options">
+          <div class="attend-row">
+            <div class="opt" data-group="attending" onclick="handleAttend(this)" data-val="yes1">🎉 YES!!!! — magfile na aq agad ng leave, mag-impake na aq. ready to go!</div>
+          </div>
+          <div class="attend-row">
+            <div class="opt" data-group="attending" onclick="handleAttend(this)" data-val="yes2">🎊 SURE!!! — grand pakain with dress up? G!</div>
+          </div>
+          <div class="attend-row">
+            <div class="opt attend-expandable" data-group="attending" onclick="handleAttend(this)" data-val="yes3">
+              <span>✨ YES — with reservations</span>
+              <textarea class="text-input attend-txt" id="reason-yes3" rows="2" placeholder="anek?" style="margin-top:10px;" onclick="event.stopPropagation()"></textarea>
+            </div>
+          </div>
+          <div class="attend-row">
+            <div class="opt" data-group="attending" onclick="handleAttend(this)" data-val="maybe1">😬 Maybe — bat weekday teh, depende pa kay boss kung makakaleave ako.</div>
+          </div>
+          <div class="attend-row">
+            <div class="opt" data-group="attending" onclick="handleAttend(this)" data-val="maybe2">✈️ Maybe — ang mahal ng pamasahe friend, depende sa seat sale.</div>
+          </div>
+          <div class="attend-row">
+            <div class="opt attend-expandable" data-group="attending" onclick="handleAttend(this)" data-val="maybe3">
+              <span>🤷 Maybe — but I have my reasons</span>
+              <textarea class="text-input attend-txt" id="reason-maybe3" rows="2" placeholder="just give me a reason, just a little bit's enough" style="margin-top:10px;" onclick="event.stopPropagation()"></textarea>
+            </div>
+          </div>
+          <div class="attend-row">
+            <div class="opt" data-group="attending" onclick="handleAttend(this)" data-val="no1">😶 No — sorry friend, next time na lang (next time???)</div>
+          </div>
+          <div class="attend-row">
+            <div class="opt attend-expandable" data-group="attending" onclick="handleAttend(this)" data-val="no2">
+              <span>😶 No — let me explain</span>
+              <textarea class="text-input attend-txt" id="reason-no2" rows="2" placeholder="it's not u, it's me" style="margin-top:10px;" onclick="event.stopPropagation()"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLUS ONE -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">PLUS ONE?</div>
+        <div style="border-radius:12px;overflow:hidden;margin-bottom:12px;"><img src="https://i.ibb.co/tPWPH47p/I-feel-attackedt.gif" alt="I feel attacked" style="width:100%;height:auto;display:block;border-radius:12px;"/></div>
+        <p class="q-text">May kasama po?</p>
+        <p class="q-hint">Di pa confirmed, vibes lang muna hehe</p>
+        <div class="options" style="flex-direction:column;gap:10px;">
+          <!-- SWAP: use "💅 Me, myself, and I" for 1 recipient, "💅 Kami lang" for 2 recipients -->
+          <div class="opt" data-group="plusone" onclick="single(this)">💅 Kami lang</div>
+          <div class="opt attend-expandable" data-group="plusone" onclick="single(this)" style="flex-direction:column;">
+            <span>💑 Yes I found the one!</span>
+            <input class="text-input" type="text" id="plusOneName" placeholder="taray! sino yan? 💕" style="margin-top:10px;background:#fff;border-color:#e8ddd0;color:var(--dark);" onclick="event.stopPropagation()"/>
+            <div style="margin-top:12px;padding-top:12px;border-top:1.5px solid #e8e0d4;" onclick="event.stopPropagation()">
+              <p style="font-size:13px;font-weight:800;color:var(--dark);margin-bottom:8px;pointer-events:none;">"Pag di kasama plus 1 ko, di na rin ako sasama." True or false?</p>
+              <div class="options" style="gap:8px;">
+                <div class="opt" data-group="plusone-ultimatum" onclick="event.stopPropagation();single(this)">😤 TRUE. non-negotiable.</div>
+                <div class="opt" data-group="plusone-ultimatum" onclick="event.stopPropagation();single(this)">😂 false lang charot, sasama pa rin</div>
+              </div>
+            </div>
+          </div>
+          <div class="opt attend-expandable" data-group="plusone" onclick="single(this)" style="flex-direction:column;">
+            <span>👨‍👩‍👧 Pwede plus 2? Kasi my pamilee omg</span>
+            <input class="text-input" type="text" id="plusTwoNames" placeholder="pa-submit ng age po &amp; family tree hahaha" style="margin-top:10px;background:#fff;border-color:#e8ddd0;color:var(--dark);" onclick="event.stopPropagation()"/>
+            <div style="margin-top:12px;padding-top:12px;border-top:1.5px solid #e8e0d4;" onclick="event.stopPropagation()">
+              <p style="font-size:13px;font-weight:800;color:var(--dark);margin-bottom:8px;pointer-events:none;">"Pag di kasama plus 1 ko, di na rin ako sasama." True or false?</p>
+              <div class="options" style="gap:8px;">
+                <div class="opt" data-group="plusone-ultimatum" onclick="event.stopPropagation();single(this)">😤 TRUE. non-negotiable.</div>
+                <div class="opt" data-group="plusone-ultimatum" onclick="event.stopPropagation();single(this)">😂 false lang charot, sasama pa rin</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRANSPORT -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">COMMUTE OR DRIVE? 🚗</div>
+        <div class="card-gif"><div class="tenor-gif-embed" data-postid="18069934" data-share-method="host" data-aspect-ratio="2" data-width="100%"><a href="https://tenor.com/view/umbrella-academy-five-vanya-gif-18069934">Umbrella Academy Five GIF</a></div>
+        </div>
+        <p class="q-text">Ang venue ay sa Caliraya Lake o Cavinti Lumot Lake. Magdala ba kayo ng car?</p>
+        <div class="options" style="flex-direction:column;gap:10px;">
+          <div class="opt attend-expandable" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='block';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false);" style="flex-direction:column;">
+            <span>🚗 Yes — roadtrip!!</span>
+            <div id="carshareSection" style="display:none;margin-top:10px;padding-top:10px;border-top:1.5px solid #e8e0d4;width:100%;" onclick="event.stopPropagation()" ontouchstart="event.stopPropagation()">
+              <p style="font-size:12px;font-weight:800;margin-bottom:8px;color:var(--mid);pointer-events:none;">pwede ba makisabay ang friends?</p>
+              <div class="options" style="flex-direction:column;gap:6px;">
+                <div class="opt attend-expandable" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',true);togglePax('pax2',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;flex-direction:column;">
+                  <span>💸 Pwede — pero pay me, part time uber, mahal ang gas</span>
+                  <div style="display:flex;align-items:center;gap:8px;margin-top:8px;">
+                    <label style="font-size:12px;font-weight:800;color:var(--mid);pointer-events:none;">Ilan pwede makisabay?</label>
+                    <input type="number" min="1" max="6" placeholder="1" id="pax1" disabled style="width:56px;border:1.5px solid var(--em-pale);border-radius:8px;padding:4px 8px;font-size:13px;font-family:'Nunito',sans-serif;font-weight:800;text-align:center;outline:none;opacity:.4;cursor:not-allowed;" onclick="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
+                    <span style="font-size:12px;color:var(--mid);pointer-events:none;">pax</span>
+                  </div>
+                </div>
+                <div class="opt attend-expandable" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax2',true);togglePax('pax1',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;flex-direction:column;">
+                  <span>🫶 G! I'm a good samaritan — pay it forward eme</span>
+                  <div style="display:flex;align-items:center;gap:8px;margin-top:8px;">
+                    <label style="font-size:12px;font-weight:800;color:var(--mid);pointer-events:none;">Ilan pwede makisabay?</label>
+                    <input type="number" min="1" max="6" placeholder="1" id="pax2" disabled style="width:56px;border:1.5px solid var(--em-pale);border-radius:8px;padding:4px 8px;font-size:13px;font-family:'Nunito',sans-serif;font-weight:800;text-align:center;outline:none;opacity:.4;cursor:not-allowed;" onclick="event.stopPropagation()" ontouchstart="event.stopPropagation()"/>
+                    <span style="font-size:12px;color:var(--mid);pointer-events:none;">pax</span>
+                  </div>
+                </div>
+                <div class="opt" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',false);togglePax('pax2',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;">🙅 I want my me-time</div>
+                <div class="opt" data-group="carshare" onclick="event.stopPropagation();single(this);togglePax('pax1',false);togglePax('pax2',false);" ontouchstart="event.stopPropagation()" style="font-size:13px;">😤 Tama na! Punong-puno na ko (yung kotse)</div>
+              </div>
+            </div>
+          </div>
+          <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='none';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false)">🚌 Commute lang ako — LRT trained 'to</div>
+          <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='none';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false)">🤝 Commute ako — pero pwede ba makisabay sa iba if meron?</div>
+          <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='none';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false)">🤷 Di ko pa sure, usap na lang next year baka may kotse na ako non</div>
+          <div class="opt" data-group="transport" onclick="single(this);document.getElementById('carshareSection').style.display='none';document.querySelectorAll('[data-group=&quot;carshare&quot;]').forEach(o=>o.classList.remove('selected','selected-or'));togglePax('pax1',false);togglePax('pax2',false)">🙋 ako na bahala — <strong>strong, independent</strong></div>
+        </div>
+      </div>
+
+      <!-- SLEEPOVER -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">SLEEPOVER!!! 🌙</div>
+        <div class="card-gif" style="position:relative;">
+          <iframe src="https://giphy.com/embed/xUA7aOqijilVW0xPvW" width="100%" height="280" frameBorder="0" class="giphy-embed" style="display:block;border:none;pointer-events:none;"></iframe>
+          <div style="position:absolute;inset:0;z-index:2;cursor:default;"></div>
+        </div>
+        <p class="q-text">May accommodation sa lake resort! Bet ba kayong magstaycation?</p>
+        <p class="q-hint" style="line-height:1.8;">Will update sa exact place closer to the dates! 🏕️ <a href="https://www.facebook.com/lakeOcali/" target="_blank" title="di to virus, promise!! → facebook.com/lakeOcali" style="color:var(--em);font-weight:800;">Check out the vibes here ↗</a> (sample lang to!)<br/><br/>
+          <strong>Our night choices:</strong> it's either pre + wedding night, post + wedding night, or just wedding night<br/>
+          🔥 <strong>Pre-Wedding Night (May 4)</strong> — game night, bonfire, chilling by the lake<br/>
+          🥂 <strong>Wedding Night (May 5)</strong> — reception afterparty, matulog pag lasing na 😂<br/>
+          🌅 <strong>Post-Wedding Night (May 6)</strong> — game night, open forum chz, bonfire, staycation extension<br/>
+          Optional group activities... pwede ring enjoy your lake time. Ok lang hehe<br/><br/>
+          Rates: ₱1,000–2,000/person · ₱2,000–3,500/2-pax room</p>
+        <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--em);font-weight:800;margin-bottom:8px;">Tick all na applicable 👇</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+          <div class="opt sleep-check" data-group="sleepover-nights" onclick="toggleOpt(this)" style="border-radius:12px;text-align:center;flex-direction:column;display:flex;align-items:center;justify-content:center;padding:14px 8px;position:relative;">
+            <div class="sleep-cb"></div>
+            🔥<br/><span style="font-size:11px;font-weight:800;margin-top:4px;">Pre-Wedding</span><br/><span style="font-size:10px;opacity:.7;">May 4</span>
+          </div>
+          <div class="opt sleep-check" data-group="sleepover-nights" onclick="toggleOpt(this)" style="border-radius:12px;text-align:center;flex-direction:column;display:flex;align-items:center;justify-content:center;padding:14px 8px;position:relative;">
+            <div class="sleep-cb"></div>
+            <span style="font-size:20px;">🍾</span><br/><span style="font-size:11px;font-weight:800;margin-top:4px;">Wedding Night</span><br/><span style="font-size:10px;opacity:.7;">May 5</span>
+          </div>
+          <div class="opt sleep-check" data-group="sleepover-nights" onclick="toggleOpt(this)" style="border-radius:12px;text-align:center;flex-direction:column;display:flex;align-items:center;justify-content:center;padding:14px 8px;position:relative;">
+            <div class="sleep-cb"></div>
+            🌅<br/><span style="font-size:11px;font-weight:800;margin-top:4px;">Post-Wedding</span><br/><span style="font-size:10px;opacity:.7;">May 6</span>
+          </div>
+          <div class="opt sleep-check" data-group="sleepover-nights" onclick="toggleOpt(this)" style="border-radius:12px;text-align:center;flex-direction:column;display:flex;align-items:center;justify-content:center;padding:14px 8px;position:relative;">
+            <div class="sleep-cb"></div>
+            🌟<br/><span style="font-size:11px;font-weight:800;margin-top:4px;">All in!! Kahit aling date, g!</span><br/><span style="font-size:10px;opacity:.7;">May 4/5/6</span>
+          </div>
+        </div>
+        <p class="q-text" style="margin-top:16px;margin-bottom:6px;">Bayad? 💸</p>
+        <div class="options" style="flex-direction:column;gap:8px;">
+          <div class="opt" data-group="sleepover-pay" onclick="single(this)">🌊 Yes happy to pay — it's giving lake vacation!</div>
+          <div class="opt" data-group="sleepover-pay" onclick="single(this)">🆓 Sama lang ako sa overnight pag free hehe</div>
+          <div class="opt" data-group="sleepover-pay" onclick="single(this)">😅 Di talaga makasama kahit free — I'm a bz person</div>
+        </div>
+        <textarea class="text-input" id="sleepoverNotes" rows="2" placeholder="may sabihin ako..." style="margin-top:10px;background:#fff;color:var(--dark);border-color:#e8ddd0;"></textarea>
+      </div>
+
+      <!-- GRAND PAKAIN -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">GRAND PAKAIN 🍽️</div>
+        <div class="card-gif" style="position:relative;">
+          <iframe src="https://giphy.com/embed/3o85xnoIXebk3xYx4Q" width="100%" height="200" frameBorder="0" class="giphy-embed" style="display:block;border:none;pointer-events:none;"></iframe>
+          <div style="position:absolute;inset:0;z-index:2;cursor:default;"></div>
+        </div>
+        <p class="q-text">May dietary requirements ba kayo?</p>
+        <div class="options" style="flex-direction:column;gap:8px;">
+          <div class="opt" data-group="diet" onclick="single(this)">🙅 Wala, kakainin ko lahat</div>
+          <div class="opt" data-group="diet" onclick="single(this)">🥦 Vegetarian / vegan</div>
+          <div class="opt" data-group="diet" onclick="single(this)">🚫🐷 Halal</div>
+          <div class="opt" data-group="diet" onclick="single(this)">🌾 Gluten free</div>
+          <div class="opt attend-expandable" data-group="diet" onclick="single(this)" style="flex-direction:column;">
+            <span>⚠️ May allergy ako / Others</span>
+            <textarea class="text-input" rows="2" placeholder="specify mo please! 🙏" id="dietDetail" style="margin-top:10px;" onclick="event.stopPropagation()"></textarea>
+          </div>
+        </div>
+        <p class="q-text" style="margin-top:14px;">Pwede po paorder? 🙋</p>
+        <p class="q-hint">order taker lang... di mo sure kung maseserve HAHAHA enge suggestions 😂</p>
+        <div class="options" style="flex-direction:column;gap:8px;margin-top:8px;">
+          <div class="opt" data-group="foodreq" onclick="toggleOpt(this)">🍜 Dapat may Shanghai!! Non-negotiable.</div>
+          <div class="opt" data-group="foodreq" onclick="toggleOpt(this)">🍖 Lechon please, it's a celebration!</div>
+          <div class="opt" data-group="foodreq" onclick="toggleOpt(this)">🍰 Surprise me, basta maraming pagkain</div>
+          <div class="opt attend-expandable" data-group="foodreq" onclick="toggleOpt(this)" style="flex-direction:column;">
+            <span>✨ Cravings satisfied!!!</span>
+            <textarea class="text-input" rows="2" placeholder="ano request mo? 🍽️" id="foodRequest" style="margin-top:10px;background:#fff;border-color:#e8ddd0;color:var(--dark);" onclick="event.stopPropagation()"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- DON'T BORE ME -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">DON'T BORE ME 🎉</div>
+        <div class="card-gif" style="height:auto;background:transparent;"><img src="https://gifbin.com/bin/022016/girl-catching-wedding-bouquet.gif" alt="bouquet toss" style="width:100%;height:auto;object-fit:contain;"/></div>
+        <p class="q-text">may hinahanap ba kayong activity?</p>
+        <p class="q-hint">reunion talaga to kaya kasama ka sa planning 😏 may karaoke for sure!</p>
+        <div class="options" style="flex-direction:column;gap:10px;">
+          <div class="opt" data-group="activity" onclick="toggleOpt(this)">💐 Bouquet toss — ako na ang next!</div>
+          <div class="opt" data-group="activity" onclick="toggleOpt(this)">💃 Prosperity dance — mamimigay ako ng pera!</div>
+          <div class="opt" data-group="activity" onclick="toggleOpt(this)">🪑 Trip to Jerusalem/Stop Dance — competitive ako sorry</div>
+          <div class="opt attend-expandable" data-group="activity" onclick="toggleOpt(this)" style="flex-direction:column;">
+            <span>🎤 Ako mag-entertain, may talent aq!!!!</span>
+            <textarea class="text-input" rows="2" placeholder="ano talent mo? 🎤" id="activityTalent" style="margin-top:10px;" onclick="event.stopPropagation()"></textarea>
+          </div>
+          <div class="opt attend-expandable" data-group="activity" onclick="toggleOpt(this)">
+            <span>💡 I have a bright idea:</span>
+            <textarea class="text-input" rows="2" placeholder="sigi daw ano? 💡" id="activityIdea" style="margin-top:10px;" onclick="event.stopPropagation()"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRIVIA -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">BONUS ROUND 🧠</div>
+        <div class="card-gif"><div class="tenor-gif-embed" data-postid="20611692" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/thinking-woman-woman-thinking-thinking-woman-math-lady-gif-20611692">Thinking Woman GIF</a></div>
+        </div>
+        <p class="q-text">Give us your favorite trivia or fun fact! (kahit tungkol saan)</p>
+        <p class="q-hint">baka masama sa trivia night — ez free point! 🧠</p>
+        <textarea class="text-input" rows="3" placeholder="Did you know..." id="trivia"></textarea>
+      </div>
+
+    </div>
+    <div class="spage-footer">
+      <button class="snext-btn orange" onclick="goStep3Ninang()">Next — Sydney Shenanigans 🚢</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- PAGE 3b5: NINONG/NINANG ANSWER -->
+<div class="survey-page page" id="page3b5">
+  <div class="spage-wrap">
+    <div class="spage-header">
+      <button class="back-btn dark sback" onclick="showPage('page3b')">← back</button>
+      <div class="step-dots">
+        <div class="step-dot done"></div>
+        <div class="step-dot active"></div>
+        <div class="step-dot"></div>
+      </div>
+      <div class="step-label">Step 2 of 3</div>
+    </div>
+    <div class="spage-body">
+      <div style="text-align:center;padding:20px 0 10px;">
+        <div style="font-family:'Pacifico',cursive;font-size:clamp(22px,5vw,32px);color:var(--em);margin-bottom:8px;">so...</div>
+        <div style="font-family:'Pacifico',cursive;font-size:clamp(15px,3vw,18px);color:var(--dark);line-height:1.5;margin-bottom:8px;">will you be our ninong/ninang?</div>
+        <div class="card-gif" style="margin:16px 0;border-radius:12px;overflow:hidden;">
+          <div class="tenor-gif-embed" data-postid="16022705" data-share-method="host" data-aspect-ratio="0.99375" data-width="100%"><a href="https://tenor.com/view/erm-fingers-hmmm-cat-guilty-gif-16022705">Erm Fingers Sticker</a></div>
+        </div>
+      </div>
+      <div class="scard" style="margin-top:24px">
+        <div class="scard-label">YOUR ANSWER</div>
+        <div class="options" style="flex-direction:column;gap:10px;">
+          <div class="opt" data-group="ninang-answer" onclick="single(this);showYodaPopup()">✨ Yes — consider me Yoda! And I shall see you at the wedding!</div>
+          <div class="opt" data-group="ninang-answer" onclick="single(this);showVirtualNinangPopup()">💌 Yes — but virtual ninong/ninang for now. See u next time!</div>
+          <div class="opt" data-group="ninang-answer" onclick="single(this)">😅 No — not yet ready with the responsibility. But see you at the wedding!</div>
+          <div class="opt" data-group="ninang-answer" onclick="single(this)">🤍 No — but I'll be cheering you on from afar!</div>
+        </div>
+      </div>
+      <div class="scard" style="margin-top:24px">
+        <div class="scard-label">THOUGHTS 💭</div>
+        <p class="q-text">May gusto ba kayong sabihin?</p>
+        <textarea class="text-input" rows="3" placeholder="Thinking out loud..." id="ninangMessage"></textarea>
+      </div>
+    </div>
+    <div class="spage-footer">
+      <button class="snext-btn orange" onclick="goStep3FromNinang()">Next — Sydney Shenanigans 🚢</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3c: SYDNEY -->
+<div class="survey-page page" id="page3c">
+  <div class="spage-wrap">
+    <div class="spage-header">
+      <button class="back-btn dark sback" onclick="showPage('page3b5')">← back</button>
+      <div class="step-dots">
+        <div class="step-dot done"></div>
+        <div class="step-dot done"></div>
+        <div class="step-dot active"></div>
+      </div>
+      <div class="step-label">Step 3 of 3</div>
+    </div>
+    <div class="spage-body">
+      <div class="spage-title" style="display:flex;align-items:center;gap:10px;justify-content:center;font-size:clamp(28px,7vw,44px);color:var(--or)">🚢 Sydney Shenanigans</div>
+      <div class="spage-sub" style="font-size:16px;font-weight:800;color:var(--or);margin-bottom:20px;">Sydney Cruise After Party · May–Dec 2027 TBD</div>
+
+      <!-- Tenor gif -->
+      <div style="border-radius:12px;overflow:hidden;margin-bottom:14px;">
+        <div class="tenor-gif-embed" data-postid="17913048" data-share-method="host" data-aspect-ratio="1.33891" data-width="100%">
+          <a href="https://tenor.com/view/one-piece-anime-falling-ship-skypiea-sky-island-gif-17913048">One Piece Anime GIF</a>
+        </div>
+      </div>
+
+      <!-- Intro notice -->
+      <div class="notice" style="background:linear-gradient(135deg,#fde8d8,#fff0e8);border-color:var(--or);margin-bottom:16px;font-size:13.5px;line-height:1.85;">
+        <strong style="color:var(--or);font-size:15px;">Sydney after party = CRUISE!! 🚢🎉</strong><br/><br/>
+        Imagine: waking up sa dagat, food and entertainment — lahat sa ship! 100% vacation mode, zero planning stress (for you at least 😂).<br/><br/>
+        We're targeting a 2–4 day cruise from Sydney. Think floating resort na pwedeng may island stop pa! Na-try na namin, and enjoy naman hehe weight gain atleast 3kg hahaha 🙌<br/><br/>
+        <a href="https://www.instagram.com/reel/DVhkh4-D7Pz/" title="di to virus, promise!! → instagram.com/reel/DVhkh4..." target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:var(--or);color:#fff;padding:8px 16px;border-radius:12px;text-decoration:none;font-weight:800;font-size:12px;margin-top:4px;">📱 See what a Carnival Cruise looks like ↗</a>
+        <p style="font-size:11px;color:#7a4020;opacity:.8;margin-top:6px;font-style:italic;">pang 8-day cruise yung example pero same same vibes 😂</p>
+        <div style="margin-top:12px;font-size:13px;color:#7a4020;line-height:1.8;opacity:.85;">
+          <strong>What's usually included:</strong><br/>
+          ✅ Unli food &nbsp;✅ Unli pantry drinks &nbsp;✅ Pools<br/>
+          ✅ Trivia &nbsp;✅ Karaoke &nbsp;✅ Theatre shows &nbsp;✅ Theme/Costume nights &nbsp;✅ Tugstugs!<br/><br/>
+          <strong>Optional extras (added cost):</strong> alcoholic drinks, island excursions, spa, specialty dining, paid activities<br/><br/>
+          May common itineraries + group exclusive activities. Di mo naman need sumama whole day sa mga activities, pwede pa rin kayong mag me-time!!<br/><br/>
+          We're in talks with a travel planner — need to lock in cabins early kasi tataas ang rates/mauubos slots as dates get closer. Kaya sagutan na niyo to!<br/><br/><em style="font-size:11px;opacity:.75;">💱 For reference: 1 AUD ~ ₱40</em>
+        </div>
+      </div>
+
+      <!-- Q1: SAMA BA U -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">SAMA BA U? 🚢</div>
+        <div class="card-gif" style="position:relative;"><iframe src="https://giphy.com/embed/l41m0DAHeMJHaKRBC" width="100%" height="200" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;pointer-events:none;"></iframe><div style="position:absolute;inset:0;z-index:2;cursor:default;"></div></div>
+        <p class="q-text">Need to lock in this week kasi tataas ang presyo or mauubos ang slot! Sama ba kayo?</p>
+        <p class="q-hint">Ganito po talaga ka-early mag-reserve 😅 If hindi kayo makapagconfirm agad, pwede pa naman balikan — pero di na guarantee ang cheaper cost at slot — pero i-try namin ihabol sa booking!</p>
+        <div class="options" style="flex-direction:column;gap:10px;">
+          <div class="opt" data-group="cruise-attend" onclick="single(this)">🥳 Sama kami!!!</div>
+          <div class="opt" data-group="cruise-attend" onclick="single(this)">⏳ Wait lang, depende sa details!</div>
+          <div class="opt" data-group="cruise-attend" onclick="single(this)">😭 Halaaa pass kami</div>
+        </div>
+      </div>
+
+      <!-- Q3: CRUISE VIBES -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">CRUISE VIBES 🌊</div>
+        <div class="card-gif"><img src="https://i.ibb.co/rfRRm5DZ/1681865371858.jpg" alt="cruise vibes"/></div>
+        <p class="q-text">Anong vibes mo?</p>
+        <p class="q-hint">Iba-ibang dates, destinations, at prices — pili ka! Lahat under Carnival Adventure 🚢</p>
+
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px;">
+
+          <!-- Cruise 1 -->
+          <div class="cruise-opt" data-group="cruise-pick" onclick="pickCruiseOpt(this)">
+            <div class="cruise-opt-check"></div>
+            <img src="https://www.carnival.com.au/-/media/CCLAU/cruise-from/sydney-hero-4.png" class="cruise-opt-img" alt="Sydney"/>
+            <div class="cruise-opt-body">
+              <div class="cruise-opt-title">2-Day Getaway</div>
+              <div class="cruise-opt-tags">
+                <span class="cruise-tag">📅 May 8–10, 2027</span>
+                <span class="cruise-tag">📍 Sydney round trip</span>
+              </div>
+              <div class="cruise-opt-route">Sydney → Fun Day at Sea → Sydney</div>
+              <div class="cruise-opt-price">
+                <span>2-pax room: <strong>from AUD $344/person</strong> <span style="font-size:11px;color:var(--mid);">(~₱13,760)</span></span><br/>
+                <span style="font-size:11px;color:var(--mid);">4-pax room: ~$50–90 cheaper/person</span>
+              </div>
+              <a href="https://www.carnival.com.au/itinerary/2-day-getaway-cruise/sydney/adventure/2-days/ct4?itinportcode=SYD&sailDate=05082027&numGuests=2&currency=AUD" target="_blank" title="di to virus, promise!! → carnival.com.au" class="cruise-opt-link">View details ↗</a>
+            </div>
+          </div>
+
+          <!-- Cruise 2 -->
+          <div class="cruise-opt" data-group="cruise-pick" onclick="pickCruiseOpt(this)">
+            <div class="cruise-opt-check"></div>
+            <img src="https://www.carnival.com.au/-/media/CCLAU/cruise-from/sydney-hero-4.png" class="cruise-opt-img" alt="Sydney"/>
+            <div class="cruise-opt-body">
+              <div class="cruise-opt-title">3-Day Getaway</div>
+              <div class="cruise-opt-tags">
+                <span class="cruise-tag">📅 Aug 6–9, 2027</span>
+                <span class="cruise-tag">📍 Sydney round trip</span>
+              </div>
+              <div class="cruise-opt-route">Sydney → 2 Fun Days at Sea → Sydney</div>
+              <div class="cruise-opt-price">
+                <span>2-pax room: <strong>from AUD $444/person</strong> <span style="font-size:11px;color:var(--mid);">(~₱17,760)</span></span><br/>
+                <span style="font-size:11px;color:var(--mid);">4-pax room: ~$50–90 cheaper/person</span>
+              </div>
+              <a href="https://www.carnival.com.au/itinerary/3-day-getaway-cruise/sydney/adventure/3-days/cte?itinportcode=SYD&sailDate=08062027&numGuests=2&currency=AUD" target="_blank" title="di to virus, promise!! → carnival.com.au" class="cruise-opt-link">View details ↗</a>
+            </div>
+          </div>
+
+          <!-- Cruise 3 -->
+          <div class="cruise-opt" data-group="cruise-pick" onclick="pickCruiseOpt(this)">
+            <div class="cruise-opt-check"></div>
+            <img src="https://www.carnival.com.au/-/media/Images/explore/destinations/ports/carnival-australia-itinerary-phillip-island-1.jpg" class="cruise-opt-img" alt="Phillip Island"/>
+            <div class="cruise-opt-body">
+              <div class="cruise-opt-title">4-Day Phillip Island</div>
+              <div class="cruise-opt-tags">
+                <span class="cruise-tag">📅 Dec 13–17, 2027</span>
+                <span class="cruise-tag">📍 Phillip Island stop!</span>
+              </div>
+              <div class="cruise-opt-route">Sydney → Fun Day at Sea → Phillip Island → Fun Day at Sea → Sydney</div>
+              <div class="cruise-opt-price">
+                <span>2-pax room: <strong>from AUD $469/person</strong> <span style="font-size:11px;color:var(--mid);">(~₱18,760)</span></span><br/>
+                <span style="font-size:11px;color:var(--mid);">4-pax room: ~$50–90 cheaper/person</span>
+              </div>
+              <a href="https://www.carnival.com.au/itinerary/4-day-phillip-island-cruise/sydney/adventure/4-days/ar0?itinportcode=SYD&sailDate=12132027&numGuests=2&currency=AUD" target="_blank" title="di to virus, promise!! → carnival.com.au" class="cruise-opt-link">View details ↗</a>
+            </div>
+          </div>
+
+          <!-- Cruise 4 -->
+          <div class="cruise-opt" data-group="cruise-pick" onclick="pickCruiseOpt(this)">
+            <div class="cruise-opt-check"></div>
+            <img src="https://www.carnival.com.au/-/media/CCLAU/cruise-to/moreton-island-hero-1.jpg" class="cruise-opt-img" alt="Moreton Island"/>
+            <div class="cruise-opt-body">
+              <div class="cruise-opt-title">4-Day Tangalooma - Moreton Island</div>
+              <div class="cruise-opt-tags">
+                <span class="cruise-tag">📅 Oct 26–30, 2027</span>
+                <span class="cruise-tag">📍 Moreton Island stop!</span>
+              </div>
+              <div class="cruise-opt-route">Sydney → Fun Day at Sea → Tangalooma/Moreton Island → Fun Day at Sea → Sydney</div>
+              <div class="cruise-opt-price">
+                <span>2-pax room: <strong>from AUD $484/person</strong> <span style="font-size:11px;color:var(--mid);">(~₱19,360)</span></span><br/>
+                <span style="font-size:11px;color:var(--mid);">4-pax room: ~$50–90 cheaper/person</span>
+              </div>
+              <a href="https://www.carnival.com.au/itinerary/4-day-tangalooma-moreton-island-cruise/sydney/adventure/4-days/auw?itinportcode=SYD&sailDate=10262027&numGuests=2&military=N&senior=N&pastGuest=N&evsel=&hideSailingEvents=true&locality=7&currency=AUD&roomType=IS" target="_blank" title="di to virus, promise!! → carnival.com.au" class="cruise-opt-link">View details ↗</a>
+            </div>
+          </div>
+
+          <!-- None -->
+          <div class="cruise-opt" data-group="cruise-pick" onclick="pickCruiseOpt(this)" style="flex-direction:column;padding:0;overflow:hidden;">
+            <div style="position:relative;width:100%;height:180px;overflow:hidden;border-radius:12px 12px 0 0;">
+              <iframe src="https://giphy.com/embed/t7pp3YLzz6Tfy" width="100%" height="100%" style="position:absolute;top:0;left:0;border:none;pointer-events:none;" frameBorder="0" class="giphy-embed"></iframe>
+              <div style="position:absolute;inset:0;z-index:2;cursor:pointer;"></div>
+              <div class="cruise-opt-check" style="position:absolute;top:10px;left:10px;z-index:3;"></div>
+            </div>
+            <div class="cruise-opt-body" style="padding:12px;text-align:center;">
+              <div class="cruise-opt-title">🤷 Di ngani sasama!</div>
+              <div class="cruise-opt-route" style="font-style:italic;">noted T.T</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Q2: KACHING KACHING -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">KACHING KACHING! 💰</div>
+        <div class="card-gif" style="position:relative;"><iframe src="https://giphy.com/embed/3ohs7ZouSy6Mz0ey5i" width="100%" height="200" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;pointer-events:none;"></iframe><div style="position:absolute;inset:0;z-index:2;cursor:default;"></div>
+        </div>
+        <p class="q-text">Libre ba???</p>
+        <div class="notice" style="margin-bottom:14px;font-size:13px;line-height:1.75;">
+          Panghoneymoon talaga namin tong budget pero iseshare na namin sainyo kasi love namin kayo HAHAHA yieee<br/><br/>
+          🏝️ <strong>For Pilipins</strong> — we can offer 30–40% off (100–200 AUD less/person)!<br/>
+          🦘 <strong>For Sydney people</strong> — what ifff share niyo na AUD niyo samin hehehehe<br/><br/>
+          Deposits are non-refundable (usually AUD50-100 pp). Optional cabin upgrades, alcoholic drinks, other activities are paid out of pocket kung gusto niyo lang mag-avail. 😊
+        </div>
+        <div class="options" style="flex-direction:column;gap:10px;">
+          <div class="opt attend-expandable" data-group="cruise-pay" onclick="single(this)" style="flex-direction:column;">
+            <span>🎁 Palista po ako sa voucher ayuda! exciting.</span>
+            <p style="font-size:11px;opacity:.8;margin-top:4px;pointer-events:none;">up to 30–40% off your cabin cost for PH guests</p>
+          </div>
+          <div class="opt attend-expandable" data-group="cruise-pay" onclick="single(this)" style="flex-direction:column;">
+            <span>💳 I can buy you, your friends, and this cruise!!! (full payment aq sakin, no worries hehehe)</span>
+            <p style="font-size:11px;opacity:.8;margin-top:4px;pointer-events:none;">thank you, our treasured friend!!! hahaha salamat lodi 🥹🙏</p>
+          </div>
+          <div class="opt attend-expandable" data-group="cruise-pay" onclick="single(this);showSponsorPopup()" style="flex-direction:column;">
+            <span>🌟 I'm feeling generous! need niyo ba ng sponsor? I volunteer!!! PM me</span>
+            <p style="font-size:11px;opacity:.8;margin-top:4px;pointer-events:none;">Wowerz, thank u boss!!!! PM Sent 🥹🙏</p>
+          </div>
+          <div class="opt attend-expandable" data-group="cruise-pay" onclick="single(this)" style="flex-direction:column;">
+            <span>🦘 Taga Sydney ako pero need ko rin ng voucher ayuda PLS</span>
+            <p style="font-size:11px;opacity:.8;margin-top:4px;pointer-events:none;">hmm siguro pag may sobra pag-isipan namin — submit your case haha 😂</p>
+          </div>
+          <div class="opt attend-expandable" data-group="cruise-pay" onclick="single(this)" style="flex-direction:column;">
+            <span>🤢 Pass na lang, nahihilo ako sa barko (at sa gastos T.T)</span>
+            <p style="font-size:11px;opacity:.8;margin-top:4px;pointer-events:none;">iz okkk, maybe next time! 🤍</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Q4: AIRBNB -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">AIRBNB? 🏡</div>
+        <div class="card-gif" style="position:relative;"><iframe src="https://giphy.com/embed/AXIy0fxkvzTFu" width="100%" height="200" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;pointer-events:none;"></iframe><div style="position:absolute;inset:0;z-index:2;cursor:default;"></div></div>
+        <p class="q-text">Kung mag-staycation tayo, kelan ninyo gusto?</p>
+        <p class="q-hint">Will check if kaya pa sa budget haha 😂</p>
+        <div class="options" style="flex-wrap:wrap;gap:8px;">
+          <div class="opt" data-group="airbnb" onclick="singleOr(this)">🌅 Before the cruise</div>
+          <div class="opt" data-group="airbnb" onclick="singleOr(this)">🌙 After the cruise</div>
+          <div class="opt" data-group="airbnb" onclick="singleOr(this)">🥳 Any! Basta kasama</div>
+          <div class="opt" data-group="airbnb" onclick="singleOr(this)">🚢 Cruise lang, ok na!</div>
+        </div>
+      </div>
+
+      <!-- Q5: COMING FROM PH -->
+      <div class="scard" style="margin-top:42px;padding-top:72px;">
+        <div class="scard-label">SAN KA NA NAMAN GALING ✈️</div>
+        <div class="card-gif" style="position:relative;"><iframe src="https://giphy.com/embed/3ov9jWD7hYaAz343SM" width="100%" height="200" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block;border:none;pointer-events:none;"></iframe><div style="position:absolute;inset:0;z-index:2;cursor:default;"></div></div>
+        <p class="q-text">Lilipad ba kayo from Pilipins or another country?</p>
+        <div class="notice" style="margin-bottom:14px;font-size:13px;line-height:1.75;">
+          ✈️ Airfare: ₱20,000–45,000 one way from Manila<br/>
+          🛂 Visa: ~AUD $200 (~₱8,000) (apply 1–2 months before flight)<br/>
+          We can help sa details!
+        </div>
+        <div class="options" style="flex-direction:column;gap:8px;">
+          <div class="opt" data-group="travel-help" onclick="singleOr(this)">🙋 Yes — palista rin ako dun sa travel planner niyo for my flight!</div>
+          <div class="opt" data-group="travel-help" onclick="singleOr(this)">✈️ Ako na bahala — magaling ako maghanap ng seat sale</div>
+          <div class="opt" data-group="travel-help" onclick="singleOr(this)">🤔 Pag-isipan ko pa</div>
+          <div class="opt" data-group="travel-help" onclick="singleOr(this)">🦘 Nandito na kami sa AU!</div>
+        </div>
+      </div>
+
+      <!-- Q6: ANYTHING ELSE -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">ANYTHING ELSE? 💬</div>
+        <div class="card-gif"><div class="tenor-gif-embed" data-postid="7892586" data-share-method="host" data-aspect-ratio="1.785" data-width="100%"><a href="https://tenor.com/view/michael-scott-gif-7892586">Michael Scott GIF</a></div>
+        </div>
+        <p class="q-text">Tanong sa cruise? Comments, violent reactions, reklamo sa barangay, requests?</p>
+        <p class="q-hint">Or pm pwede rin 😂</p>
+        <textarea class="text-input" rows="3" placeholder="I-type mo na! 💬" id="notes"></textarea>
+      </div>
+
+      <!-- FINAL ANSWER -->
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">FINAL ANSWER 🎤</div>
+        <div class="card-gif"><div class="tenor-gif-embed" data-postid="10123907" data-share-method="host" data-aspect-ratio="1.95" data-width="100%"><a href="https://tenor.com/view/i-need-an-answer-now-joey-friends-gif-10123907">I Need An Answer Now Joey GIF</a></div>
+        </div>
+        <p class="q-text">So... sama ba kayo sa Sydney trip?</p>
+        <div class="options" style="flex-direction:column;gap:10px;">
+          <div class="opt attend-expandable" data-group="final-ans" onclick="single(this);showYayPopup();document.getElementById('roomTypeSection').style.display='block';" style="flex-direction:column;">
+            <span>✅ SAMA ako, PM me!</span>
+            <div id="roomTypeSection" style="display:none;margin-top:10px;padding-top:10px;border-top:1.5px solid #e8e0d4;width:100%;" onclick="event.stopPropagation()">
+              <p style="font-size:12px;font-weight:800;margin-bottom:8px;color:var(--mid);pointer-events:none;">Room type preference?</p>
+              <div class="options" style="flex-direction:column;gap:6px;">
+                <div class="opt" data-group="room-type" onclick="event.stopPropagation();single(this)" style="font-size:13px;">🛏️ 2-pax room (mas private)</div>
+                <div class="opt" data-group="room-type" onclick="event.stopPropagation();single(this)" style="font-size:13px;">🛏️🛏️ 4-pax room (slightly cheaper, share with friends!)</div>
+                <div class="opt" data-group="room-type" onclick="event.stopPropagation();single(this)" style="font-size:13px;">🤷 Either is fine!</div>
+              </div>
+            </div>
+          </div>
+          <div class="opt" data-group="final-ans" onclick="single(this);document.getElementById('roomTypeSection').style.display='none';document.querySelectorAll('[data-group=&quot;room-type&quot;]').forEach(o=>o.classList.remove('selected','selected-or'))">⏳ Di pa rin ako sure — update namin kayo later, we take the risks</div>
+          <div class="opt" data-group="final-ans" onclick="single(this);document.getElementById('roomTypeSection').style.display='none';document.querySelectorAll('[data-group=&quot;room-type&quot;]').forEach(o=>o.classList.remove('selected','selected-or'))">😅 Pass talaga!!! ang kulit mo</div>
+          <div class="opt" data-group="final-ans" onclick="single(this);showMamPavoidPopup();document.getElementById('roomTypeSection').style.display='none';document.querySelectorAll('[data-group=&quot;room-type&quot;]').forEach(o=>o.classList.remove('selected','selected-or'))">🤯 Hala wait, pwede ba wag na umattend sa Pilipin Wedding? Dito na lang ako sama sa cruise para isang byahe lang!!!</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="spage-footer">
+      <button class="snext-btn" onclick="goStep4()">Next — almost done! 🙏</button>
+      <p class="submit-note">By submitting you confirm you've read all the notes above 😅</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3d: FINAL COMMENTS + THANK YOU -->
+<div class="survey-page page" id="page3d">
+  <div class="spage-wrap">
+    <div class="spage-header">
+      <button class="back-btn dark sback" onclick="showPage('page3c')">← back</button>
+      <div class="step-dots">
+        <div class="step-dot done"></div>
+        <div class="step-dot done"></div>
+        <div class="step-dot done"></div>
+      </div>
+      <div class="step-label">Almost done! 🙏</div>
+    </div>
+    <div class="spage-body">
+      <div class="spage-title">Last na! 💬</div>
+      <div class="spage-sub">maraming salamat sa pagsagot!! 🥹</div>
+
+      <div class="scard" style="margin-top:42px">
+        <div class="scard-label">OPEN MIC 🎤</div>
+        <p class="q-text">Any comments, questions, or kahit unsolicited marriage advice?</p>
+        <p class="q-hint">baka maiyak pa kami niyan 🥹</p>
+        <textarea class="text-input" rows="4" id="finalComments" placeholder="i-type mo na lahat... 💬"></textarea>
+      </div>
+
+      <!-- Thank you note -->
+      <div style="border-radius:16px;overflow:hidden;margin-top:16px;">
+        <div class="tenor-gif-embed" data-postid="8128931" data-share-method="host" data-aspect-ratio="1.785" data-width="100%"><a href="https://tenor.com/view/done-over-it-suits-harvey-specter-gabriel-macht-gif-8128931">Done Over It GIF</a></div>
+      </div>
+      <div style="background:linear-gradient(135deg,var(--em-pale),#e8f8ef);border:2px solid var(--em-pale);border-radius:20px;overflow:hidden;margin-top:12px;text-align:center;">
+        <div style="padding:24px;">
+          <p style="font-size:14px;color:#1a4a30;line-height:1.85;margin-bottom:12px;">
+            Excuse lang talaga yung wedding para sa travel goalz HAHAHA we volunteer as organizers 😂<br/><br/>
+            See you!!! Or not(?) 🤍
+          </p>
+          <p style="font-size:13px;color:#2d7a50;font-weight:800;">Gege — Lhicel &amp; Kim 💍</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="spage-footer">
+      <button class="snext-btn" onclick="submitForm()">🎉 Send it na!!</button>
+      <p class="submit-note">Reminders will be sent before each event 💌</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 4: SUCCESS -->
+<div class="survey-page page" id="page4">
+  <button class="back-btn dark" onclick="showPage('page3c')" style="position:fixed;top:20px;left:20px;">← back</button>
+<div class="success-screen" id="successScreen">
+  <span class="s-big">🥹🎉</span>
+  <h2>Yesss <span id="successName">friend</span>.</h2>
+  <p>
+    Nakatrack na kayo HAHAHA 🐾🐾<br/><br/>
+    We'll ping you with a reminder <strong>2 months before</strong> each event and again <strong>2 weeks out</strong> with all the official RSVP deets.<br/><br/>
+    <img src="https://i.ibb.co/k2SzPjGz/legen.gif" alt="legen" style="width:100%;border-radius:12px;margin:8px 0 16px;display:block;"/><br/>
+    In the meantime — kape kape muna 😂
+  </p>
+</div>
+</div><!-- end page4 -->
+
+<script>
+  function showPage(id) {
+    ['page0','page1','page2','page3','page3b','page3b5','page3c','page3d','page4'].forEach(p => {
+      document.getElementById(p).classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0, 0);
+    const body = document.querySelector('#' + id + ' .spage-body');
+    if (body) body.scrollTop = 0;
+  }
+
+  /* ── VALIDATION TOAST ── */
+
+  function showToast(msg) {
+    let t = document.getElementById('validationToast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = 'validationToast';
+      t.style.cssText = `
+        position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(80px);
+        background:#1a1208; color:#fff; font-family:'Nunito',sans-serif; font-weight:800;
+        font-size:14px; padding:14px 24px; border-radius:50px;
+        box-shadow:0 8px 32px rgba(0,0,0,.25); z-index:9999;
+        transition:transform .3s cubic-bezier(.34,1.56,.64,1), opacity .3s;
+        opacity:0; white-space:nowrap; text-align:center;
+        border:2px solid var(--or,#f4620a);
+      `;
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.style.transform = 'translateX(-50%) translateY(0)';
+    t.style.opacity = '1';
+    clearTimeout(window._toastTimer);
+    window._toastTimer = setTimeout(() => {
+      t.style.transform = 'translateX(-50%) translateY(80px)';
+      t.style.opacity = '0';
+    }, 2800);
+  }
+
+  function isAnswered(group) {
+    return !!document.querySelector(`[data-group="${group}"].selected, [data-group="${group}"].selected-or`);
+  }
+  function scrollToGroup(group) {
+    const el = document.querySelector(`[data-group="${group}"]`);
+    scrollToField(el);
+  }
+  function scrollToField(el) {
+    if (!el) return;
+    const page = el.closest('.survey-page');
+    if (page) {
+      setTimeout(() => {
+        const top = el.closest('.scard') ? el.closest('.scard').offsetTop - 80 : el.offsetTop - 80;
+        page.scrollTo({ top: top, behavior: 'smooth' });
+      }, 50);
+    }
+    el.focus && el.focus();
+  }
+
+  function goStep2() {
+    const emailEl = document.getElementById('email');
+    const phoneEl = document.getElementById('phone');
+    const email = emailEl.value.trim();
+    const phone = phoneEl.value.trim();
+    if (!email || !email.includes('@')) { showToast('may nakalimutan ka sagutan!!! — email mo 📬'); scrollToField(emailEl); return; }
+    if (phone && !/^[+\d\s\-()]{6,20}$/.test(phone)) { showToast('may nakalimutan ka sagutan!!! — valid number lang please 📱'); scrollToField(phoneEl); return; }
+    const locationEl = document.getElementById('locationOther');
+    if (!locationEl || !locationEl.value.trim()) { showToast('may nakalimutan ka sagutan!!! — city, country mo? 📍'); scrollToField(locationEl); return; }
+    const memoryEl = document.getElementById('memory');
+    if (!memoryEl || !memoryEl.value.trim()) { showToast('may nakalimutan ka sagutan!!! — most chaotic memory? 🤨'); scrollToField(memoryEl); return; }
+    showPage('page3b');
+  }
+
+  function goStep3() {
+    if (!isAnswered('attending')) { showToast('may nakalimutan ka sagutan!!! — G ba kayo?'); scrollToGroup('attending'); return; }
+    // if expandable attending selected, require the textarea
+    const attendSel = document.querySelector('[data-group="attending"].selected,[data-group="attending"].selected-or');
+    if (attendSel) {
+      const val = attendSel.dataset.val;
+      if (val === 'yes3') { const el = document.getElementById('reason-yes3'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — ano yung reservation mo? ✨'); scrollToField(el); return; } }
+      if (val === 'maybe3') { const el = document.getElementById('reason-maybe3'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — ano yung reason mo? 🤷'); scrollToField(el); return; } }
+      if (val === 'no2') { const el = document.getElementById('reason-no2'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — explain mo nga? 😶'); scrollToField(el); return; } }
+    }
+    if (!isAnswered('plusone')) { showToast('may nakalimutan ka sagutan!!! — plus one? 💑'); scrollToGroup('plusone'); return; }
+    // if plus one expandable selected, require the name input
+    const plusOneSel = document.querySelector('[data-group="plusone"].selected,[data-group="plusone"].selected-or');
+    if (plusOneSel) {
+      if (plusOneSel.textContent.includes('Yes I found')) { const el = document.getElementById('plusOneName'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — sino yan? 💑'); scrollToField(el); return; } }
+      if (plusOneSel.textContent.includes('plus 2')) { const el = document.getElementById('plusTwoNames'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — sino sila? 👨‍👩‍👧'); scrollToField(el); return; } }
+    }
+    const plusOneSel2 = document.querySelector('[data-group="plusone"].selected,[data-group="plusone"].selected-or');
+    if (plusOneSel2 && !plusOneSel2.textContent.includes('Me, myself') && !plusOneSel2.textContent.includes('Kami lang')) {
+      if (!isAnswered('plusone-ultimatum')) { showToast('may nakalimutan ka sagutan!!! — true or false?'); scrollToField(plusOneSel2); return; }
+    }
+    if (!isAnswered('transport')) { showToast('may nakalimutan ka sagutan!!! — commute or drive? 🚗'); scrollToGroup('transport'); return; }
+    const carshareVisible = document.getElementById('carshareSection') && document.getElementById('carshareSection').style.display !== 'none';
+    if (carshareVisible && !isAnswered('carshare')) { showToast('may nakalimutan ka sagutan!!! — pwede bang makisabay? 🚗'); scrollToField(document.getElementById('carshareSection')); return; }
+    if (!isAnswered('sleepover-nights')) { showToast('may nakalimutan ka sagutan!!! — sleepover? 🌙'); scrollToGroup('sleepover-nights'); return; }
+    if (!isAnswered('sleepover-pay')) { showToast('may nakalimutan ka sagutan!!! — bayad? 💸'); scrollToGroup('sleepover-pay'); return; }
+    if (!isAnswered('diet')) { showToast('may nakalimutan ka sagutan!!! — dietary requirements? 🍽️'); scrollToGroup('diet'); return; }
+    const dietSel = document.querySelector('[data-group="diet"].selected,[data-group="diet"].selected-or');
+    if (dietSel && dietSel.textContent.includes('allergy')) { const el = document.getElementById('dietDetail'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — specify mo yung allergy mo! ⚠️'); scrollToField(el); return; } }
+    if (!isAnswered('foodreq')) { showToast('may nakalimutan ka sagutan!!! — pwede po paorder? 🍽️'); scrollToGroup('foodreq'); return; }
+    const cravingsSel = Array.from(document.querySelectorAll('[data-group="foodreq"].selected')).find(e => e.textContent.includes('Cravings'));
+    if (cravingsSel) { const el = document.getElementById('foodRequest'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — ano yung cravings mo? ✨'); scrollToField(el); return; } }
+    if (!isAnswered('activity')) { showToast('may nakalimutan ka sagutan!!! — activities? 🎉'); scrollToGroup('activity'); return; }
+    const talentSel = Array.from(document.querySelectorAll('[data-group="activity"].selected')).find(e => e.textContent.includes('talent'));
+    if (talentSel) { const el = document.getElementById('activityTalent'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — ano talent mo? 🎤'); scrollToField(el); return; } }
+    const ideaSel = Array.from(document.querySelectorAll('[data-group="activity"].selected')).find(e => e.textContent.includes('bright idea'));
+    if (ideaSel) { const el = document.getElementById('activityIdea'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — ano yung idea mo? 💡'); scrollToField(el); return; } }
+    const triviaEl = document.getElementById('trivia');
+    if (!triviaEl || !triviaEl.value.trim()) { showToast('may nakalimutan ka sagutan!!! — trivia or fun fact? 🧠'); scrollToField(triviaEl); return; }
+    showPage('page3c');
+  }
+
+  function goStep4() {
+    if (!isAnswered('cruise-attend')) { showToast('may nakalimutan ka sagutan!!! — Sama ba u? 🚢'); scrollToGroup('cruise-attend'); return; }
+    if (!document.querySelector('[data-group="cruise-pick"].selected')) { showToast('may nakalimutan ka sagutan!!! — Cruise Vibes? 🌊'); scrollToField(document.querySelector('[data-group="cruise-pick"]')); return; }
+    if (!isAnswered('cruise-pay')) { showToast('may nakalimutan ka sagutan!!! — Libre ba? 💸'); scrollToGroup('cruise-pay'); return; }
+    if (!isAnswered('airbnb')) { showToast('may nakalimutan ka sagutan!!! — Airbnb? 🏡'); scrollToGroup('airbnb'); return; }
+    if (!isAnswered('travel-help')) { showToast('may nakalimutan ka sagutan!!! — Lilipad ka? ✈️'); scrollToGroup('travel-help'); return; }
+    if (!isAnswered('final-ans')) { showToast('may nakalimutan ka sagutan!!! — Final answer? 🎤'); scrollToGroup('final-ans'); return; }
+    const finalAnsSel = document.querySelector('[data-group="final-ans"].selected,[data-group="final-ans"].selected-or');
+    if (finalAnsSel && finalAnsSel.textContent.includes('Hala wait')) { showToast('hala wait ka dyan 😂 — sagot mo muna yung FINAL ANSWER ha! 🎤'); scrollToField(finalAnsSel); return; }
+    const roomTypeVisible = document.getElementById('roomTypeSection') && document.getElementById('roomTypeSection').style.display !== 'none';
+    if (roomTypeVisible && !isAnswered('room-type')) { showToast('may nakalimutan ka sagutan!!! — room type preference? 🛏️'); scrollToField(document.getElementById('roomTypeSection')); return; }
+    const notesEl = document.getElementById('notes');
+    if (!notesEl || !notesEl.value.trim()) { showToast('may nakalimutan ka sagutan!!! — may reklamo ka? 💬'); scrollToField(notesEl); return; }
+    showPage('page3d');
+  }
+
+
+  // ── AUTO-SAVE TO LOCALSTORAGE ──────────────────────────────────────────
+  const LS_KEY = 'kasalan_survey_v1';
+
+  function saveState() {
+    try {
+      const state = {
+        page: document.querySelector('.page.active') ? document.querySelector('.page.active').id : 'page1',
+        inputs: {},
+        selected: {},
+        sections: {}
+      };
+      // Save all text inputs and textareas
+      document.querySelectorAll('.text-input').forEach(el => {
+        if (el.id) state.inputs[el.id] = el.value;
+      });
+      // Save all selected pills
+      const groups = ['location','attending','plusone','plusone-ultimatum','transport','carshare','sleepover-nights','sleepover-pay','diet','foodreq','activity','cruise-attend','cruise-pay','cruise-pick','airbnb','travel-help','final-ans','room-type'];
+      groups.forEach(g => {
+        const selected = Array.from(document.querySelectorAll(`[data-group="${g}"].selected,[data-group="${g}"].selected-or`)).map(el => {
+          return el.querySelector('.cruise-opt-title') ? el.querySelector('.cruise-opt-title').textContent.trim() : (el.querySelector('span') ? el.querySelector('span').textContent.trim() : el.textContent.trim().substring(0, 60));
+        });
+        state.selected[g] = selected;
+      });
+      // Save section visibility
+      ['carshareSection','roomTypeSection','plusOneSection','plusTwoSection'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) state.sections[id] = el.style.display;
+      });
+      localStorage.setItem(LS_KEY, JSON.stringify(state));
+    } catch(e) {}
+  }
+
+  function restoreState() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (!raw) return;
+      const state = JSON.parse(raw);
+
+      // Restore text inputs
+      Object.keys(state.inputs || {}).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = state.inputs[id];
+      });
+
+      // Restore selected pills
+      const groups = ['location','attending','plusone','plusone-ultimatum','transport','carshare','sleepover-nights','sleepover-pay','diet','foodreq','activity','cruise-attend','cruise-pay','cruise-pick','airbnb','travel-help','final-ans','room-type'];
+      groups.forEach(g => {
+        const savedTexts = state.selected[g] || [];
+        if (!savedTexts.length) return;
+        document.querySelectorAll(`[data-group="${g}"]`).forEach(el => {
+          const text = el.querySelector('.cruise-opt-title') ? el.querySelector('.cruise-opt-title').textContent.trim() : (el.querySelector('span') ? el.querySelector('span').textContent.trim() : el.textContent.trim().substring(0, 60));
+          if (savedTexts.some(s => text.includes(s.substring(0, 30)) || s.includes(text.substring(0, 30)))) {
+            el.classList.add('selected');
+          }
+        });
+      });
+
+      // Restore section visibility
+      Object.keys(state.sections || {}).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = state.sections[id];
+      });
+
+      // Restore pax inputs
+      const cs = document.querySelector('[data-group="carshare"].selected,[data-group="carshare"].selected-or');
+      if (cs) {
+        if (cs.textContent.includes('pay me')) togglePax('pax1', true);
+        else if (cs.textContent.includes('samaritan')) togglePax('pax2', true);
+      }
+
+      // Restore page
+      if (state.page && state.page !== 'page1') {
+        showPage(state.page);
+      }
+
+      updateProgress();
+    } catch(e) {}
+  }
+
+  function clearState() {
+    try { localStorage.removeItem(LS_KEY); } catch(e) {}
+  }
+  // ────────────────────────────────────────────────────────────────────────
+
+  function updateSurveyGreeting() {
+    const namesEl = document.querySelector('.proposal-names');
+    if (namesEl) {
+      const names = namesEl.innerText.replace(/\n/g, ' ').replace('& ', '& ').trim();
+      const greetingEl = document.getElementById('surveyGreeting');
+      if (greetingEl) {
+        var parts = names.split(/\s*&\s*/).map(function(s){ return s.trim(); }).filter(Boolean);
+        var formatted = parts.length === 2
+          ? 'Ninong/Ninang ' + parts[0] + ' &amp; Ninong/Ninang ' + parts[1]
+          : 'Ninong/Ninang ' + parts[0];
+        greetingEl.innerHTML = 'survey lang po future <span style="color:var(--or);">' + formatted + '</span> hehe (parang bagay? hahaha)';
+      }
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    restoreState();
+    if (!localStorage.getItem(LS_KEY)) showPage('page0');
+    updateSurveyGreeting();
+    document.querySelectorAll('.text-input').forEach(i => {
+      i.addEventListener('input', updateProgress);
+      i.addEventListener('input', saveState);
+    });
+    // Save on any pill click
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.opt') || e.target.closest('.cruise-opt')) {
+        setTimeout(saveState, 100);
+      }
+    });
+  });
+
+  function handleAttend(el) {
+    document.querySelectorAll('[data-group="attending"]').forEach(o => o.classList.remove('selected','selected-or'));
+    const val = el.dataset.val;
+    if (val === 'no1' || val === 'no2') {
+      window._pendingNoEl = el;
+      document.getElementById('catPopup').style.display = 'flex';
+      return;
+    }
+    selectAttend(el);
+  }
+
+  function selectAttend(el) {
+    document.querySelectorAll('[data-group="attending"]').forEach(o => o.classList.remove('selected','selected-or'));
+    el.classList.add('selected');
+    updateProgress();
+  }
+
+  function confirmNo() {
+    const el = window._pendingNoEl;
+    if (el) selectAttend(el);
+    document.getElementById('catPopup').style.display = 'none';
+    window._pendingNoEl = null;
+  }
+
+  function cancelNo() {
+    window._pendingNoEl = null;
+    document.getElementById('catPopup').style.display = 'none';
+  }
+
+  function selectTransportYes() {
+    const opts = document.querySelectorAll('[data-group="transport"]');
+    opts.forEach(o => o.classList.remove('selected','selected-or'));
+    if (opts[0]) opts[0].classList.add('selected');
+    const sec = document.getElementById('carshareSection');
+    if (sec) sec.style.display = 'block';
+    updateProgress();
+  }
+
+  function togglePax(id, enable) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.disabled = !enable;
+    el.style.opacity = enable ? '1' : '.4';
+    el.style.cursor = enable ? 'text' : 'not-allowed';
+    if (!enable) el.value = '';
+  }
+
+  function toggleSub(id, show) {
+    const el = document.getElementById(id);
+    if (el) el.style.display = show ? 'block' : 'none';
+  }
+
+  function showSponsorPopup() {
+    document.getElementById('sponsorPopup').style.display = 'flex';
+  }
+
+  function showYayPopup() {
+    document.getElementById('yayPopup').style.display = 'flex';
+  }
+
+  function showMamPavoidPopup() {
+    document.getElementById('mamPavoidPopup').style.display = 'flex';
+  }
+  function goEditLaguna() {
+    document.getElementById('mamPavoidPopup').style.display = 'none';
+    showPage('page3b');
+    window.scrollTo(0, 0);
+    const body = document.getElementById('page3b');
+    if (body) body.scrollTop = 0;
+  }
+  function closeMamPavoid() {
+    document.getElementById('mamPavoidPopup').style.display = 'none';
+  }
+
+  function single(el) {
+    const g = el.dataset.group;
+    document.querySelectorAll(`[data-group="${g}"]`).forEach(o => {
+      o.classList.remove('selected','selected-or');
+    });
+    el.classList.add('selected');
+    updateProgress();
+  }
+  function singleOr(el, checkUnsure) {
+    const g = el.dataset.group;
+    document.querySelectorAll(`[data-group="${g}"]`).forEach(o => o.classList.remove('selected','selected-or'));
+    el.classList.add('selected-or');
+    updateProgress();
+    if (checkUnsure) {
+      document.getElementById('unsureNote').style.display = el.textContent.includes('Unsure') ? 'block' : 'none';
+    }
+  }
+  function toggleOpt(el) { el.classList.toggle('selected'); updateProgress(); }
+  function selectVoucher(el) { document.querySelectorAll('.voucher-btn').forEach(b => b.classList.remove('selected')); el.classList.add('selected'); updateProgress(); }
+  function pickCruiseOpt(el) {
+    const isNotGoing = el.querySelector('.cruise-opt-title') && el.querySelector('.cruise-opt-title').textContent.includes('Di ngani');
+    if (isNotGoing) {
+      // deselect all other cruise options
+      document.querySelectorAll('[data-group="cruise-pick"]').forEach(c => c.classList.remove('selected'));
+      el.classList.toggle('selected');
+    } else {
+      // deselect "di ngani" if selecting a real option
+      document.querySelectorAll('[data-group="cruise-pick"]').forEach(c => {
+        if (c.querySelector('.cruise-opt-title') && c.querySelector('.cruise-opt-title').textContent.includes('Di ngani')) {
+          c.classList.remove('selected');
+        }
+      });
+      el.classList.toggle('selected');
+    }
+    updateProgress();
+  }
+  function selectCruise(el) { document.querySelectorAll('.cruise-card').forEach(c => c.classList.remove('selected')); el.classList.add('selected'); updateProgress(); }
+
+  function updateProgress() {
+    const groups = ['overnight-d1','overnight-d2','plusone','cruise-attend','airbnb'];
+    let filled = 0;
+    groups.forEach(g => { if (document.querySelector(`[data-group="${g}"].selected, [data-group="${g}"].selected-or`)) filled++; });
+    const fn = document.getElementById('firstName');
+    const em = document.getElementById('email');
+    if (fn && fn.value.trim()) filled++;
+    if (em && em.value.trim()) filled++;
+    const pct = Math.min(100, Math.round(filled/7*100));
+    const pb = document.getElementById('progressBar');
+    const pf = document.getElementById('progressFill');
+    const pp = document.getElementById('progressPct');
+    if (pb) pb.style.width = pct + '%';
+    if (pf) pf.style.width = pct + '%';
+    if (pp) pp.textContent = pct + '%';
+  }
+  function getSelected(group) {
+    const el = document.querySelector(`[data-group="${group}"].selected, [data-group="${group}"].selected-or`);
+    if (!el) return '';
+    const span = el.querySelector('span');
+    if (span) return span.textContent.trim();
+    const clone = el.cloneNode(true);
+    clone.querySelectorAll('input,textarea,p,.attend-txt').forEach(n => n.remove());
+    return clone.textContent.trim();
+  }
+  function getMultiSelected(group) {
+    return Array.from(document.querySelectorAll(`[data-group="${group}"].selected, [data-group="${group}"].selected-or`))
+      .map(el => {
+        const span = el.querySelector('span');
+        if (span) return span.textContent.trim();
+        // clone and remove child inputs/textareas before reading text
+        const clone = el.cloneNode(true);
+        clone.querySelectorAll('input,textarea,p,.attend-txt').forEach(n => n.remove());
+        return clone.textContent.trim();
+      })
+      .join(', ');
+  }
+  function val(id) {
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+
+  function submitForm() {
+    const finalComments = document.getElementById('finalComments');
+    if (!finalComments || !finalComments.value.trim()) {
+      showToast('may nakalimutan ka sagutan!!! — Open Mic! 🎤');
+      scrollToField(finalComments);
+      return;
+    }
+    clearState();
+    var namesEl = document.querySelector('.proposal-names');
+    var successText = 'friend';
+    if (namesEl) {
+      var raw = namesEl.innerText.trim();
+      var parts = raw.split(/\n|&/).map(function(s){ return s.replace(/&/g,'').trim(); }).filter(Boolean);
+      successText = parts.length === 2
+        ? 'Ninong/Ninang ' + parts[0] + ' & Ninong/Ninang ' + parts[1]
+        : 'Ninong/Ninang ' + parts[0];
+    }
+    document.getElementById('successName').textContent = successText;
+    document.getElementById('progressBar').style.width = '100%';
+    showPage('page4');
+
+    const data = {
+      // --- PAGE 3: ABOUT YOU ---
+      firstName:        val('firstName'),
+      lastName:         val('lastName'),
+      email:            val('email'),
+      phone:            val('phone'),
+      from:             val('locationOther'),
+      locationOther:    val('locationOther'),
+      memory:           val('memory'),
+      // --- PAGE 3b: LAGUNA WEDDING ---
+      attending:        getSelected('attending'),
+      attendReason:     val('reason-yes3') || val('reason-maybe3') || val('reason-no2'),
+      plusOne:          getSelected('plusone'),
+      plusOneName:      (() => {
+        const sel = document.querySelector('[data-group="plusone"].selected,[data-group="plusone"].selected-or');
+        if (!sel) return '';
+        const inp = sel.querySelector('input');
+        return inp ? inp.value.trim() : '';
+      })(),
+      plusOneUltimatum: getSelected('plusone-ultimatum'),
+      transport:        getSelected('transport'),
+      carShare:         getSelected('carshare'),
+      carPax:           (() => {
+        const cs = document.querySelector('[data-group="carshare"].selected,[data-group="carshare"].selected-or');
+        if (!cs) return '';
+        const inp = cs.querySelector('input[type="number"]');
+        return inp && !inp.disabled ? inp.value.trim() : '';
+      })(),
+      sleepoverPreWedding: (Array.from(document.querySelectorAll('[data-group="sleepover-nights"].selected')).some(e => e.textContent.includes('Pre-Wedding') || e.textContent.includes('May 4') || e.textContent.includes('All in')) ? 1 : 0),
+      sleepoverWalwalan: (Array.from(document.querySelectorAll('[data-group="sleepover-nights"].selected')).some(e => e.textContent.includes('Wedding Night') || e.textContent.includes('May 5') || e.textContent.includes('All in')) ? 1 : 0),
+      sleepoverPostWedding: (Array.from(document.querySelectorAll('[data-group="sleepover-nights"].selected')).some(e => e.textContent.includes('Post-Wedding') || e.textContent.includes('May 6') || e.textContent.includes('All in')) ? 1 : 0),
+      sleepoverPay:     getSelected('sleepover-pay'),
+      sleepoverNotes:   val('sleepoverNotes'),
+      diet:             getSelected('diet'),
+      dietDetail:       val('dietDetail'),
+      foodShanghai:     (Array.from(document.querySelectorAll('[data-group="foodreq"].selected')).some(e => e.textContent.includes('Shanghai')) ? 1 : 0),
+      foodLechon:       (Array.from(document.querySelectorAll('[data-group="foodreq"].selected')).some(e => e.textContent.includes('Lechon')) ? 1 : 0),
+      foodSurprise:     (Array.from(document.querySelectorAll('[data-group="foodreq"].selected')).some(e => e.textContent.includes('Surprise')) ? 1 : 0),
+      foodCravings:     (Array.from(document.querySelectorAll('[data-group="foodreq"].selected')).some(e => e.textContent.includes('Cravings')) ? 1 : 0),
+      foodCravingsNote: val('foodRequest'),
+      activities:       getMultiSelected('activity'),
+      activityTalent:   val('activityTalent'),
+      activityIdea:     val('activityIdea'),
+      trivia:           val('trivia'),
+      // --- PAGE 3c: SYDNEY CRUISE ---
+      cruiseAttending:  getSelected('cruise-attend'),
+      cruise2DayMay:    (document.querySelector('[data-group="cruise-pick"].selected .cruise-opt-title') && Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected')).some(e => e.querySelector('.cruise-opt-title') && e.querySelector('.cruise-opt-title').textContent.includes('2-Day')) ? 1 : 0),
+      cruise3DayAug:    (Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected')).some(e => e.querySelector('.cruise-opt-title') && e.querySelector('.cruise-opt-title').textContent.includes('3-Day')) ? 1 : 0),
+      cruise4DayPhillip:(Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected')).some(e => e.querySelector('.cruise-opt-title') && e.querySelector('.cruise-opt-title').textContent.includes('Phillip')) ? 1 : 0),
+      cruise4DayMoreton:(Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected')).some(e => e.querySelector('.cruise-opt-title') && e.querySelector('.cruise-opt-title').textContent.includes('Moreton')) ? 1 : 0),
+      cruiseNotGoing:   (Array.from(document.querySelectorAll('[data-group="cruise-pick"].selected')).some(e => e.querySelector('.cruise-opt-title') && e.querySelector('.cruise-opt-title').textContent.includes('Di ngani')) ? 1 : 0),
+      cruisePay:        getSelected('cruise-pay'),
+      airbnb:           getSelected('airbnb'),
+      travelHelp:       getSelected('travel-help'),
+      finalAnswer:      getSelected('final-ans'),
+      roomType:         (() => {
+        const finalAns = document.querySelector('[data-group="final-ans"].selected,[data-group="final-ans"].selected-or');
+        if (!finalAns) return '';
+        const span = finalAns.querySelector('span');
+        const text = span ? span.textContent : finalAns.textContent;
+        if (!text.includes('SAMA')) return '';
+        return getSelected('room-type');
+      })(),
+      notes:            val('notes'),
+      // --- PAGE 3d: FINAL ---
+      finalComments:    val('finalComments'),
+      ninangAnswer:     getSelected('ninang-answer'),
+      ninangMessage:    val('ninangMessage'),
+      proposalNames:    (function() {
+        var el = document.querySelector('.proposal-names');
+        if (!el) return '';
+        var raw = el.innerText.trim();
+        var parts = raw.split(/\n|&/).map(function(s){ return s.replace(/&/g,'').trim(); }).filter(Boolean);
+        return parts.length === 2
+          ? 'Ninong/Ninang ' + parts[0] + ' & Ninong/Ninang ' + parts[1]
+          : 'Ninong/Ninang ' + parts[0];
+      })(),
+    };
+
+    fetch('https://script.google.com/macros/s/AKfycbztoeV86Lhj1vWcd5kLfsB7zM1hRFrdv4KNq0rHbQPMs0ia05dVXfJcGngb_1Dd73kH/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).catch(err => console.error('Submit error:', err));
+  }
+
+  function goStep3Ninang() {
+    if (!isAnswered('attending')) { showToast('may nakalimutan ka sagutan!!! — G ba kayo?'); scrollToGroup('attending'); return; }
+    const attendSel = document.querySelector('[data-group="attending"].selected,[data-group="attending"].selected-or');
+    if (attendSel) {
+      const v = attendSel.dataset.val;
+      if (v === 'yes3') { const el = document.getElementById('reason-yes3'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — ano yung reservation mo? ✨'); scrollToField(el); return; } }
+      if (v === 'maybe3') { const el = document.getElementById('reason-maybe3'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — ano yung reason mo? 🤷'); scrollToField(el); return; } }
+      if (v === 'no2') { const el = document.getElementById('reason-no2'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — explain mo nga? 😶'); scrollToField(el); return; } }
+    }
+    if (!isAnswered('plusone')) { showToast('may nakalimutan ka sagutan!!! — plus one? 💑'); scrollToGroup('plusone'); return; }
+    const plusOneSel = document.querySelector('[data-group="plusone"].selected,[data-group="plusone"].selected-or');
+    if (plusOneSel) {
+      if (plusOneSel.textContent.includes('Yes I found')) { const el = document.getElementById('plusOneName'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — sino yan? 💑'); scrollToField(el); return; } }
+      if (plusOneSel.textContent.includes('plus 2')) { const el = document.getElementById('plusTwoNames'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — sino sila? 👨‍👩‍👧'); scrollToField(el); return; } }
+    }
+    const plusOneSel2 = document.querySelector('[data-group="plusone"].selected,[data-group="plusone"].selected-or');
+    if (plusOneSel2 && !plusOneSel2.textContent.includes('Me, myself') && !plusOneSel2.textContent.includes('Kami lang')) {
+      if (!isAnswered('plusone-ultimatum')) { showToast('may nakalimutan ka sagutan!!! — true or false?'); scrollToField(plusOneSel2); return; }
+    }
+    if (!isAnswered('transport')) { showToast('may nakalimutan ka sagutan!!! — commute or drive? 🚗'); scrollToGroup('transport'); return; }
+    const carshareVisible = document.getElementById('carshareSection') && document.getElementById('carshareSection').style.display !== 'none';
+    if (carshareVisible && !isAnswered('carshare')) { showToast('may nakalimutan ka sagutan!!! — pwede bang makisabay? 🚗'); scrollToField(document.getElementById('carshareSection')); return; }
+    if (!isAnswered('sleepover-nights')) { showToast('may nakalimutan ka sagutan!!! — sleepover? 🌙'); scrollToGroup('sleepover-nights'); return; }
+    if (!isAnswered('sleepover-pay')) { showToast('may nakalimutan ka sagutan!!! — bayad? 💸'); scrollToGroup('sleepover-pay'); return; }
+    if (!isAnswered('diet')) { showToast('may nakalimutan ka sagutan!!! — dietary requirements? 🍽️'); scrollToGroup('diet'); return; }
+    const dietSel = document.querySelector('[data-group="diet"].selected,[data-group="diet"].selected-or');
+    if (dietSel && dietSel.textContent.includes('allergy')) { const el = document.getElementById('dietDetail'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — specify mo yung allergy mo! ⚠️'); scrollToField(el); return; } }
+    if (!isAnswered('foodreq')) { showToast('may nakalimutan ka sagutan!!! — pwede po paorder? 🍽️'); scrollToGroup('foodreq'); return; }
+    const cravingsSel = Array.from(document.querySelectorAll('[data-group="foodreq"].selected')).find(e => e.textContent.includes('Cravings'));
+    if (cravingsSel) { const el = document.getElementById('foodRequest'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — ano yung cravings mo? ✨'); scrollToField(el); return; } }
+    if (!isAnswered('activity')) { showToast('may nakalimutan ka sagutan!!! — activities? 🎉'); scrollToGroup('activity'); return; }
+    const talentSel = Array.from(document.querySelectorAll('[data-group="activity"].selected')).find(e => e.textContent.includes('talent'));
+    if (talentSel) { const el = document.getElementById('activityTalent'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — ano talent mo? 🎤'); scrollToField(el); return; } }
+    const ideaSel = Array.from(document.querySelectorAll('[data-group="activity"].selected')).find(e => e.textContent.includes('bright idea'));
+    if (ideaSel) { const el = document.getElementById('activityIdea'); if (!el||!el.value.trim()) { showToast('may nakalimutan ka sagutan!!! — ano yung idea mo? 💡'); scrollToField(el); return; } }
+    const triviaEl = document.getElementById('trivia');
+    if (!triviaEl || !triviaEl.value.trim()) { showToast('may nakalimutan ka sagutan!!! — trivia or fun fact? 🧠'); scrollToField(triviaEl); return; }
+    showPage('page3b5');
+  }
+
+  function goStep3FromNinang() {
+    if (!isAnswered('ninang-answer')) {
+      showToast('may nakalimutan ka sagutan!!! — ninong/ninang answer? 💍');
+      scrollToGroup('ninang-answer');
+      return;
+    }
+    const thoughtsEl = document.getElementById('ninangMessage');
+    if (!thoughtsEl || !thoughtsEl.value.trim()) {
+      showToast('may nakalimutan ka sagutan!!! — thoughts? 💭');
+      scrollToField(thoughtsEl);
+      return;
+    }
+    showPage('page3c');
+  }
+
+
+  function showYodaPopup() {
+    setTimeout(function() {
+      var popup = document.getElementById('yodaPopup');
+      if (popup) popup.style.display = 'flex';
+      var namesEl = document.querySelector('.proposal-names');
+      var btn = document.getElementById('yodaThankBtn');
+      if (namesEl && btn) {
+        var names = namesEl.innerText.replace(/\n/g, ' & ').trim();
+        btn.textContent = 'Salamat, ' + names + '! 🙏';
+      }
+    }, 300);
+  }
+
+  function showVirtualNinangPopup() {
+    setTimeout(function() {
+      var popup = document.getElementById('virtualNinangPopup');
+      if (popup) popup.style.display = 'flex';
+      var namesEl = document.querySelector('.proposal-names');
+      var btn = document.getElementById('virtualNinangThankBtn');
+      if (namesEl && btn) {
+        var names = namesEl.innerText.replace(/\n/g, ' & ').replace('& &','&').trim();
+        btn.textContent = 'Salamat, ' + names + '! 🙏';
+      }
+    }, 300);
+  }
+</script>
+
+<!-- PLEADING CAT POPUP -->
+<div id="catPopup" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.6);align-items:center;justify-content:center;flex-direction:column;">
+  <div style="background:#fff;border-radius:24px;padding:28px 32px;text-align:center;max-width:320px;width:90%;box-shadow:0 16px 48px rgba(0,0,0,.3);">
+    <div style="border-radius:16px;overflow:hidden;margin-bottom:16px;">
+      <iframe src="https://giphy.com/embed/ffzhLUixCtlsc" width="100%" height="200" frameBorder="0" allowFullScreen style="border:none;border-radius:16px;pointer-events:none;display:block;"></iframe>
+    </div>
+    <p style="font-family:'Pacifico',cursive;font-size:20px;color:#1a6b45;margin-bottom:8px;">final answer???</p>
+    
+    <div style="display:flex;gap:10px;justify-content:center;">
+      <button onclick="confirmNo()" style="background:#e8ddd0;border:none;padding:10px 20px;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer;color:#4a3520;">Yes, mhie! 🙏 sorrymasen</button>
+      <button onclick="cancelNo()" style="background:#1a6b45;border:none;padding:10px 20px;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer;color:#fff;">wait, let me think!! 🤔</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- YAYYYY POPUP -->
+<div id="yayPopup" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.6);align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:24px;padding:28px 28px 24px;text-align:center;max-width:340px;width:90%;box-shadow:0 16px 48px rgba(0,0,0,.3);">
+    <div style="font-size:48px;margin-bottom:12px;">🥳🚢🎉</div>
+    <div style="font-family:'Pacifico',cursive;font-size:22px;color:var(--em);margin-bottom:10px;">YAYYY!!! Sama ka!!!</div>
+    <p style="font-family:'Nunito',sans-serif;font-size:14px;color:#4a3520;margin-bottom:20px;line-height:1.7;">
+      So excited!!! 🥹<br/><br/>
+      Pa-note lang — need ng <strong>non-refundable DP</strong> to reserve your spot. Will check pa exact amount pero <strong>will PM you!</strong><br/><br/>
+      <em style="font-size:12px;opacity:.7;">see u sa barko friend!! 🚢🧡</em>
+    </p>
+    <button onclick="document.getElementById('yayPopup').style.display='none'" style="background:var(--em);border:none;padding:12px 28px;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;color:#fff;">Sige, PM mo ako! 📩</button>
+  </div>
+</div>
+
+<!-- MAM PAVOID POPUP -->
+<div id="mamPavoidPopup" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.65);align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:24px;padding:28px 28px 24px;text-align:center;max-width:340px;width:90%;box-shadow:0 16px 48px rgba(0,0,0,.3);">
+    <img src="https://i.ibb.co/MDBn6Wtv/F1-4s74-X0-AIBJmn.jpg" style="width:100%;border-radius:14px;margin-bottom:12px;display:block;"/>
+    <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:22px;color:var(--or);margin-bottom:6px;">Mam Pa-VOID!!! 🚢</div>
+    <p style="font-family:'Nunito',sans-serif;font-size:14px;color:#4a3520;margin-bottom:20px;line-height:1.7;">
+      okay no worries! nood na lang kayo ng wedding vlog HAHAHA 🎬<br/><br/>
+      go edit mo na Wedding answers mo. See u sa Sydney!! 🚢🥂
+    </p>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <button onclick="goEditLaguna()" style="background:var(--em);border:none;padding:12px 20px;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;color:#fff;">← edit Wedding answers</button>
+      <button onclick="closeMamPavoid()" style="background:#e8ddd0;border:none;padding:10px 20px;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer;color:#4a3520;">de joke, final answer na</button>
+    </div>
+  </div>
+</div>
+<!-- SPONSOR POPUP -->
+<div id="sponsorPopup" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.6);align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:24px;padding:28px 28px 24px;text-align:center;max-width:320px;width:90%;box-shadow:0 16px 48px rgba(0,0,0,.3);">
+    <div style="font-size:48px;margin-bottom:12px;">🥹💸🎉</div>
+    <div style="font-family:'Pacifico',cursive;font-size:20px;color:var(--or);margin-bottom:10px;">Wowerz, thank u boss!!!!</div>
+    <p style="font-family:'Nunito',sans-serif;font-size:14px;color:#4a3520;margin-bottom:20px;line-height:1.7;">
+      PM Sent 🥹🙏
+    </p>
+    <button onclick="document.getElementById('sponsorPopup').style.display='none'" style="background:var(--or);border:none;padding:12px 28px;border-radius:12px;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;color:#fff;">Sige boss! 😂🙏</button>
+  </div>
+</div>
+
+
+<!-- YODA POPUP -->
+<div id="yodaPopup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:24px;padding:28px;text-align:center;max-width:320px;width:90%;box-shadow:0 16px 48px rgba(0,0,0,.3);animation:popIn .4s cubic-bezier(.34,1.56,.64,1);">
+    <div style="border-radius:14px;overflow:hidden;margin-bottom:14px;">
+      <div class="tenor-gif-embed" data-postid="17039392211547081941" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/yoda-yoda-glasses-yoda-cool-ai-yoda-ai-gif-17039392211547081941">Yoda GIF</a></div>
+    </div>
+    <div style="font-family:'Pacifico',cursive;font-size:20px;color:var(--em);margin-bottom:8px;">Yay! 🟢</div>
+    <p style="font-family:'Nunito',sans-serif;font-size:14px;color:#4a3520;line-height:1.7;margin-bottom:20px;">
+      Honored, we are!!! 🥹<br/>Guide us, you will — and see you at the wedding!
+    </p>
+    <button onclick="document.getElementById('yodaPopup').style.display='none'" style="background:var(--em);color:#fff;border:none;padding:12px 28px;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;cursor:pointer;width:100%;" id="yodaThankBtn">Salamat, ninong/ninang! 🙏</button>
+  </div>
+</div>
+
+
+<!-- VIRTUAL NINANG POPUP -->
+<div id="virtualNinangPopup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:24px;padding:28px;text-align:center;max-width:320px;width:90%;box-shadow:0 16px 48px rgba(0,0,0,.3);animation:popIn .4s cubic-bezier(.34,1.56,.64,1);">
+    <div style="position:relative;height:260px;margin-bottom:14px;border-radius:14px;overflow:hidden;">
+      <iframe src="https://giphy.com/embed/2GDHOfqcmYIX6" width="100%" height="100%" style="position:absolute;top:0;left:0;border:none;pointer-events:none;" frameBorder="0" class="giphy-embed"></iframe>
+      <div style="position:absolute;inset:0;z-index:2;"></div>
+    </div>
+    <div style="font-family:'Pacifico',cursive;font-size:20px;color:var(--or);margin-bottom:8px;">Virtual hug! 🤍</div>
+    <p style="font-family:'Nunito',sans-serif;font-size:14px;color:#4a3520;line-height:1.7;margin-bottom:20px;">
+      Still honoured! We'll feel your presence in spirit 👻✨
+    </p>
+    <button onclick="document.getElementById('virtualNinangPopup').style.display='none'" style="background:var(--em);color:#fff;border:none;padding:12px 28px;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;cursor:pointer;width:100%;" id="virtualNinangThankBtn">Salamat, future Ninong/Ninang! 🙏</button>
+  </div>
+</div>
+
+</body>
+</html>
